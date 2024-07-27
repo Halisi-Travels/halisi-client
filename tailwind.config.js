@@ -7,7 +7,12 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue, js, ts, jsx, tsx}"],
   purge: ["./index.html", "./src/**/*.{vue, js, ts, jsx, tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#002570",
+        secondary: "#F98A16",
+      },
+    },
   },
   plugins: [typography, forms, aspectRatio],
 };

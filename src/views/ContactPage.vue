@@ -16,7 +16,7 @@
       <div class="contact-div flex justify-around w-10/12 mx-auto my-12">
         <div class="info flex flex-col gap-10">
           <div class="contact-info flex flex-col gap-2">
-            <p class="text-3xl font-semibold mb-3">Contact Info</p>
+            <p class="text-3xl font-semibold mb-3 text-primary">Contact Info</p>
             <p>
               <span class="font-semibold">Phone number: </span>
               +254745313519/+254747393209
@@ -33,7 +33,9 @@
           </div>
 
           <div class="business-hours flex flex-col gap-2">
-            <p class="text-3xl font-semibold mb-3">Business Hours</p>
+            <p class="text-3xl font-semibold mb-3 text-primary">
+              Business Hours
+            </p>
             <p>
               <span class="font-semibold">Monday - Friday: </span>8.00am -
               5.00pm
@@ -45,7 +47,7 @@
           </div>
 
           <div class="business-hours">
-            <p class="text-3xl font-semibold mb-3">Social Media</p>
+            <p class="text-3xl font-semibold mb-3 text-primary">Social Media</p>
             <ul class="flex gap-4">
               <li>
                 <i class="fa fa-facebook text-lg"></i>
@@ -76,7 +78,7 @@
           <label for="name">Your name</label>
           <textarea name="message" id="message" cols="30" rows="10"></textarea>
 
-          <button type="submit">SUBMIT</button>
+          <button type="submit" class="bg-secondary rounded">SUBMIT</button>
         </form>
       </div>
     </main>
@@ -119,7 +121,6 @@ textarea {
 }
 
 button {
-  background-color: black;
   color: white;
   padding: 10px 15px;
 }

@@ -2,31 +2,40 @@
 <template>
   <div
     id="footer"
-    class="rounded-2xl bg-slate-700 mx-4 p-6 text-white flex flex-col items-center gap-7"
+    class="rounded-2xl bg-slate-900 mx-4 p-6 text-white flex flex-col items-center gap-7"
   >
     <div class="logo">
-      <p class="text-center">Halisi Travels.</p>
+      <img
+        width="200px"
+        :src="require('@/assets/logo.png')"
+        alt="halisi travels"
+      />
     </div>
 
     <ul class="flex gap-8">
-      <li>About</li>
-      <li>Job Placement</li>
-      <li>Visa Application</li>
-      <li>Contact Us</li>
+      <li class="hover:underline underline-offset-2">About</li>
+      <li class="hover:underline underline-offset-2">Job Placement</li>
+      <li class="hover:underline underline-offset-2">Visa Application</li>
+      <li
+        class="hover:underline underline-offset-2"
+        @click="$router.push('/contact-us')"
+      >
+        Contact Us
+      </li>
     </ul>
 
     <ul class="socials flex gap-8">
       <li>
-        <i class="fa fa-facebook text-lg text-gray-400"></i>
+        <i class="fa fa-facebook text-lg text-gray-400 hover:text-white"></i>
       </li>
       <li>
-        <i class="fa fa-twitter text-lg text-gray-400"></i>
+        <i class="fa fa-twitter text-lg text-gray-400 hover:text-white"></i>
       </li>
       <li>
-        <i class="fa fa-instagram text-lg text-gray-400"></i>
+        <i class="fa fa-instagram text-lg text-gray-400 hover:text-white"></i>
       </li>
       <li>
-        <i class="fa fa-linkedin text-lg text-gray-400"></i>
+        <i class="fa fa-linkedin text-lg text-gray-400 hover:text-white"></i>
       </li>
     </ul>
 

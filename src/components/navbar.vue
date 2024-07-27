@@ -5,18 +5,23 @@
     class="bg-white shadow-lg rounded-full w-9/12 py-4 px-6 flex justify-between items-center space-x-4 m-auto border"
   >
     <div class="company-logo cursor-pointer" @click="$router.push('/')">
-      <p class="text-xl font-semibold">Halisi.</p>
+      <img
+        width="100px"
+        :src="require('@/assets/logo.png')"
+        alt="halisi logo"
+      />
     </div>
+
     <div class="nav-links">
       <ul class="">
-        <li class="d-inline-block">About</li>
-        <li>Job Placement</li>
-        <li>Visa Application</li>
-        <li>Profile</li>
+        <li class="text-gray-400 hover:text-primary">About</li>
+        <li class="text-gray-400 hover:text-primary">Job Placement</li>
+        <li class="text-gray-400 hover:text-primary">Visa Application</li>
+        <li class="text-gray-400 hover:text-primary">Profile</li>
       </ul>
     </div>
     <div
-      class="contact-link bg-black shadow-lg text-white px-4 py-2 rounded-full"
+      class="contact-link bg-secondary hover:bg-primary shadow-lg text-white px-7 py-4 rounded-full"
       @click="$router.push('/contact-us')"
     >
       <p class="font-semibold">Contact Us</p>
@@ -29,6 +34,7 @@ li {
   display: inline-block;
   margin: 0 20px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 li,
