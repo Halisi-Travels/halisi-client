@@ -80,6 +80,28 @@
           </p>
         </div>
       </section>
+
+      <section class="testimonial-section">
+        <div class="testimonial-container">
+          <div
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+            class="testimonial"
+          >
+            <div
+              class="bg-white p-6 rounded-2xl w-1/2 mx-auto shadow-lg text-center"
+            >
+              <p class="text-gray-800 text-xl">{{ testimonial.text }}</p>
+              <div class="mt-4">
+                <h3 class="text-2xl font-semibold text-primary">
+                  {{ testimonial.author }}
+                </h3>
+                <p class="text-gray-500 text-md">{{ testimonial.position }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <app-footer />
@@ -104,12 +126,57 @@ export default {
         },
         { name: "Visa Application", desc: "Pilots to Your Destination" },
       ],
+      testimonials: [
+        {
+          text: "This service exceeded my expectations. The team was professional, and the results were outstanding. I highly recommend them!",
+          author: "Alex Johnson",
+          position: "Marketing Manager at XYZ Corp",
+        },
+        {
+          text: "An excellent experience from start to finish. The attention to detail and customer service was impeccable.",
+          author: "Jessica Lee",
+          position: "Freelance Graphic Designer",
+        },
+        {
+          text: "I've never worked with a more dedicated and efficient team. They truly transformed our project and delivered exceptional quality.",
+          author: "Michael Brown",
+          position: "Product Owner at Tech Innovations",
+        },
+        {
+          text: "The project was delivered on time and exceeded our expectations. Their professionalism and expertise were evident throughout.",
+          author: "Emily Davis",
+          position: "CEO at Creative Solutions Inc.",
+        },
+        {
+          text: "Fantastic results and a great team to work with. Their innovative approach made a significant impact on our business.",
+          author: "Daniel White",
+          position: "Sales Director at Global Enterprises",
+        },
+      ],
+      currentTestimonial: 0,
     };
+  },
+
+  mounted() {
+    this.startScrolling();
+  },
+
+  methods: {
+    startScrolling() {
+      setInterval(() => {
+        this.currentTestimonial =
+          (this.currentTestimonial + 1) % this.testimonials.length;
+        const container = this.$el.querySelector(".testimonial-container");
+        container.style.transform = `translateX(-${
+          this.currentTestimonial * 100
+        }%)`;
+      }, 4000); // Adjust the time (4000ms = 4 seconds) as needed
+    },
   },
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .banner {
   background-image: url("../assets/images/flight1.jpg");
   background-size: cover;
@@ -131,5 +198,17 @@ export default {
   width: 95%;
   margin: 0 auto 9rem auto;
   height: 60vh;
+}
+
+.testimonial-section {
+  height: 50vh;
+  .testimonial-container {
+    display: flex;
+    .testimonial {
+      width: 50px;
+      height: 100%;
+      flex: 0 0 100%;
+    }
+  }
 }
 </style>
