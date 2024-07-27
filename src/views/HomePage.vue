@@ -7,8 +7,10 @@
 
         <div class="mt-20 flex flex-col gap-6">
           <p class="text-6xl font-bold text-center text-white">Halisi Agency</p>
-          <p class="text-2xl font-bold text-center text-white tracking-wider">
-            Simple. Transparent. Reliable
+          <p
+            class="slogan text-2xl font-bold text-center text-white tracking-wider italic"
+          >
+            ~ Simple ~ Transparent ~ Reliable ~
           </p>
         </div>
       </section>
@@ -44,7 +46,9 @@
       </section>
 
       <section class="my-28 services w-9/12 mx-auto">
-        <p class="text-center font-bold text-4xl underline mb-9 text-secondary">
+        <p
+          class="service-title text-center font-bold text-4xl underline mb-9 text-secondary"
+        >
           Our Services
         </p>
         <div class="grid grid-cols-3 gap-9">
@@ -112,6 +116,12 @@ export default {
   background-attachment: fixed;
   height: 90vh;
   border-radius: 0 0 10% 10%;
+}
+
+.slogan,
+.service-title,
+.choose-us p:first-child {
+  font-family: "Handlee", cursive;
 }
 
 .choose-us {

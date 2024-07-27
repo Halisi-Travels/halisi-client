@@ -42,7 +42,14 @@
     <div class="bg-gray-600 w-full h-[1px]"></div>
 
     <p class="text-gray-500">&copy; {{ year }}, All Rights Reserved</p>
-    <p class="text-gray-500">Licenses</p>
+    <p class="text-gray-500">
+      Developed By
+      <span class="underline text-secondary"
+        ><a href="http://mawira.netlify.app" target="_blank"
+          >Mawira Corp.</a
+        ></span
+      >
+    </p>
   </div>
 </template>
 

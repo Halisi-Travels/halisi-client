@@ -2,7 +2,11 @@
 <template>
   <div
     id="nav"
-    class="bg-white shadow-lg rounded-full w-9/12 py-4 px-6 flex justify-between items-center space-x-4 m-auto border"
+    class="bg-white shadow-lg rounded-full w-9/12 py-4 px-6 flex justify-between items-center space-x-4 m-auto border transition-all duration-100"
+    :class="{
+      'fixed top-5 left-0 right-0 shadow-lg bg-white': isFixed,
+      relative: !isFixed,
+    }"
   >
     <div class="company-logo cursor-pointer" @click="$router.push('/')">
       <img
@@ -28,6 +32,30 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isFixed: false,
+    };
+  },
+
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
+  methods: {
+    handleScroll() {
+      this.isFixed = window.scrollY > 250;
+    },
+  },
+};
+</script>
 
 <style scoped lang="scss">
 li {
