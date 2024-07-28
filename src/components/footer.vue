@@ -13,15 +13,20 @@
     </div>
 
     <ul class="flex gap-8">
-      <li class="hover:underline underline-offset-2">About</li>
-      <li class="hover:underline underline-offset-2">Job Placement</li>
-      <li class="hover:underline underline-offset-2">Visa Application</li>
-      <li
-        class="hover:underline underline-offset-2"
-        @click="$router.push('/contact-us')"
+      <router-link class="hover:underline underline-offset-2" to="/about-page"
+        >About</router-link
       >
+      <router-link
+        class="hover:underline underline-offset-2"
+        to="/job-placement"
+        >Job Placement</router-link
+      >
+      <router-link class="hover:underline underline-offset-2" to="/">
+        Visa Application
+      </router-link>
+      <router-link class="hover:underline underline-offset-2" to="/contact-us">
         Contact Us
-      </li>
+      </router-link>
     </ul>
 
     <ul class="socials flex gap-8">

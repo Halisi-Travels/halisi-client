@@ -22,6 +22,11 @@ const routes = [
     name: "jobs page",
     component: () => import("../views/JobPlacementPage.vue"),
   },
+  {
+    path: "/about-page",
+    name: "about page",
+    component: () => import("../views/AboutPage.vue"),
+  },
 ];
 
 const router = createRouter({

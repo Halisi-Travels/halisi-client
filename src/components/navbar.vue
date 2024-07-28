@@ -18,19 +18,35 @@
 
     <div class="nav-links">
       <ul>
-        <router-link class="nav-link text-gray-400 hover:text-primary" to="">
-          About Us
-        </router-link>
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
+          active-class="text-primary"
+          to="/about-page"
+        >
+          About Us
+        </router-link>
+
+        <router-link
+          class="nav-link text-gray-400 hover:text-primary"
+          active-class="text-primary"
           to="/job-placement"
         >
           Job Placement
         </router-link>
-        <router-link class="nav-link text-gray-400 hover:text-primary" to="">
+
+        <router-link
+          class="nav-link text-gray-400 hover:text-primary"
+          active-class="active"
+          to=""
+        >
           Visa Application
         </router-link>
-        <router-link class="nav-link text-gray-400 hover:text-primary" to="">
+
+        <router-link
+          class="nav-link text-gray-400 hover:text-primary"
+          active-class="text-primary"
+          to="/profile"
+        >
           Profile
         </router-link>
       </ul>

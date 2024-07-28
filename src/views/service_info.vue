@@ -24,7 +24,7 @@
           />
         </div>
         <div class="w-1/2">
-          <p class="text-2xl mt-12 tracking-wider text-center">
+          <p class="text-xl mt-12 tracking-wider text-center">
             We craft seamless flight bookings tailored to your needs. With
             extensive network of airline partnersand advanced technology, we
             personalize travel itineraries to fit your preferences. Whether you
