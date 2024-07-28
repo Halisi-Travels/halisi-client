@@ -55,7 +55,8 @@
           <div
             v-for="service in services"
             :key="service.name"
-            class="bg-primary text-white p-3 rounded text-center h-40 flex flex-col justify-center"
+            class="bg-primary text-white p-3 rounded text-center h-40 flex flex-col justify-center cursor-pointer hover:bg-primary/80"
+            @click="$router.push('/service/1')"
           >
             <p class="text-2xl font-semibold">{{ service.name }}</p>
             <p class="text-xl">{{ service.desc }}</p>

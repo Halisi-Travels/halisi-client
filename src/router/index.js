@@ -12,6 +12,16 @@ const routes = [
     name: "contact page",
     component: () => import("../views/ContactPage.vue"),
   },
+  {
+    path: "/service/:id",
+    name: "service page",
+    component: () => import("../views/service_info.vue"),
+  },
+  {
+    path: "/job-placement",
+    name: "jobs page",
+    component: () => import("../views/JobPlacementPage.vue"),
+  },
 ];
 
 const router = createRouter({

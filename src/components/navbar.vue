@@ -2,7 +2,7 @@
 <template>
   <div
     id="nav"
-    class="bg-white shadow-lg rounded-full w-9/12 py-4 px-6 flex justify-between items-center space-x-4 m-auto border transition-all duration-100"
+    class="bg-white shadow-lg rounded-full w-9/12 py-4 px-6 flex justify-between items-center space-x-4 mx-auto border transition-all duration-100"
     :class="{
       'fixed top-5 left-0 right-0 shadow-lg bg-white': isFixed,
       relative: !isFixed,
@@ -17,13 +17,25 @@
     </div>
 
     <div class="nav-links">
-      <ul class="">
-        <li class="text-gray-400 hover:text-primary">About</li>
-        <li class="text-gray-400 hover:text-primary">Job Placement</li>
-        <li class="text-gray-400 hover:text-primary">Visa Application</li>
-        <li class="text-gray-400 hover:text-primary">Profile</li>
+      <ul>
+        <router-link class="nav-link text-gray-400 hover:text-primary" to="">
+          About Us
+        </router-link>
+        <router-link
+          class="nav-link text-gray-400 hover:text-primary"
+          to="/job-placement"
+        >
+          Job Placement
+        </router-link>
+        <router-link class="nav-link text-gray-400 hover:text-primary" to="">
+          Visa Application
+        </router-link>
+        <router-link class="nav-link text-gray-400 hover:text-primary" to="">
+          Profile
+        </router-link>
       </ul>
     </div>
+
     <div
       class="contact-link bg-secondary hover:bg-primary shadow-lg text-white px-7 py-4 rounded-full"
       @click="$router.push('/contact-us')"
@@ -58,14 +70,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-li {
+.nav-link {
   display: inline-block;
   margin: 0 20px;
   cursor: pointer;
   font-weight: bold;
 }
 
-li,
+.nav-link,
 .contact-link {
   cursor: pointer;
 }

@@ -2,7 +2,7 @@
 <template>
   <div
     id="footer"
-    class="rounded-2xl bg-slate-900 mx-4 p-6 text-white flex flex-col items-center gap-7"
+    class="rounded-2xl bg-slate-900 m-4 p-6 text-white flex flex-col items-center gap-7"
   >
     <div class="logo">
       <img
@@ -27,9 +27,6 @@
     <ul class="socials flex gap-8">
       <li>
         <i class="fa fa-facebook text-lg text-gray-400 hover:text-white"></i>
-      </li>
-      <li>
-        <i class="fa fa-twitter text-lg text-gray-400 hover:text-white"></i>
       </li>
       <li>
         <i class="fa fa-instagram text-lg text-gray-400 hover:text-white"></i>

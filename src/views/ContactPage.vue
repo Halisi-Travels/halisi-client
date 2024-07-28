@@ -6,10 +6,10 @@
 
         <app-navbar />
 
-        <div class="flex gap-2 justify-center items-end w-[20rem] mx-auto">
-          <p class="text-6xl text-white">-</p>
-          <p class="text-3xl font-bold text-white">CONTACT US</p>
-          <p class="text-6xl text-white">-</p>
+        <div class="w-[20rem] mx-auto mt-28">
+          <p class="page-title text-3xl text-white font-bold text-center">
+            CONTACT US
+          </p>
         </div>
       </div>
 
@@ -51,9 +51,6 @@
             <ul class="flex gap-4">
               <li>
                 <i class="fa fa-facebook text-lg"></i>
-              </li>
-              <li>
-                <i class="fa fa-twitter text-lg"></i>
               </li>
               <li>
                 <i class="fa fa-instagram text-lg"></i>
@@ -99,6 +96,10 @@ export default {
   background-size: cover;
   border-radius: 0 0 25% 25%;
   height: 60vh;
+}
+
+.page-title {
+  font-family: "Handlee", cursive;
 }
 
 label {
