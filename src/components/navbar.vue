@@ -45,18 +45,18 @@
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="text-primary"
-          to="/profile"
+          to="/contact-us"
         >
-          Profile
+          Contact Us
         </router-link>
       </ul>
     </div>
 
     <div
       class="contact-link bg-secondary hover:bg-primary shadow-lg text-white px-7 py-4 rounded-full"
-      @click="$router.push('/contact-us')"
+      @click="$router.push('/apply')"
     >
-      <p class="font-semibold">Contact Us</p>
+      <p class="font-semibold">Apply Now</p>
     </div>
   </div>
 </template>
