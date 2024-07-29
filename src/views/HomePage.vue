@@ -55,7 +55,7 @@
           <div
             v-for="service in services"
             :key="service.name"
-            class="bg-primary text-white p-3 rounded text-center h-40 flex flex-col justify-center cursor-pointer hover:bg-primary/80"
+            class="bg-primary/75 text-white p-3 rounded text-center h-40 flex flex-col justify-center cursor-pointer hover:bg-primary/80 hover:shadow-lg"
             @click="$router.push('/service/1')"
           >
             <p class="text-2xl font-semibold">{{ service.name }}</p>
@@ -82,6 +82,9 @@
         </div>
       </section>
 
+      <h2 class="text-center font-bold section-title text-5xl text-secondary">
+        Testimonials
+      </h2>
       <section class="testimonial-section">
         <div class="testimonial-container">
           <div
@@ -188,7 +191,8 @@ export default {
 
 .slogan,
 .service-title,
-.choose-us p:first-child {
+.choose-us p:first-child,
+.section-title {
   font-family: "Handlee", cursive;
 }
 
@@ -202,9 +206,13 @@ export default {
 }
 
 .testimonial-section {
-  height: 50vh;
+  width: 100%;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
   .testimonial-container {
     display: flex;
+    transition: transform 0.5s ease-in-out;
     .testimonial {
       width: 50px;
       height: 100%;
