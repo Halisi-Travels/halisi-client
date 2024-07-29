@@ -31,13 +31,27 @@
 
     <ul class="socials flex gap-8">
       <li>
-        <i class="fa fa-facebook text-lg text-gray-400 hover:text-white"></i>
+        <a
+          href="https://whatsapp.com/channel/0029VaLOeK4HVvTYWRSC6v28"
+          target="_blank"
+        >
+          <i class="fa fa-whatsapp text-lg text-gray-400 hover:text-white"></i>
+        </a>
       </li>
       <li>
-        <i class="fa fa-instagram text-lg text-gray-400 hover:text-white"></i>
+        <a
+          href="https://www.instagram.com/halisi.travels?igsh=MW5pOW9iMDVweHZjcA=="
+          target="_blank"
+        >
+          <span
+            class="fa fa-instagram text-lg text-gray-400 hover:text-white"
+          ></span
+        ></a>
       </li>
       <li>
-        <i class="fa fa-linkedin text-lg text-gray-400 hover:text-white"></i>
+        <span
+          class="fa fa-tiktok text-lg text-gray-400 hover:text-white"
+        ></span>
       </li>
     </ul>
 

@@ -79,7 +79,7 @@ export default {
 
   methods: {
     handleScroll() {
-      this.isFixed = window.scrollY > 250;
+      this.isFixed = window.scrollY > 150;
     },
   },
 };
