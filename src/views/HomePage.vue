@@ -5,13 +5,46 @@
         <div class="h-7"></div>
         <app-navbar />
 
-        <div class="mt-20 flex flex-col gap-6">
-          <p class="text-6xl font-bold text-center text-white">Halisi Agency</p>
-          <p
-            class="slogan text-2xl font-bold text-center text-white tracking-wider italic"
-          >
-            ~ Simple ~ Transparent ~ Reliable ~
-          </p>
+        <div class="mt-20 flex flex-col justify-between md:h-[350px]">
+          <div class="page-title flex flex-col gap-5 items-center">
+            <p class="text-6xl font-bold text-white">Halisi Agency</p>
+            <p
+              class="slogan text-2xl font-bold text-white tracking-wider italic"
+            >
+              ~ Simple ~ Transparent ~ Reliable ~
+            </p>
+          </div>
+
+          <div class="newsletter flex flex-col gap-4">
+            <p class="text-xl font-bold text-white text-center">
+              Subscibe to our News Letter
+            </p>
+
+            <form
+              @submit.prevent=""
+              class="flex bg-white/50 w-6/12 mx-auto p-4"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                class="flex-1 px-2"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                class="flex-1 px-2"
+              />
+
+              <button
+                value="submit"
+                class="bg-black text-white px-3 font-semibold"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
       </section>
 
@@ -192,6 +225,14 @@ export default {
 .choose-us p:first-child,
 .section-title {
   font-family: "Handlee", cursive;
+}
+
+input {
+  border: 1px solid rgb(209, 209, 209);
+  &:focus {
+    outline: none;
+    border: 2px solid rgb(199, 197, 197);
+  }
 }
 
 .choose-us {
