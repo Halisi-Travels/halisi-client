@@ -5,9 +5,9 @@
       <app-navbar class="mb-4" />
 
       <div class="h-full flex flex-col justify-center">
-        <p class="text-5xl font-bold text-white text-center">Flight Booking</p>
+        <p class="text-5xl font-bold text-center">Flight Booking</p>
         <p
-          class="slogan text-2xl font-semibold text-white text-center w-7/12 mx-auto mt-2 tracking-wider"
+          class="slogan text-2xl font-semibold text-center w-7/12 mx-auto mt-2 tracking-wider"
         >
           Book. Fly. Enjoy. Repeat
         </p>
@@ -106,8 +106,6 @@
         </ul>
       </section>
     </main>
-
-    <app-footer />
   </div>
 </template>
 
@@ -123,10 +121,11 @@ export default {
 
 <style scoped lang="scss">
 .banner {
-  background-image: url("../assets/images/service.jpg");
+  background-image: url("../assets/images/booking.jpg");
   background-attachment: fixed;
   background-size: cover;
-  height: 60vh;
+  height: 80vh;
+  color: black;
   border-radius: 0 0 20% 20%;
 }
 

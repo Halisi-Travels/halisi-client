@@ -79,8 +79,6 @@
         </form>
       </div>
     </main>
-
-    <app-footer />
   </div>
 </template>
 

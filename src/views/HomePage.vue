@@ -107,8 +107,6 @@
         </div>
       </section>
     </main>
-
-    <app-footer />
   </div>
 </template>
 
@@ -182,7 +180,7 @@ export default {
 
 <style scoped lang="scss">
 .banner {
-  background-image: url("../assets/images/flight1.jpg");
+  background-image: url("../assets/images/skyline.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 90vh;

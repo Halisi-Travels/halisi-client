@@ -7,7 +7,5 @@
     </header>
 
     <main></main>
-
-    <app-footer />
   </div>
 </template>

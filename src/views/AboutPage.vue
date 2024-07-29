@@ -12,8 +12,8 @@
       </div>
     </header>
 
-    <main>
-      <section class="w-9/12 text-lg mx-auto lg:mt-28 flex gap-10">
+    <main class="my-36">
+      <section class="w-9/12 text-lg mx-auto flex gap-10">
         <div class="flex-1">
           <p class="section-title text-2xl text-secondary font-semibold mb-8">
             Our Commitment
@@ -123,8 +123,6 @@
         </div>
       </div>
     </main>
-
-    <app-footer />
   </div>
 </template>
 
@@ -145,11 +143,11 @@ header {
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 25% 25%;
-  height: 60vh;
+  height: 80vh;
 }
 
 .services {
-  background-image: url("../assets/images/explore.jpg");
+  background-image: url("../assets/images/marina.jpg");
   background-size: cover;
   background-attachment: fixed;
   padding: 4rem;
