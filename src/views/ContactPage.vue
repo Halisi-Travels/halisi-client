@@ -6,7 +6,7 @@
       <app-navbar />
 
       <div class="w-[20rem] mx-auto mt-28">
-        <p class="page-title text-3xl text-white font-bold text-center">
+        <p class="page-title text-3xl text-black font-bold text-center">
           CONTACT US
         </p>
       </div>
@@ -62,6 +62,18 @@
               </li>
             </ul>
           </div>
+
+          <div class="map bg-red-400 h-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8175055376323!2d36.81569657421936!3d-1.2833555987044385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d3dd7dfc47%3A0xfd9e361041633eb7!2sCianda%20House!5e0!3m2!1sen!2ske!4v1722362238548!5m2!1sen!2ske"
+              width="600"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
 
         <form class="form md:w-5/12" @submit.prevent="">
@@ -93,7 +105,7 @@ export default {
 
 <style scoped lang="scss">
 .banner {
-  background-image: url("../assets/images/map.jpg");
+  background-image: url("../assets/images/contact.png");
   background-size: cover;
   border-radius: 0 0 25% 25%;
   height: 40vh;
@@ -101,7 +113,7 @@ export default {
 
 @media screen and (min-width: 700px) {
   .banner {
-    height: 80vh;
+    height: 70vh;
   }
 }
 

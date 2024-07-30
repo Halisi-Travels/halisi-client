@@ -6,7 +6,7 @@
       <app-navbar />
 
       <div class="w-[20rem] mx-auto mt-28">
-        <p class="page-title text-4xl text-white font-bold text-center">
+        <p class="page-title text-4xl text-secondary font-bold text-center">
           APPLY NOW
         </p>
       </div>
@@ -117,7 +117,7 @@ export default {
 
 <style scoped lang="scss">
 header {
-  background-image: url("../assets/images/birds.jpg");
+  background-image: url("../assets/images/apply.png");
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 25% 25%;

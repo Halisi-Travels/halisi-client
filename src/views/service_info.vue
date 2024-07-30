@@ -19,7 +19,7 @@
         <div class="rounded-3xl overflow-hidden">
           <img
             width="600px"
-            :src="require('@/assets/images/passport.jpg')"
+            :src="require('@/assets/images/plane.webp')"
             alt="service image"
           />
         </div>
@@ -71,7 +71,7 @@
         <div class="rounded-3xl overflow-hidden">
           <img
             width="600px"
-            :src="require('@/assets/images/schedule.jpg')"
+            :src="require('@/assets/images/requirement.png')"
             alt="service image"
           />
         </div>
@@ -121,7 +121,7 @@ export default {
 
 <style scoped lang="scss">
 .banner {
-  background-image: url("../assets/images/booking.jpg");
+  background-image: url("../assets/images/suitcase.jpg");
   background-attachment: fixed;
   background-size: cover;
   height: 80vh;

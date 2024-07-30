@@ -55,9 +55,9 @@
             class="h-36 md:rounded-tr-xl md:rounded-br-xl overflow-hidden flex-1"
           >
             <img
-              class="object-contain"
+              loading="lazy"
               width="100%"
-              :src="require('../assets/images/dubai.jpg')"
+              :src="require('@/assets/images/career.jpg')"
             />
           </div>
         </div>
@@ -78,9 +78,8 @@
             class="h-36 md:rounded-tl-xl md:rounded-bl-xl overflow-hidden flex-1"
           >
             <img
-              class="object-contain"
               width="100%"
-              :src="require('../assets/images/marina.jpg')"
+              :src="require('@/assets/images/matching.jpg')"
               alt=""
             />
           </div>
@@ -107,7 +106,7 @@
             <img
               class="object-contain"
               width="100%"
-              :src="require('../assets/images/marina.jpg')"
+              :src="require('@/assets/images/visa.png')"
               alt=""
             />
           </div>
@@ -132,7 +131,7 @@ export default {
 
 <style scoped lang="scss">
 .banner {
-  background-image: url("../assets/images/airport.jpg");
+  background-image: url("../assets/images/strips.webp");
   background-size: cover;
   background-attachment: fixed;
   height: 50vh;

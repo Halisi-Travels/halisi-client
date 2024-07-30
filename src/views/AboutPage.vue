@@ -33,9 +33,10 @@
 
         <div class="rounded-2xl overflow-hidden flex-1 my-10 md:my-0">
           <img
+            loading="lazy"
             class="object-cover"
             width="100%"
-            :src="require('@/assets/images/time.jpg')"
+            src="@/assets/images/commit.png"
             alt="map image"
           />
         </div>
@@ -60,9 +61,10 @@
 
         <div class="rounded-2xl overflow-hidden flex-1">
           <img
+            loading="lazy"
             class="object-cover"
             width="100%"
-            :src="require('@/assets/images/dubai.jpg')"
+            src="@/assets/images/tour.jpg"
             alt="map image"
           />
         </div>
@@ -147,7 +149,7 @@ export default {
 
 <style scoped lang="scss">
 header {
-  background-image: url("../assets/images/airport.jpg");
+  background-image: url("@/assets/images/about.webp");
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 25% 25%;
@@ -156,7 +158,7 @@ header {
 
 @media screen and (min-width: 700px) {
   header {
-    height: 80vh;
+    height: 70vh;
   }
   .services {
     padding: 4rem;
@@ -164,7 +166,7 @@ header {
 }
 
 .services {
-  background-image: url("../assets/images/marina.jpg");
+  background-image: url("https://ik.imagekit.io/qxekjpfx0b/Halisi%20Travels/marina_c2LJG69WrM.jpg?updatedAt=1722361000892");
   background-size: cover;
   background-attachment: fixed;
 }

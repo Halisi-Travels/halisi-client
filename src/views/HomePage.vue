@@ -6,20 +6,20 @@
 
         <app-navbar />
 
-        <div class="mt-20 flex flex-col justify-between md:h-[350px]">
+        <div
+          class="mt-20 flex flex-col justify-between md:h-[350px] text-black"
+        >
           <div class="page-title flex flex-col gap-5 items-center">
-            <p class="text-4xl lg:text-6xl font-bold text-white">
-              Halisi Agency
-            </p>
+            <p class="text-4xl lg:text-6xl font-bold">Halisi Agency</p>
             <p
-              class="slogan text-xl md:text-2xl font-bold text-white tracking-wider italic"
+              class="slogan text-xl md:text-2xl font-bold tracking-wider italic"
             >
               ~ Simple ~ Transparent ~ Reliable ~
             </p>
           </div>
 
           <div class="newsletter flex flex-col gap-4">
-            <p class="text-xl font-bold text-white text-center">
+            <p class="text-xl font-bold text-center">
               Subscibe to our News Letter
             </p>
 
@@ -58,8 +58,9 @@
           class="intro-image md:w-2/6 rounded-lg overflow-hidden bg-pink-400"
         >
           <img
+            loading="lazy"
             class="w-full"
-            :src="require('@/assets/images/books.jpg')"
+            src="https://ik.imagekit.io/qxekjpfx0b/Halisi%20Travels/books_YMc5KUO-1.jpg?updatedAt=1722360997040"
             alt="into image"
           />
         </div>
@@ -219,7 +220,7 @@ export default {
 
 <style scoped lang="scss">
 .banner {
-  background-image: url("../assets/images/skyline.jpg");
+  background-image: url("@/assets/images/collage.jpg");
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 10% 10%;
@@ -249,7 +250,7 @@ input {
 }
 
 .choose-us {
-  background-image: url("../assets/images/choice.jpg");
+  background-image: url("https://ik.imagekit.io/qxekjpfx0b/Halisi%20Travels/choice_I5n03eepHo.jpg?updatedAt=1722360992498");
   background-size: cover;
   background-attachment: fixed;
 }
