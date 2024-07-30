@@ -223,13 +223,7 @@ export default {
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 10% 10%;
-}
-
-// mobile devices
-@media screen and (max-width: 600px) {
-  .banner {
-    height: 60vh;
-  }
+  height: 60vh;
 }
 
 // tablet and desktop devices
@@ -263,7 +257,7 @@ input {
 .testimonial-section {
   width: 100%;
   padding: 4rem 0;
-  position: relative;
+  // position: relative;
   overflow: hidden;
   .testimonial-container {
     display: flex;

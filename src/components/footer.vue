@@ -12,7 +12,7 @@
       />
     </div>
 
-    <ul class="flex gap-8">
+    <ul class="md:flex gap-8 hidden">
       <router-link class="hover:underline underline-offset-2" to="/about-page"
         >About</router-link
       >
