@@ -33,6 +33,11 @@ const routes = [
     component: () => import("../views/ApplicationPage.vue"),
   },
   {
+    path: "/visa-page",
+    name: "visa page",
+    component: () => import("../views/VisaAppPage.vue"),
+  },
+  {
     path: "/:catchAll(.*)",
     name: "NotFound",
     component: () => import("../views/unknown_page.vue"),

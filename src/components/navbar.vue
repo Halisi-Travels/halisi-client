@@ -37,7 +37,7 @@
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="active"
-          to="/visa"
+          to="/visa-page"
         >
           Visa Application
         </router-link>
@@ -87,7 +87,7 @@
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="md:text-primary text-white"
-          to="/visa"
+          to="/visa-page"
         >
           Visa Application
         </router-link>
