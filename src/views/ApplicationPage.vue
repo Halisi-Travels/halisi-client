@@ -13,7 +13,7 @@
     </header>
 
     <main class="my-12 md:my-28">
-      <seection class="details">
+      <!-- <section class="details">
         <h1 class="font-bold text-3xl">Application Details</h1>
         <expansion-panel
           v-for="(item, index) in 4"
@@ -24,7 +24,7 @@
           :panelIndex="index"
           @toggle-panel="handleTogglePanel"
         />
-      </seection>
+      </section> -->
 
       <section class="w-11/12 md:w-1/2 mx-auto">
         <p class="section-title text-3xl text-secondary mb-6">
@@ -86,13 +86,7 @@
 </template>
 
 <script>
-import ExpansionPanel from "@/components/accordion.vue";
-
 export default {
-  components: {
-    "expansion-panel": ExpansionPanel,
-  },
-
   data() {
     return {
       fileName: "",
