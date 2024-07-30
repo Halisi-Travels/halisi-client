@@ -2,14 +2,17 @@
   <div class="home">
     <main>
       <section class="banner">
-        <div class="h-7"></div>
+        <div class="h-7" />
+
         <app-navbar />
 
         <div class="mt-20 flex flex-col justify-between md:h-[350px]">
           <div class="page-title flex flex-col gap-5 items-center">
-            <p class="text-6xl font-bold text-white">Halisi Agency</p>
+            <p class="text-4xl lg:text-6xl font-bold text-white">
+              Halisi Agency
+            </p>
             <p
-              class="slogan text-2xl font-bold text-white tracking-wider italic"
+              class="slogan text-xl md:text-2xl font-bold text-white tracking-wider italic"
             >
               ~ Simple ~ Transparent ~ Reliable ~
             </p>
@@ -22,7 +25,7 @@
 
             <form
               @submit.prevent=""
-              class="flex bg-white/50 w-6/12 mx-auto p-4"
+              class="flex bg-white/50 w-6/12 mx-auto p-4 flex-col lg:flex-row"
             >
               <input
                 type="text"
@@ -49,17 +52,19 @@
       </section>
 
       <section
-        class="intro mt-28 w-9/12 mx-auto flex justify-between items-center"
+        class="intro mt-28 mx-4 md:w-9/12 md:mx-auto sm:mx-2 block md:flex md:justify-between md:items-center"
       >
-        <div class="intro-image w-2/6 rounded-lg overflow-hidden">
+        <div
+          class="intro-image md:w-2/6 rounded-lg overflow-hidden bg-pink-400"
+        >
           <img
-            width="100%"
+            class="w-full"
             :src="require('@/assets/images/books.jpg')"
             alt="into image"
           />
         </div>
 
-        <div class="w-2/4">
+        <div class="md:w-2/4 px-4 mt-4 md:mt-0">
           <p class="text-xl font-semibold text-secondary">
             Tours & Travel Agency
           </p>
@@ -78,13 +83,13 @@
         </div>
       </section>
 
-      <section class="my-28 services w-9/12 mx-auto">
+      <section class="my-16 md:my-28 services px-3 md:px-0 md:w-9/12 mx-auto">
         <p
           class="service-title text-center font-bold text-4xl underline mb-9 text-secondary"
         >
           Our Services
         </p>
-        <div class="grid grid-cols-3 gap-9">
+        <div class="grid md:grid-cols-3 gap-9">
           <div
             v-for="service in services"
             :key="service.name"
@@ -97,7 +102,7 @@
         </div>
       </section>
 
-      <section class="choose-us rounded-3xl overflow-hidden">
+      <section class="choose-us rounded-3xl overflow-hidden mx-2 my-9 md:mx-4">
         <div
           class="w-full h-full mx-auto bg-black/30 text-white p-16 flex flex-col justify-end"
         >
@@ -118,6 +123,7 @@
       <h2 class="text-center font-bold section-title text-5xl text-secondary">
         Testimonials
       </h2>
+
       <section class="testimonial-section">
         <div class="testimonial-container">
           <div
@@ -126,7 +132,7 @@
             class="testimonial"
           >
             <div
-              class="bg-white p-6 rounded-2xl w-1/2 mx-auto shadow-lg text-center"
+              class="bg-white p-6 rounded-2xl md:w-1/2 mx-4 md:mx-auto shadow-lg text-center"
             >
               <p class="text-gray-800 text-xl">{{ testimonial.text }}</p>
               <div class="mt-4">
@@ -216,8 +222,21 @@ export default {
   background-image: url("../assets/images/skyline.jpg");
   background-size: cover;
   background-attachment: fixed;
-  height: 90vh;
   border-radius: 0 0 10% 10%;
+}
+
+// mobile devices
+@media screen and (max-width: 600px) {
+  .banner {
+    height: 60vh;
+  }
+}
+
+// tablet and desktop devices
+@media screen and (min-width: 600px) {
+  .banner {
+    height: 90vh;
+  }
 }
 
 .slogan,
@@ -239,9 +258,6 @@ input {
   background-image: url("../assets/images/choice.jpg");
   background-size: cover;
   background-attachment: fixed;
-  width: 95%;
-  margin: 0 auto 9rem auto;
-  height: 60vh;
 }
 
 .testimonial-section {

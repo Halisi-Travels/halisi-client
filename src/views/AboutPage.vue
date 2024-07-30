@@ -5,15 +5,17 @@
 
       <app-navbar />
 
-      <div class="w-[20rem] mx-auto mt-28">
-        <p class="page-title text-4xl text-black font-bold text-center">
+      <div class="w-8/12 mx-auto mt-28">
+        <p class="page-title text-4xl text-white font-bold text-center mb-3">
           ABOUT US
         </p>
       </div>
     </header>
 
-    <main class="my-36">
-      <section class="w-9/12 text-lg mx-auto flex gap-10">
+    <main class="my-20 md:my-36">
+      <section
+        class="commitment w-11/12 md:w-9/12 text-lg mx-auto md:flex md:flex-row-reverse gap-10"
+      >
         <div class="flex-1">
           <p class="section-title text-2xl text-secondary font-semibold mb-8">
             Our Commitment
@@ -29,7 +31,7 @@
           </p>
         </div>
 
-        <div class="rounded-2xl overflow-hidden flex-1">
+        <div class="rounded-2xl overflow-hidden flex-1 my-10 md:my-0">
           <img
             class="object-cover"
             width="100%"
@@ -39,17 +41,10 @@
         </div>
       </section>
 
-      <section class="w-9/12 text-lg mx-auto lg:mt-28 flex gap-10">
-        <div class="rounded-2xl overflow-hidden flex-1">
-          <img
-            class="object-cover"
-            width="100%"
-            :src="require('@/assets/images/dubai.jpg')"
-            alt="map image"
-          />
-        </div>
-
-        <div class="flex-1">
+      <section
+        class="explore md:w-9/12 w-11/12 md:px-0 text-lg mx-auto lg:mt-28 md:flex gap-10"
+      >
+        <div class="flex-1 mb-5 md:mb-0">
           <p class="section-title text-2xl text-secondary font-semibold mb-8">
             Explore The World With Us
           </p>
@@ -62,10 +57,21 @@
             best each destination has to offer.
           </p>
         </div>
+
+        <div class="rounded-2xl overflow-hidden flex-1">
+          <img
+            class="object-cover"
+            width="100%"
+            :src="require('@/assets/images/dubai.jpg')"
+            alt="map image"
+          />
+        </div>
       </section>
 
-      <section class="services text-xl mt-28">
-        <div class="w-9/12 mx-auto bg-black/75 text-white p-10 rounded-lg">
+      <section class="services mt-28">
+        <div
+          class="md:w-9/12 w-full mx-auto bg-black/50 md:bg-black/75 text-white p-10 rounded-lg"
+        >
           <p class="text-2xl font-medium">
             Halisi Travels takes immense pride in offering a diverse array of
             travel services designed to meet the unique needs of our valued
@@ -81,13 +87,13 @@
         </div>
       </section>
 
-      <div class="team mt-28 w-9/12 mx-auto">
+      <div class="team mt-28 md:w-9/12 mx-auto">
         <p
           class="section-title text-5xl font-bold text-center mb-3 text-secondary"
         >
           Meet the Team
         </p>
-        <p class="text-center text-xl w-3/5 mx-auto mb-10">
+        <p class="text-center text-xl md:w-3/5 w-11/12 mx-auto mb-10">
           Our dedicated team of professionals is committed to providing
           exceptional service and support at every stage of your journey.
         </p>
@@ -101,19 +107,21 @@
           />
         </div>
 
-        <div class="images-div flex justify-between mt-20">
+        <div class="images-div lg:flex justify-between md:mt-20 gap-3">
           <member-div
             :img="require('../assets/images/manager.jpeg')"
             altText="Manager"
             title="Manager"
             name="Samuel Ikinya"
           />
+          <br class="lg:hidden" />
           <member-div
             :img="require('../assets/images/ac_manager.jpeg')"
             altText="ac manager"
             title="Accounts Manager"
             name="Edwin Gitonga"
           />
+          <br class="lg:hidden" />
           <member-div
             :img="require('../assets/images/mr_manager.jpeg')"
             altText="Marketing Manager"
@@ -143,14 +151,22 @@ header {
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 25% 25%;
-  height: 80vh;
+  height: 40vh;
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    height: 80vh;
+  }
+  .services {
+    padding: 4rem;
+  }
 }
 
 .services {
   background-image: url("../assets/images/marina.jpg");
   background-size: cover;
   background-attachment: fixed;
-  padding: 4rem;
 }
 
 .page-title,

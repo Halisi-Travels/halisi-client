@@ -12,8 +12,21 @@
       </div>
     </header>
 
-    <main class="my-28">
-      <section class="w-1/2 mx-auto">
+    <main class="my-12 md:my-28">
+      <seection class="details">
+        <h1 class="font-bold text-3xl">Application Details</h1>
+        <expansion-panel
+          v-for="(item, index) in 4"
+          :key="index"
+          title="Europe"
+          content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati magnam rem accusantium quibusdam deleniti ut nulla ea vitae debitis laborum quis ex repellendus quod deserunt omnis, saepe quos provident doloribus."
+          :isActive="activePanelIndex === index"
+          :panelIndex="index"
+          @toggle-panel="handleTogglePanel"
+        />
+      </seection>
+
+      <section class="w-11/12 md:w-1/2 mx-auto">
         <p class="section-title text-3xl text-secondary mb-6">
           Application Form
         </p>
@@ -73,10 +86,17 @@
 </template>
 
 <script>
+import ExpansionPanel from "@/components/accordion.vue";
+
 export default {
+  components: {
+    "expansion-panel": ExpansionPanel,
+  },
+
   data() {
     return {
       fileName: "",
+      activePanelIndex: null,
     };
   },
 
@@ -86,6 +106,10 @@ export default {
       if (file) {
         this.fileName = file.name;
       }
+    },
+
+    handleTogglePanel(index) {
+      this.activePanelIndex = this.activePanelIndex == index ? null : index;
     },
   },
 };
@@ -97,7 +121,13 @@ header {
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 25% 25%;
-  height: 70vh;
+  height: 50vh;
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    height: 70vh;
+  }
 }
 
 .page-title,

@@ -6,14 +6,14 @@
       <app-navbar />
 
       <div class="w-[20rem] mx-auto mt-28">
-        <p class="page-title text-4xl text-black font-bold text-center">
+        <p class="page-title text-4xl text-white font-bold text-center">
           JOB PLACEMENT
         </p>
       </div>
     </header>
 
-    <main class="my-36">
-      <section class="w-7/12 mx-auto">
+    <main class="my-16 md:my-36">
+      <section class="w-11/12 md:w-7/12 mx-auto">
         <p class="section-title text-secondary text-4xl mb-4">
           Launch Your International Career
         </p>
@@ -30,20 +30,14 @@
         </p>
       </section>
 
-      <section class="w-9/12 mx-auto mt-28 flex flex-col gap-3">
+      <section
+        class="w-11/12 md:w-9/12 mx-auto mt-16 md:mt-28 flex flex-col gap-3"
+      >
         <p class="section-title text-4xl text-secondary text-center">
           Comprehensive Support Services
         </p>
 
-        <div class="flex mt-10">
-          <div class="h-36 rounded-tl-xl rounded-bl-xl overflow-hidden flex-1">
-            <img
-              class="object-contain"
-              width="100%"
-              :src="require('../assets/images/dubai.jpg')"
-            />
-          </div>
-
+        <div class="flex mt-10 md:flex-row flex-col gap-5">
           <div class="flex-1 px-4">
             <p class="section-title text-xl text-secondary mb-2">
               Career Consultation
@@ -56,9 +50,19 @@
               Detailed information about job markets in your destination country
             </li>
           </div>
+
+          <div
+            class="h-36 md:rounded-tr-xl md:rounded-br-xl overflow-hidden flex-1"
+          >
+            <img
+              class="object-contain"
+              width="100%"
+              :src="require('../assets/images/dubai.jpg')"
+            />
+          </div>
         </div>
 
-        <div class="flex">
+        <div class="flex md:flex-row-reverse flex-col gap-5 mt-10 md:mt-0">
           <div class="flex-1 px-4">
             <p class="section-title text-xl text-secondary mb-2">
               Job Matching
@@ -70,7 +74,9 @@
             <li>Job placements in high-demand sectors</li>
           </div>
 
-          <div class="h-36 rounded-tr-xl rounded-br-xl overflow-hidden flex-1">
+          <div
+            class="h-36 md:rounded-tl-xl md:rounded-bl-xl overflow-hidden flex-1"
+          >
             <img
               class="object-contain"
               width="100%"
@@ -80,7 +86,7 @@
           </div>
         </div>
 
-        <div class="flex flex-row-reverse">
+        <div class="flex mt-10 md:mt-0 md:flex-row flex-col gap-5">
           <div class="flex-1 px-4 py-2">
             <p class="section-title text-xl text-secondary mb-2">
               Visa and Documentation Support
@@ -95,7 +101,9 @@
             </ul>
           </div>
 
-          <div class="h-36 rounded-tl-xl rounded-bl-xl overflow-hidden flex-1">
+          <div
+            class="h-36 md:rounded-tr-xl md:rounded-br-xl overflow-hidden flex-1"
+          >
             <img
               class="object-contain"
               width="100%"
@@ -127,8 +135,14 @@ export default {
   background-image: url("../assets/images/airport.jpg");
   background-size: cover;
   background-attachment: fixed;
-  height: 70vh;
+  height: 50vh;
   border-radius: 0 0 25% 25%;
+}
+
+@media screen and (min-width: 700px) {
+  .banner {
+    height: 70vh;
+  }
 }
 
 .page-title,

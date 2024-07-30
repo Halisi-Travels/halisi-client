@@ -1,19 +1,21 @@
 <template>
   <div id="contact">
-    <main>
-      <div class="banner h-4 w-full">
-        <div class="h-7"></div>
+    <header class="banner h-4 w-full">
+      <div class="h-7"></div>
 
-        <app-navbar />
+      <app-navbar />
 
-        <div class="w-[20rem] mx-auto mt-28">
-          <p class="page-title text-3xl text-white font-bold text-center">
-            CONTACT US
-          </p>
-        </div>
+      <div class="w-[20rem] mx-auto mt-28">
+        <p class="page-title text-3xl text-white font-bold text-center">
+          CONTACT US
+        </p>
       </div>
+    </header>
 
-      <div class="contact-div flex justify-around w-10/12 mx-auto my-12">
+    <main class="px-4 md:mx-0">
+      <div
+        class="contact-div flex md:flex-row flex-col gap-14 justify-around md:w-10/12 mx-auto my-12"
+      >
         <div class="info flex flex-col gap-10">
           <div class="contact-info flex flex-col gap-2">
             <p class="text-3xl font-semibold mb-3 text-primary">Contact Info</p>
@@ -62,7 +64,8 @@
           </div>
         </div>
 
-        <form class="form w-5/12" @submit.prevent="">
+        <form class="form md:w-5/12" @submit.prevent="">
+          <p class="text-3xl font-semibold mb-3 text-primary">Feedback Form</p>
           <label for="name">Your name</label>
           <input type="text" name="name" />
 
@@ -93,7 +96,13 @@ export default {
   background-image: url("../assets/images/map.jpg");
   background-size: cover;
   border-radius: 0 0 25% 25%;
-  height: 60vh;
+  height: 40vh;
+}
+
+@media screen and (min-width: 700px) {
+  .banner {
+    height: 80vh;
+  }
 }
 
 .page-title {
@@ -102,13 +111,15 @@ export default {
 
 label {
   display: block;
+  margin-bottom: 7px;
 }
 
 input,
 textarea {
-  width: 90%;
+  width: 100%;
   border: 2px solid rgb(199, 197, 197);
   margin-bottom: 16px;
+  padding: 16px;
   &:focus {
     outline: none;
     border: 2px solid rgb(199, 197, 197);
