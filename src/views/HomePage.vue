@@ -42,7 +42,7 @@
 
               <button
                 value="submit"
-                class="bg-black text-white px-3 font-semibold"
+                class="bg-black text-white px-3 py-3 md:py-0 font-semibold"
               >
                 Subscribe
               </button>
