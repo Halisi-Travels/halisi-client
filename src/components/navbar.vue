@@ -36,7 +36,7 @@
 
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
-          active-class="active"
+          active-class="text-primary"
           to="/visa-page"
         >
           Visa Application
