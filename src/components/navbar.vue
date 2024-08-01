@@ -2,7 +2,7 @@
 <template>
   <div
     id="nav"
-    class="bg-white shadow-lg rounded-full w-11/12 md:w-8/12 py-4 px-6 flex justify-between items-center space-x-4 mx-auto border transition-all duration-100"
+    class="bg-white shadow-lg rounded-full w-11/12 lg:w-8/12 py-4 px-6 flex justify-between items-center space-x-4 mx-auto border transition-all duration-100"
     :class="{
       'fixed top-5 left-0 right-0 shadow-lg bg-white': isFixed,
       relative: !isFixed,
@@ -16,8 +16,8 @@
       />
     </div>
 
-    <div class="nav-links hidden md:block">
-      <ul class="md:flex sm:hidden">
+    <div class="nav-links hidden lg:block">
+      <ul class="flex">
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="text-primary"
@@ -110,13 +110,14 @@
     </div>
 
     <div
-      class="shadow-lg px-4 py-3 bg-black rounded-full md:hidden"
+      class="shadow-lg px-4 py-3 bg-black rounded-full lg:hidden"
       @click="toggleDrawer"
     >
       <i class="fa fa-bars text-white"></i>
     </div>
+
     <div
-      class="md:block hidden contact-link bg-secondary hover:bg-primary shadow-lg text-white px-7 py-4 rounded-full"
+      class="lg:block hidden contact-link bg-secondary hover:bg-primary shadow-lg text-white px-7 py-4 rounded-full"
       @click="$router.push('/apply')"
     >
       <p class="font-semibold">Apply Now</p>
