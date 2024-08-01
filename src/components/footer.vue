@@ -38,7 +38,9 @@
           href="https://whatsapp.com/channel/0029VaLOeK4HVvTYWRSC6v28"
           target="_blank"
         >
-          <i class="fa fa-whatsapp text-lg text-gray-400 hover:text-white"></i>
+          <i
+            class="ri-whatsapp-line text-lg text-gray-400 hover:text-white"
+          ></i>
         </a>
       </li>
       <li>
@@ -46,15 +48,13 @@
           href="https://www.instagram.com/halisi.travels?igsh=MW5pOW9iMDVweHZjcA=="
           target="_blank"
         >
-          <span
-            class="fa fa-instagram text-lg text-gray-400 hover:text-white"
-          ></span
-        ></a>
+          <i
+            class="ri-instagram-line text-lg text-gray-400 hover:text-white"
+          ></i>
+        </a>
       </li>
       <li>
-        <span
-          class="fa fa-tiktok text-lg text-gray-400 hover:text-white"
-        ></span>
+        <i class="ri-tiktok-line text-lg text-gray-400 hover:text-white"></i>
       </li>
     </ul>
 

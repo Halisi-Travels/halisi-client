@@ -2,7 +2,7 @@
 <template>
   <div
     id="nav"
-    class="bg-white shadow-lg rounded-full w-11/12 lg:w-8/12 py-4 px-6 flex justify-between items-center space-x-4 mx-auto border transition-all duration-100"
+    class="bg-white shadow-lg z-10 rounded-full w-11/12 lg:w-8/12 py-4 px-6 flex justify-between items-center space-x-4 mx-auto border transition-all duration-100"
     :class="{
       'fixed top-5 left-0 right-0 shadow-lg bg-white': isFixed,
       relative: !isFixed,
@@ -54,9 +54,9 @@
 
     <!-- nav drawer -->
     <div
-      class="p-4"
+      class="p-4 mobile-nav"
       :class="[
-        'fixed inset-0 bg-blue-900 transition-transform duration-300 nav-links',
+        'fixed inset-0 transition-transform duration-300 nav-links',
         drawerClass,
       ]"
     >
@@ -171,5 +171,14 @@ export default {
 .nav-link,
 .contact-link {
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.contact-link:hover {
+  transform: scale(1.1);
+}
+
+.mobile-nav {
+  backdrop-filter: blur(32px);
 }
 </style>

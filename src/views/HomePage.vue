@@ -11,43 +11,20 @@
             class="mt-20 flex flex-col justify-between md:h-[350px] text-white"
           >
             <div class="page-title flex flex-col gap-5 items-center">
-              <p class="text-4xl lg:text-6xl font-bold">Halisi Agency</p>
+              <p
+                class="text-4xl lg:text-6xl font-bold"
+                data-aos="fade-right"
+                data-aos-duration="1400"
+              >
+                Halisi Agency
+              </p>
               <p
                 class="slogan text-xl md:text-2xl font-bold tracking-wider italic"
+                data-aos="fade-right"
+                data-aos-duration="2400"
               >
                 ~ Simple ~ Transparent ~ Reliable ~
               </p>
-            </div>
-
-            <div class="newsletter flex flex-col gap-4">
-              <p class="text-xl font-bold text-center">
-                Subscibe to our News Letter
-              </p>
-
-              <form
-                @submit.prevent=""
-                class="flex bg-white/50 w-6/12 mx-auto p-4 flex-col lg:flex-row"
-              >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  class="flex-1 px-2"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  class="flex-1 px-2"
-                />
-
-                <button
-                  value="submit"
-                  class="bg-black text-white px-3 py-3 md:py-0 font-semibold"
-                >
-                  Subscribe
-                </button>
-              </form>
             </div>
           </div>
         </div>
@@ -109,10 +86,18 @@
         <div
           class="w-full h-full mx-auto bg-black/30 text-white p-8 md:p-16 flex flex-col justify-end"
         >
-          <p class="text-4xl text-secondary font-semibold mb-8">
+          <p
+            class="text-4xl text-secondary font-semibold mb-8"
+            data-aos="zoom-in-left"
+            data-aos-duration="1400"
+          >
             Why Choose Us
           </p>
-          <p class="text-2xl tracking-wider">
+          <p
+            class="text-2xl tracking-wider"
+            data-aos="zoom-in-left"
+            data-aos-duration="2400"
+          >
             At Halisi Travels, our commitment to professionalism, reliability,
             and client satisfaction sets us apart. We excel in making the visa
             process seamless and stress-free, ensuring your international travel
@@ -121,6 +106,35 @@
             of the way.
           </p>
         </div>
+      </section>
+
+      <section class="newsletter flex flex-col gap-4 my-14">
+        <p class="text-xl font-bold text-center">Subscibe to our News Letter</p>
+
+        <form
+          @submit.prevent=""
+          class="flex w-full md:w-6/12 mx-auto p-4 flex-col lg:flex-row gap-4 md:gap-0"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            class="flex-1 px-2"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            class="flex-1 px-2"
+          />
+
+          <button
+            value="submit"
+            class="bg-black text-white px-3 py-3 md:py-0 font-semibold"
+          >
+            Subscribe
+          </button>
+        </form>
       </section>
 
       <h2 class="text-center font-bold section-title text-5xl text-secondary">
@@ -133,6 +147,8 @@
             v-for="(testimonial, index) in testimonials"
             :key="index"
             class="testimonial"
+            data-aos="fade-right"
+            data-aos-duration="1400"
           >
             <div
               class="bg-white p-6 rounded-2xl md:w-1/2 mx-4 md:mx-auto shadow-lg text-center"
@@ -225,7 +241,7 @@ export default {
   background-image: url("@/assets/images/collage.jpg");
   background-size: cover;
   background-attachment: fixed;
-  border-radius: 0 0 5% 5%;
+  height: 70vh;
 }
 
 // tablet and desktop devices
@@ -234,6 +250,23 @@ export default {
     height: 90vh;
     border-radius: 0 0 10% 10%;
   }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.intro {
+  animation: appear 5s linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 
 .slogan,

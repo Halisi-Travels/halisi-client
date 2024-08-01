@@ -54,13 +54,25 @@
             <p class="text-3xl font-semibold mb-3 text-primary">Social Media</p>
             <ul class="flex gap-4">
               <li>
-                <i class="fa fa-facebook text-lg"></i>
+                <a
+                  href="https://whatsapp.com/channel/0029VaLOeK4HVvTYWRSC6v28"
+                  target="_blank"
+                >
+                  <i class="ri-whatsapp-line text-xl text-black"></i>
+                </a>
               </li>
               <li>
-                <i class="fa fa-instagram text-lg"></i>
+                <a
+                  href="https://www.instagram.com/halisi.travels?igsh=MW5pOW9iMDVweHZjcA=="
+                  target="_blank"
+                >
+                  <i class="ri-instagram-line text-xl text-black"></i>
+                </a>
               </li>
               <li>
-                <i class="fa fa-linkedin text-lg"></i>
+                <a href="" target="_blank">
+                  <i class="ri-tiktok-line text-xl text-black"></i>
+                </a>
               </li>
             </ul>
           </div>

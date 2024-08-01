@@ -18,7 +18,7 @@
       <section
         class="commitment w-11/12 md:w-9/12 text-lg mx-auto md:flex md:flex-row-reverse gap-10"
       >
-        <div class="flex-1">
+        <div class="flex-1" data-aos="fade-left" data-aos-duration="1400">
           <p class="section-title text-2xl text-secondary font-semibold mb-8">
             Our Commitment
           </p>
@@ -33,7 +33,11 @@
           </p>
         </div>
 
-        <div class="rounded-2xl overflow-hidden flex-1 my-10 md:my-0">
+        <div
+          class="rounded-2xl overflow-hidden flex-1 my-10 md:my-0"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+        >
           <img
             loading="lazy"
             class="object-cover"
@@ -47,7 +51,11 @@
       <section
         class="explore md:w-9/12 w-11/12 md:px-0 text-lg mx-auto lg:mt-28 md:flex gap-10"
       >
-        <div class="flex-1 mb-5 md:mb-0">
+        <div
+          class="flex-1 mb-5 md:mb-0"
+          data-aos="fade-right"
+          data-aos-duration="1400"
+        >
           <p class="section-title text-2xl text-secondary font-semibold mb-8">
             Explore The World With Us
           </p>
@@ -61,7 +69,11 @@
           </p>
         </div>
 
-        <div class="rounded-2xl overflow-hidden flex-1">
+        <div
+          class="rounded-2xl overflow-hidden flex-1"
+          data-aos="fade-right"
+          data-aos-duration="1400"
+        >
           <img
             loading="lazy"
             class="object-cover"
@@ -102,7 +114,7 @@
           exceptional service and support at every stage of your journey.
         </p>
 
-        <div class="images-div">
+        <div class="images-div" data-aos="fade-up" data-aos-duration="1000">
           <member-div
             :img="require('../assets/images/director.jpeg')"
             altText="Director"
@@ -117,6 +129,8 @@
             altText="Manager"
             title="Manager"
             name="Samuel Ikinya"
+            data-aos="fade-up"
+            data-aos-duration="1400"
           />
           <br class="lg:hidden" />
           <member-div
@@ -124,6 +138,8 @@
             altText="ac manager"
             title="Accounts Manager"
             name="Edwin Gitonga"
+            data-aos="fade-up"
+            data-aos-duration="1800"
           />
           <br class="lg:hidden" />
           <member-div
@@ -131,6 +147,8 @@
             altText="Marketing Manager"
             title="Marketing Manager"
             name="Ian Munene"
+            data-aos="fade-up"
+            data-aos-duration="2200"
           />
         </div>
       </div>
