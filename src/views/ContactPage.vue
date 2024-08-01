@@ -30,7 +30,7 @@
               >customerhappiness@halisitravels.com
             </p>
             <p>
-              <span class="font-semibold">Head Office Address: </span>11th Flr,
+              <span class="font-semibold">Head Office Address: </span>10th Flr,
               Cianda House. <br />
               Koinange Str, Nairobi
             </p>
