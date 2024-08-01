@@ -33,9 +33,9 @@ const routes = [
     component: () => import("../views/ApplicationPage.vue"),
   },
   {
-    path: "/visa-page",
-    name: "visa page",
-    component: () => import("../views/VisaAppPage.vue"),
+    path: "/countries-page",
+    name: "countries page",
+    component: () => import("../views/Countries.vue"),
   },
   {
     path: "/:catchAll(.*)",

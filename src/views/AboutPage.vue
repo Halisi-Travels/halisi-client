@@ -6,7 +6,9 @@
       <app-navbar />
 
       <div class="w-8/12 mx-auto mt-28">
-        <p class="page-title text-4xl text-white font-bold text-center mb-3">
+        <p
+          class="page-title text-2xl md:text-4xl text-white font-bold text-center mb-3"
+        >
           ABOUT US
         </p>
       </div>
@@ -153,9 +155,10 @@ header {
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 25% 25%;
-  height: 40vh;
+  height: 60vh;
 }
 
+// desktop and tablet devices
 @media screen and (min-width: 700px) {
   header {
     height: 70vh;

@@ -18,12 +18,15 @@
       >
       <router-link
         class="hover:underline underline-offset-2"
+        to="/countries-page"
+      >
+        Destinations
+      </router-link>
+      <router-link
+        class="hover:underline underline-offset-2"
         to="/job-placement"
         >Job Placement</router-link
       >
-      <router-link class="hover:underline underline-offset-2" to="/">
-        Visa Application
-      </router-link>
       <router-link class="hover:underline underline-offset-2" to="/contact-us">
         Contact Us
       </router-link>

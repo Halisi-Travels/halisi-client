@@ -29,17 +29,17 @@
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="text-primary"
-          to="/job-placement"
+          to="/countries-page"
         >
-          Job Placement
+          Destinations
         </router-link>
 
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="text-primary"
-          to="/visa-page"
+          to="/job-placement"
         >
-          Visa Application
+          Job Placement
         </router-link>
 
         <router-link
@@ -79,17 +79,17 @@
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="md:text-primary text-white"
-          to="/job-placement"
+          to="/countries-page"
         >
-          Job Placement
+          Destinations
         </router-link>
 
         <router-link
           class="nav-link text-gray-400 hover:text-primary"
           active-class="md:text-primary text-white"
-          to="/visa-page"
+          to="/job-placement"
         >
-          Visa Application
+          Job Placement
         </router-link>
 
         <router-link

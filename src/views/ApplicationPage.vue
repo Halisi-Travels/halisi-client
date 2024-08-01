@@ -1,14 +1,16 @@
 <template>
   <div id="application-page">
-    <header class="banner">
-      <div class="h-7" />
+    <header class="banner overflow-hidden">
+      <div class="bg-black/60 w-full h-full">
+        <div class="h-7" />
 
-      <app-navbar />
+        <app-navbar />
 
-      <div class="w-[20rem] mx-auto mt-28">
-        <p class="page-title text-4xl text-secondary font-bold text-center">
-          APPLY NOW
-        </p>
+        <div class="w-[20rem] mx-auto mt-28">
+          <p class="page-title text-4xl text-white font-bold text-center">
+            APPLY NOW
+          </p>
+        </div>
       </div>
     </header>
 
@@ -115,7 +117,7 @@ header {
   background-size: cover;
   background-attachment: fixed;
   border-radius: 0 0 25% 25%;
-  height: 50vh;
+  height: 60vh;
 }
 
 @media screen and (min-width: 700px) {

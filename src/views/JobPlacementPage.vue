@@ -5,8 +5,8 @@
 
       <app-navbar />
 
-      <div class="w-[20rem] mx-auto mt-28">
-        <p class="page-title text-4xl text-white font-bold text-center">
+      <div class="w-8/12 mx-auto mt-28">
+        <p class="page-title text-2xl text-white font-bold text-center mb-3">
           JOB PLACEMENT
         </p>
       </div>
@@ -134,7 +134,7 @@ export default {
   background-image: url("../assets/images/strips.webp");
   background-size: cover;
   background-attachment: fixed;
-  height: 50vh;
+  height: 60vh;
   border-radius: 0 0 25% 25%;
 }
 

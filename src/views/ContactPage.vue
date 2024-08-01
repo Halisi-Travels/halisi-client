@@ -1,14 +1,16 @@
 <template>
   <div id="contact">
-    <header class="banner h-4 w-full">
-      <div class="h-7"></div>
+    <header class="banner h-4 w-full overflow-hidden">
+      <div class="bg-black/60 w-full h-full">
+        <div class="h-7"></div>
 
-      <app-navbar />
+        <app-navbar />
 
-      <div class="w-[20rem] mx-auto mt-28">
-        <p class="page-title text-3xl text-black font-bold text-center">
-          CONTACT US
-        </p>
+        <div class="w-[20rem] mx-auto mt-28">
+          <p class="page-title text-3xl text-white font-bold text-center">
+            CONTACT US
+          </p>
+        </div>
       </div>
     </header>
 
@@ -107,8 +109,9 @@ export default {
 .banner {
   background-image: url("../assets/images/contact.png");
   background-size: cover;
+  background-attachment: fixed;
   border-radius: 0 0 25% 25%;
-  height: 40vh;
+  height: 60vh;
 }
 
 @media screen and (min-width: 700px) {
