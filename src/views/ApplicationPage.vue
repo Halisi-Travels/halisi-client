@@ -86,12 +86,31 @@
 </template>
 
 <script>
+import { useHead } from "@vueuse/head";
+
 export default {
   data() {
     return {
       fileName: "",
       activePanelIndex: null,
     };
+  },
+
+  mounted() {
+    useHead({
+      title: "Apply Now | Halisi Travels",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Send your application and jumpstart the process to your future",
+        },
+        {
+          property: "og:title",
+          content: "Apply Now | Halisi Travels",
+        },
+      ],
+    });
   },
 
   methods: {

@@ -14,6 +14,8 @@
 
 <script>
 export default {
+  name: "App",
+
   methods: {
     openWhatsapp() {
       // window.open("https://wa.me/25766518377", "_blank");

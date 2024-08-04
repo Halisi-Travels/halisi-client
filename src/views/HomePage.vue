@@ -195,11 +195,32 @@
 
 <script>
 import Carousel from "@/components/carousel.vue";
+import { useHead } from "@vueuse/head";
 
 export default {
   name: "HomePage",
+
   components: {
     "app-carousel": Carousel,
+  },
+
+  mounted() {
+    this.startScrolling();
+
+    useHead({
+      title: "Homepage | Halisi Travels",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Get a brief introduction into what our company does and the services we offer",
+        },
+        {
+          property: "og:title",
+          content: "Homepage | Halisi Travels",
+        },
+      ],
+    });
   },
 
   data() {
@@ -260,10 +281,6 @@ export default {
       ],
       currentTestimonial: 0,
     };
-  },
-
-  mounted() {
-    this.startScrolling();
   },
 
   methods: {

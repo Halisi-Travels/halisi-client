@@ -156,11 +156,30 @@
 
 <script>
 import MemberComponent from "@/components/member.vue";
+import { useHead } from "@vueuse/head";
 
 export default {
   name: "AboutPage",
+
   components: {
     "member-div": MemberComponent,
+  },
+
+  mounted() {
+    useHead({
+      title: "About Us | Halisi Travels",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Learn more about us, our vision and values, and get to know our team",
+        },
+        {
+          property: "og:title",
+          content: "About Us | Halisi Travels",
+        },
+      ],
+    });
   },
 };
 </script>

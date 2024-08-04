@@ -41,7 +41,26 @@
 </template>
 
 <script>
+import { useHead } from "@vueuse/head";
+
 export default {
+  mounted() {
+    useHead({
+      title: "Countries | Halisi Travels",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Get a chance to visit the world and emerse yourself in different sceneries and cultures",
+        },
+        {
+          property: "og:title",
+          content: "countries | Halisi Travels",
+        },
+      ],
+    });
+  },
+
   data() {
     return {
       countries: [

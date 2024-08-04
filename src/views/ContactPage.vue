@@ -113,8 +113,27 @@
 </template>
 
 <script>
+import { useHead } from "@vueuse/head";
+
 export default {
   name: "HomePage",
+
+  mounted() {
+    useHead({
+      title: "Contact Us | Halisi Travels",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Get in touch with us or give us feedback on your experience with our company",
+        },
+        {
+          property: "og:title",
+          content: "Contact Us | Halisi Travels",
+        },
+      ],
+    });
+  },
 };
 </script>
 
