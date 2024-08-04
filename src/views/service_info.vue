@@ -1,7 +1,6 @@
 <template>
   <div id="service-info">
     <div class="banner">
-      <div class="h-7" />
       <app-navbar class="mb-4" />
 
       <div class="h-full flex flex-col justify-center">

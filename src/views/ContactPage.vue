@@ -2,8 +2,6 @@
   <div id="contact">
     <header class="banner h-4 w-full overflow-hidden">
       <div class="bg-black/60 w-full h-full">
-        <div class="h-7"></div>
-
         <app-navbar />
 
         <div class="w-[20rem] mx-auto mt-28">
@@ -70,7 +68,10 @@
                 </a>
               </li>
               <li>
-                <a href="" target="_blank">
+                <a
+                  href="https://www.tiktok.com/@halisi.travel?_t=8oQ56X8R61d&_r=1"
+                  target="_blank"
+                >
                   <i class="ri-tiktok-line text-xl text-black"></i>
                 </a>
               </li>

@@ -2,9 +2,9 @@
 <template>
   <div
     id="nav"
-    class="bg-white shadow-lg z-10 rounded-full w-11/12 lg:w-8/12 py-4 px-6 flex justify-between items-center space-x-4 mx-auto border transition-all duration-100"
+    class="bg-white shadow-lg z-10 w-full h-auto md:h-[10vh] py-4 px-6 flex justify-between items-center space-x-4 transition-all duration-100"
     :class="{
-      'fixed top-5 left-0 right-0 shadow-lg bg-white': isFixed,
+      'fixed top-0 left-0 right-0 shadow-lg bg-white': isFixed,
       relative: !isFixed,
     }"
   >

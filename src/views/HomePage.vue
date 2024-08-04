@@ -1,40 +1,46 @@
 <template>
   <div class="home">
-    <main>
-      <section class="banner overflow-hidden">
-        <div class="bg-black/60 w-full h-full pb-4 md:pb-0">
-          <div class="h-7" />
+    <header>
+      <app-navbar />
 
-          <app-navbar />
+      <div class="carousel-div relative">
+        <app-carousel />
 
-          <div
-            class="mt-20 flex flex-col justify-between md:h-[350px] text-white"
-          >
-            <div class="page-title flex flex-col gap-5 items-center">
-              <p
-                class="text-4xl lg:text-6xl font-bold"
-                data-aos="fade-right"
-                data-aos-duration="1400"
-              >
-                Halisi Agency
-              </p>
-              <p
-                class="slogan text-xl md:text-2xl font-bold tracking-wider italic"
-                data-aos="fade-right"
-                data-aos-duration="2400"
-              >
-                ~ Simple ~ Transparent ~ Reliable ~
-              </p>
-            </div>
+        <div
+          class="absolute top-0 bg-black/60 w-full h-full pb-4 md:pb-10 text-white gap-9"
+        >
+          <div class="w-6 h-[40%] hidden md:block"></div>
+          <div class="w-11/12 md:w-10/12 mx-auto">
+            <p
+              class="header-title text-4xl md:text-6xl font-bold"
+              data-aos="fade-up"
+              data-aos-duration="1400"
+            >
+              Halisi Travel.
+            </p>
+
+            <p
+              class="slogan text-2xl w-2/3 mt-5"
+              data-aos="fade-up"
+              data-aos-duration="2400"
+            >
+              At Halisi Travels, we create unforgettable experiences by
+              seamlessly connecting you with the world's diverse cultures,
+              landscapes, opportunities
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </header>
 
+    <main>
       <section
-        class="intro mt-28 mx-4 md:w-9/12 md:mx-auto sm:mx-2 block md:flex md:justify-between md:items-center"
+        class="intro mt-28 mx-4 md:w-9/12 md:mx-auto sm:mx-2 block md:flex md:justify-between md:items-center md:gap-10"
       >
         <div
-          class="intro-image md:w-2/6 rounded-lg overflow-hidden bg-pink-400"
+          class="intro-image md:w-3/6 rounded-lg overflow-hidden"
+          data-aos="fade-right"
+          data-aos-duration="2400"
         >
           <img
             loading="lazy"
@@ -45,11 +51,15 @@
         </div>
 
         <div class="md:w-2/4 px-4 mt-4 md:mt-0">
-          <p class="text-xl font-semibold text-secondary">
+          <p
+            class="section-title text-xl font-semibold text-secondary"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          >
             Tours & Travel Agency
           </p>
           <br />
-          <p>
+          <p data-aos="fade-left" data-aos-duration="2400">
             Based in Nairobi, Kenya, Halisi Travels takes pride in offering a
             diverse array of flight booking, hotel booking, vacation, and job
             placement packages to our valued clients. Immerse yourself in the
@@ -63,21 +73,36 @@
         </div>
       </section>
 
-      <section class="my-16 md:my-28 services px-3 md:px-0 md:w-9/12 mx-auto">
+      <section class="my-16 md:my-28 services md:px-0 w-11/12 mx-auto">
         <p
           class="service-title text-center font-bold text-4xl underline mb-9 text-secondary"
         >
           Our Services
         </p>
+
         <div class="grid md:grid-cols-3 gap-9">
           <div
-            v-for="service in services"
-            :key="service.name"
-            class="bg-primary/75 text-white p-3 rounded text-center h-40 flex flex-col justify-center cursor-pointer hover:bg-primary/80 hover:shadow-lg"
+            v-for="(service, index) in services"
+            :key="index"
+            class="bg-white border-2 transition-all duration-300 overflow-hidden text-center cursor-pointer hover:bg-primary/80 hover:shadow-lg hover:text-white h-[350px]"
+            data-aos="fade-up"
+            :data-aos-duration="1400 + (index + 1) * 300"
             @click="$router.push('/service/1')"
           >
-            <p class="text-2xl font-semibold">{{ service.name }}</p>
-            <p class="text-xl">{{ service.desc }}</p>
+            <div class="bg-purple-300 w-full h-3/4">
+              <img
+                class="h-full w-full"
+                :src="service.url"
+                alt="service mage"
+              />
+            </div>
+
+            <div class="p-3">
+              <p class="service-title text-xl font-semibold">
+                {{ service.name }}
+              </p>
+              <p class="text-md">{{ service.desc }}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -169,22 +194,42 @@
 </template>
 
 <script>
+import Carousel from "@/components/carousel.vue";
+
 export default {
   name: "HomePage",
+  components: {
+    "app-carousel": Carousel,
+  },
+
   data() {
     return {
       services: [
-        { name: "Flight Booking", desc: "Book, Fly, Enjoy, Repeat" },
-        { name: "Hotel Booking", desc: "Exquisite stays. Book Now!" },
+        {
+          name: "Flight Booking",
+          desc: "Book, Fly, Enjoy, Repeat",
+          url: require("@/assets/images/flight_b.png"),
+        },
+        {
+          name: "Hotel Booking",
+          desc: "Exquisite stays. Book Now!",
+          url: require("@/assets/images/hotel_b.avif"),
+        },
         {
           name: "Vacation Package",
           desc: "Escape, Relax, Discover, Adventure",
+          url: require("@/assets/images/v_package.jpg"),
         },
         {
           name: "Job Placement",
           desc: "Career Compass: Navigating your Future",
+          url: require("@/assets/images/placement.jpg"),
         },
-        { name: "Visa Application", desc: "Pilots to Your Destination" },
+        {
+          name: "Visa Application",
+          desc: "Pilots to Your Destination",
+          url: require("@/assets/images/visa_app.png"),
+        },
       ],
       testimonials: [
         {
@@ -248,7 +293,6 @@ export default {
 @media screen and (min-width: 600px) {
   .banner {
     height: 90vh;
-    border-radius: 0 0 10% 10%;
   }
 }
 
@@ -263,17 +307,12 @@ export default {
   }
 }
 
-.intro {
-  animation: appear 5s linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-
-.slogan,
+.header-title,
+header p,
 .service-title,
 .choose-us p:first-child,
 .section-title {
-  font-family: "Handlee", cursive;
+  font-family: "Kanit", sans-serif;
 }
 
 input {

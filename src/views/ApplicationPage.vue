@@ -2,8 +2,6 @@
   <div id="application-page">
     <header class="banner overflow-hidden">
       <div class="bg-black/60 w-full h-full">
-        <div class="h-7" />
-
         <app-navbar />
 
         <div class="w-[20rem] mx-auto mt-28">

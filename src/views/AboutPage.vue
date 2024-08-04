@@ -1,8 +1,6 @@
 <template>
   <div id="about-page">
     <header>
-      <div class="h-7" />
-
       <app-navbar />
 
       <div class="w-8/12 mx-auto mt-28">

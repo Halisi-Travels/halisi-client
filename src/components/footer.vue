@@ -54,7 +54,12 @@
         </a>
       </li>
       <li>
-        <i class="ri-tiktok-line text-lg text-gray-400 hover:text-white"></i>
+        <a
+          href="https://www.tiktok.com/@halisi.travel?_t=8oQ56X8R61d&_r=1"
+          target="_blank"
+        >
+          <i class="ri-tiktok-line text-lg text-gray-400 hover:text-white"></i>
+        </a>
       </li>
     </ul>
 

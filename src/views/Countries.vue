@@ -2,8 +2,6 @@
 <template>
   <div id="visa-page">
     <header class="pb-8">
-      <div class="h-7" />
-
       <app-navbar />
 
       <div class="w-8/12 mx-auto mt-28">
