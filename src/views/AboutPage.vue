@@ -1,13 +1,20 @@
 <template>
   <div id="about-page">
-    <header>
+    <header class="flex flex-col">
       <app-navbar />
 
-      <div class="w-8/12 mx-auto mt-28">
+      <div
+        class="mt-auto bg-black/60 py-10 px-10 text-white backdrop-blur-lg border-y-4 border-secondary"
+      >
         <p
-          class="page-title text-2xl md:text-4xl text-white font-bold text-center mb-3"
+          class="page-title text-2xl md:text-4xl font-bold mb-3"
+          data-aos="fade-up"
+          data-aos-duration="2000"
         >
           ABOUT US
+        </p>
+        <p data-aos="fade-up" data-aos-duration="2900">
+          Passionate About Your Next Destination
         </p>
       </div>
     </header>
@@ -52,7 +59,7 @@
         <div
           class="flex-1 mb-5 md:mb-0"
           data-aos="fade-right"
-          data-aos-duration="1400"
+          data-aos-duration="2400"
         >
           <p class="section-title text-2xl text-secondary font-semibold mb-8">
             Explore The World With Us
@@ -69,8 +76,8 @@
 
         <div
           class="rounded-2xl overflow-hidden flex-1"
-          data-aos="fade-right"
-          data-aos-duration="1400"
+          data-aos="fade-left"
+          data-aos-duration="2400"
         >
           <img
             loading="lazy"
@@ -93,11 +100,65 @@
           </p>
 
           <ul class="ml-5 mt-3 flex flex-col gap-5 font-semibold list-disc">
-            <li>Flight Booking</li>
-            <li>Hotel Booking</li>
-            <li>Vacation Packages</li>
-            <li>Job Placement Packages</li>
+            <li data-aos="fade-up" data-aos-duration="2400">Flight Booking</li>
+            <li data-aos="fade-up" data-aos-duration="2400">Hotel Booking</li>
+            <li data-aos="fade-up" data-aos-duration="2400">
+              Vacation Packages
+            </li>
+            <li data-aos="fade-up" data-aos-duration="2400">
+              Job Placement Packages
+            </li>
           </ul>
+        </div>
+      </section>
+
+      <section
+        class="set-apart mt-28 flex flex-col items-center gap-10 w-10/12 mx-auto"
+      >
+        <div class="our-story flex gap-4 justify-center">
+          <div class="flex-initial w-[20%]">
+            <div class="bg-secondary h-[3px] w-14 mb-2"></div>
+            <p
+              class="text-xl font-semibold section-title text-secondary"
+              data-aos="fade-right"
+              data-aos-duration="1800"
+            >
+              Our Story
+            </p>
+          </div>
+
+          <p class="w-[60%]" data-aos="fade-right" data-aos-duration="3000">
+            Halisi Travels was founded with a simple yet profound vision: to
+            bring the world closer to you. Born out of a passion for travel and
+            a deep understanding of the transformative power of exploring new
+            places, we set out to create a travel agency that not only meets but
+            exceeds the expectations of our clients. We are one of Kenya's most
+            trusted travel agencies, known for our personalized service,
+            attention to detail, and unwavering commitment to customer
+            satisfaction.
+          </p>
+        </div>
+
+        <div class="bespoke flex gap-4 justify-center">
+          <div class="flex-initial w-[20%]">
+            <div class="bg-secondary h-[3px] w-14 mb-2"></div>
+            <p
+              class="text-xl font-semibold section-title text-secondary"
+              data-aos="fade-right"
+              data-aos-duration="1800"
+            >
+              What Sets Us Apart?
+            </p>
+          </div>
+
+          <p class="w-[60%]" data-aos="fade-right" data-aos-duration="3000">
+            At Halisi Travels, we believe that every journey should be as unique
+            as the traveler embarking on it. That’s why we offer bespoke travel
+            packages tailored to your individual needs and desires. Whether
+            you’re planning a family vacation, a romantic getaway, or an
+            adventurous solo trip, our team of experienced travel experts is
+            here to craft the perfect itinerary for you.
+          </p>
         </div>
       </section>
 
@@ -186,17 +247,16 @@ export default {
 
 <style scoped lang="scss">
 header {
-  background-image: url("@/assets/images/about.webp");
-  background-size: cover;
+  background-image: url("@/assets/images/commitment.jpg");
+  background-size: contain;
   background-attachment: fixed;
-  border-radius: 0 0 25% 25%;
-  height: 60vh;
+  height: 80vh;
 }
 
 // desktop and tablet devices
 @media screen and (min-width: 700px) {
   header {
-    height: 70vh;
+    height: 90vh;
   }
   .services {
     padding: 4rem;
@@ -211,6 +271,6 @@ header {
 
 .page-title,
 .section-title {
-  font-family: "Handlee", cursive;
+  font-family: "Kanit", sans-serif;
 }
 </style>

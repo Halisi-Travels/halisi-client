@@ -1,24 +1,33 @@
 <template>
   <div id="contact">
-    <header class="banner h-4 w-full overflow-hidden">
-      <div class="bg-black/60 w-full h-full">
-        <app-navbar />
+    <header class="flex flex-col">
+      <app-navbar />
 
-        <div class="w-[20rem] mx-auto mt-28">
-          <p class="page-title text-3xl text-white font-bold text-center">
-            CONTACT US
-          </p>
-        </div>
+      <div
+        class="mt-auto bg-black/60 py-10 px-10 text-white backdrop-blur-lg border-y-4 border-secondary"
+      >
+        <p
+          class="page-title text-2xl md:text-4xl font-bold mb-3"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          ABOUT US
+        </p>
+        <p data-aos="fade-up" data-aos-duration="2900">
+          Let’s Discuss Your Career Goals
+        </p>
       </div>
     </header>
 
-    <main class="px-4 md:mx-0">
+    <main class="px-4 md:mx-0 md:mt-4">
       <div
         class="contact-div flex md:flex-row flex-col gap-14 justify-around md:w-10/12 mx-auto my-12"
       >
         <div class="info flex flex-col gap-10">
           <div class="contact-info flex flex-col gap-2">
-            <p class="text-3xl font-semibold mb-3 text-primary">Contact Info</p>
+            <p class="section-title text-3xl font-semibold mb-3 text-primary">
+              Contact Info
+            </p>
             <p>
               <span class="font-semibold">Phone number: </span>
               +254745313519/+254747393209
@@ -35,7 +44,7 @@
           </div>
 
           <div class="business-hours flex flex-col gap-2">
-            <p class="text-3xl font-semibold mb-3 text-primary">
+            <p class="section-title text-3xl font-semibold mb-3 text-primary">
               Business Hours
             </p>
             <p>
@@ -49,7 +58,9 @@
           </div>
 
           <div class="business-hours">
-            <p class="text-3xl font-semibold mb-3 text-primary">Social Media</p>
+            <p class="section-title text-3xl font-semibold mb-3 text-primary">
+              Social Media
+            </p>
             <ul class="flex gap-4">
               <li>
                 <a
@@ -92,7 +103,9 @@
         </div>
 
         <form class="form md:w-5/12" @submit.prevent="">
-          <p class="text-3xl font-semibold mb-3 text-primary">Feedback Form</p>
+          <p class="section-title text-3xl font-semibold mb-3 text-primary">
+            Feedback Form
+          </p>
           <label for="name">Your name</label>
           <input type="text" name="name" />
 
@@ -138,22 +151,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.banner {
-  background-image: url("../assets/images/contact.png");
+header {
+  background-image: url("../assets/images/contact-us.jpg");
   background-size: cover;
   background-attachment: fixed;
-  border-radius: 0 0 25% 25%;
   height: 60vh;
 }
 
 @media screen and (min-width: 700px) {
-  .banner {
-    height: 70vh;
+  header {
+    height: 90vh;
   }
 }
 
-.page-title {
-  font-family: "Handlee", cursive;
+.page-title,
+.section-title {
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 2px;
 }
 
 label {

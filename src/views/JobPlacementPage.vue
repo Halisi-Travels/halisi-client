@@ -1,11 +1,21 @@
 <template>
   <div id="job-page">
-    <header class="banner">
+    <header class="flex flex-col">
       <app-navbar />
 
-      <div class="w-8/12 mx-auto mt-28">
-        <p class="page-title text-2xl text-white font-bold text-center mb-3">
-          JOB PLACEMENT
+      <div
+        class="mt-auto bg-black/60 py-10 px-10 text-white backdrop-blur-lg border-y-4 border-secondary"
+      >
+        <p
+          class="page-title text-2xl md:text-4xl font-bold mb-3"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          Job Placement
+        </p>
+
+        <p data-aos="fade-up" data-aos-duration="2900">
+          Unlock Your Potential with the Right Role
         </p>
       </div>
     </header>
@@ -29,14 +39,18 @@
       </section>
 
       <section
-        class="w-11/12 md:w-9/12 mx-auto mt-16 md:mt-28 flex flex-col gap-3"
+        class="w-11/12 md:w-9/12 mx-auto mt-16 md:mt-28 flex flex-col gap-16"
       >
         <p class="section-title text-4xl text-secondary text-center">
           Comprehensive Support Services
         </p>
 
         <div class="flex mt-10 md:flex-row flex-col gap-5">
-          <div class="flex-1 px-4">
+          <div
+            class="flex-1 px-4"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
             <p class="section-title text-xl text-secondary mb-2">
               Career Consultation
             </p>
@@ -51,6 +65,8 @@
 
           <div
             class="h-36 md:rounded-tr-xl md:rounded-br-xl overflow-hidden flex-1"
+            data-aos="fade-left"
+            data-aos-duration="2000"
           >
             <img
               loading="lazy"
@@ -61,7 +77,11 @@
         </div>
 
         <div class="flex md:flex-row-reverse flex-col gap-5 mt-10 md:mt-0">
-          <div class="flex-1 px-4">
+          <div
+            class="flex-1 px-4"
+            data-aos="fade-left"
+            data-aos-duration="2400"
+          >
             <p class="section-title text-xl text-secondary mb-2">
               Job Matching
             </p>
@@ -74,6 +94,8 @@
 
           <div
             class="h-36 md:rounded-tl-xl md:rounded-bl-xl overflow-hidden flex-1"
+            data-aos="fade-right"
+            data-aos-duration="2400"
           >
             <img
               width="100%"
@@ -84,7 +106,11 @@
         </div>
 
         <div class="flex mt-10 md:mt-0 md:flex-row flex-col gap-5">
-          <div class="flex-1 px-4 py-2">
+          <div
+            class="flex-1 px-4 py-2"
+            data-aos="fade-right"
+            data-aos-duration="2400"
+          >
             <p class="section-title text-xl text-secondary mb-2">
               Visa and Documentation Support
             </p>
@@ -100,6 +126,8 @@
 
           <div
             class="h-36 md:rounded-tr-xl md:rounded-br-xl overflow-hidden flex-1"
+            data-aos="fade-left"
+            data-aos-duration="2400"
           >
             <img
               class="object-contain"
@@ -128,22 +156,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.banner {
-  background-image: url("../assets/images/strips.webp");
+header {
+  background-image: url("../assets/images/placement1.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 60vh;
-  border-radius: 0 0 25% 25%;
 }
 
 @media screen and (min-width: 700px) {
-  .banner {
-    height: 70vh;
+  header {
+    height: 90vh;
   }
 }
 
 .page-title,
 .section-title {
-  font-family: "Handlee", cursive;
+  font-family: "Kanit", sans-serif;
 }
 </style>

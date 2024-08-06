@@ -1,14 +1,22 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div id="visa-page">
-    <header class="pb-8">
+    <header class="flex flex-col">
       <app-navbar />
 
-      <div class="w-8/12 mx-auto mt-28">
+      <div
+        class="mt-auto bg-black/60 py-10 px-10 text-white backdrop-blur-lg border-y-4 border-secondary"
+      >
         <p
-          class="page-title text-2xl md:text-4xl text-white font-bold text-center"
+          class="page-title text-2xl md:text-4xl font-bold mb-3"
+          data-aos="fade-up"
+          data-aos-duration="2000"
         >
           Destinations
+        </p>
+
+        <p data-aos="fade-up" data-aos-duration="2900">
+          Curated Adventures, Just for You
         </p>
       </div>
     </header>
@@ -21,18 +29,28 @@
         :class="[country.reverse ? 'flex-row-reverse' : '']"
       >
         <div class="section-title flex-1 mb-4">
-          <p class="text-xl font-semibold text-secondary mb-4">
+          <p
+            class="text-xl font-semibold text-secondary mb-4 section-title"
+            data-aos="fade-up"
+            data-aos-duration="1600"
+          >
             {{ country.name }}
           </p>
 
-          <p>{{ country.desc }}</p>
-          <p
+          <p data-aos="fade-up" data-aos-duration="2000">{{ country.desc }}</p>
+          <!-- <p
             class="text-sm text-secondary mt-2 hover:underline hover:cursor-pointer"
+            data-aos="fade-up"
+            data-aos-duration="2900"
           >
             More Info...
-          </p>
+          </p> -->
         </div>
-        <div class="w-full md:w-[400px] rounded-lg">
+        <div
+          class="w-full md:w-[400px] rounded-lg"
+          data-aos="fade-up"
+          data-aos-duration="2900"
+        >
           <img width="100%" :src="country.flag" alt="middle east" />
         </div>
       </section>
@@ -96,34 +114,15 @@ export default {
 
 <style scoped>
 header {
-  background-image: url("@/assets/images/destination.jpg");
+  background-image: url("@/assets/images/travel.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 60vh;
-  border-radius: 0 0 25% 25%;
 }
 
 @media screen and (min-width: 700px) {
   header {
-    height: 70vh;
+    height: 90vh;
   }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    scale: 0.5;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
-}
-
-.intro,
-.midle-east {
-  animation: appear 5s linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 </style>
