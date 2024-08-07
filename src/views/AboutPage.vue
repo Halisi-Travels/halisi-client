@@ -11,7 +11,9 @@
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          ABOUT US
+          <span class="text-sm font-normal text-secondary"
+            ><router-link to="/">Home / </router-link> </span
+          >ABOUT US
         </p>
         <p data-aos="fade-up" data-aos-duration="2900">
           Passionate About Your Next Destination

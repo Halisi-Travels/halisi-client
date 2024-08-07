@@ -26,7 +26,10 @@
             >
               At Halisi Travels, we create unforgettable experiences by
               seamlessly connecting you with the world's diverse cultures,
-              landscapes, opportunities
+              landscapes and opportunities. Our commitment to professionalism,
+              reliability, and client satisfaction sets us apart. We excel in
+              making the visa process seamless and stress-free, ensuring your
+              international travel is smooth and worry-free.
             </p>
           </div>
         </div>
