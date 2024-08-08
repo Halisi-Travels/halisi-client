@@ -14,7 +14,7 @@
           <span class="text-sm font-normal text-secondary"
             ><router-link to="/">Home / </router-link>
           </span>
-          ABOUT US
+          CONTACT US
         </p>
         <p data-aos="fade-up" data-aos-duration="2900">
           Let’s Discuss Your Career Goals
@@ -155,7 +155,7 @@ export default {
 
 <style scoped lang="scss">
 header {
-  background-image: url("../assets/images/contact-us.jpg");
+  background-image: url("../assets/images/contact-sm.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 60vh;
@@ -163,6 +163,7 @@ header {
 
 @media screen and (min-width: 700px) {
   header {
+    background-image: url("../assets/images/contact-us.jpg");
     height: 90vh;
   }
 }

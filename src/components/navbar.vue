@@ -69,7 +69,7 @@
 
       <ul class="flex flex-col gap-10 text-center text-2xl mt-28">
         <router-link
-          class="nav-link text-gray-400 hover:text-primary"
+          class="nav-link text-black hover:text-primary"
           active-class="md:text-primary text-white"
           to="/about-page"
         >
@@ -77,7 +77,7 @@
         </router-link>
 
         <router-link
-          class="nav-link text-gray-400 hover:text-primary"
+          class="nav-link text-black hover:text-primary"
           active-class="md:text-primary text-white"
           to="/countries-page"
         >
@@ -85,7 +85,7 @@
         </router-link>
 
         <router-link
-          class="nav-link text-gray-400 hover:text-primary"
+          class="nav-link text-black hover:text-primary"
           active-class="md:text-primary text-white"
           to="/job-placement"
         >
@@ -93,7 +93,7 @@
         </router-link>
 
         <router-link
-          class="nav-link text-gray-400 hover:text-primary"
+          class="nav-link text-black hover:text-primary"
           active-class="md:text-primary text-white"
           to="/contact-us"
         >

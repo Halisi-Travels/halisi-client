@@ -115,7 +115,7 @@
       </section>
 
       <section
-        class="set-apart mt-28 flex flex-col items-center gap-10 w-10/12 mx-auto"
+        class="set-apart mt-28 flex flex-col items-center gap-10 md:w-10/12 mx-auto"
       >
         <div class="our-story flex gap-4 justify-center">
           <div class="flex-initial w-[20%]">
@@ -250,14 +250,14 @@ export default {
 <style scoped lang="scss">
 header {
   background-image: url("@/assets/images/commitment.jpg");
-  background-size: contain;
   background-attachment: fixed;
-  height: 80vh;
+  height: 60vh;
 }
 
 // desktop and tablet devices
 @media screen and (min-width: 700px) {
   header {
+    background-size: contain;
     height: 90vh;
   }
   .services {

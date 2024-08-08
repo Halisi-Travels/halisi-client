@@ -7,10 +7,9 @@
         <app-carousel />
 
         <div
-          class="absolute top-0 bg-black/60 w-full h-full pb-4 md:pb-10 text-white gap-9"
+          class="absolute top-0 bg-black/60 w-full h-full pb-4 md:pb-10 text-white gap-9 flex flex-col"
         >
-          <div class="w-6 h-[40%] hidden md:block"></div>
-          <div class="w-11/12 md:w-10/12 mx-auto">
+          <div class="w-11/12 md:w-10/12 mx-auto mt-auto">
             <p
               class="header-title text-4xl md:text-6xl font-bold"
               data-aos="fade-up"
@@ -20,7 +19,7 @@
             </p>
 
             <p
-              class="slogan text-2xl w-2/3 mt-5"
+              class="slogan text-2xl md:w-2/3 mt-5"
               data-aos="fade-up"
               data-aos-duration="2400"
             >
@@ -306,7 +305,7 @@ export default {
   background-image: url("@/assets/images/collage.jpg");
   background-size: cover;
   background-attachment: fixed;
-  height: 70vh;
+  height: 50vh;
 }
 
 // tablet and desktop devices
