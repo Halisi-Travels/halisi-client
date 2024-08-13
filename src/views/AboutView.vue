@@ -1,5 +1,168 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <header
+      class="h-[50vh] bg-gray-600 text-white flex items-center justify-center"
+    >
+      <p class="font-bold text-4xl">ABOUT US</p>
+    </header>
+
+    <main class="my-10 w-9/12 mx-auto">
+      <section class="intro flex flex-col gap-5 text-lg">
+        <p>
+          We at Halisi Travels are dedicated to providing exceptional travel
+          experiences that are seamless, personalized, and memorable. Our team
+          of travel experts works tirelessly to ensure that every aspect of your
+          journey is meticulously planned and executed, allowing you to relax
+          and enjoy your adventure.
+        </p>
+
+        <p>
+          Halisi Travels was founded with a simple yet profound vision: to bring
+          the world closer to you. Born out of a passion for travel and a deep
+          understanding of the transformative power of exploring new places, we
+          set out to create a travel agency that not only meets but exceeds the
+          expectations of our clients. We are one of Kenya's most trusted travel
+          agencies, known for our personalized service, attention to detail, and
+          unwavering commitment to customer satisfaction.
+        </p>
+
+        <p>
+          At Halisi Travels, we believe that every journey should be as unique
+          as the traveler embarking on it. That’s why we offer bespoke travel
+          packages tailored to your individual needs and desires. Whether you’re
+          planning a family vacation, a romantic getaway, or an adventurous solo
+          trip, our team of experienced travel experts is here to craft the
+          perfect itinerary for you.
+        </p>
+      </section>
+
+      <section class="services my-16 flex flex-col gap-12">
+        <h3 class="text-4xl font-semibold text-center mb-10">Our Services</h3>
+        <div
+          class="service flex justify-between"
+          v-for="(item, index) in services"
+          :key="index"
+          :class="{ 'flex-row-reverse': item.reverse }"
+        >
+          <div class="text flex-initial w-[500px]">
+            <h3 class="text-xl font-semibold mb-3">{{ item.title }}</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
+              nihil ut accusamus hic enim beatae qui voluptates adipisci numquam
+              error! Atque doloribus sit facilis nostrum eligendi, esse quidem
+              a, maiores vero non magnam exercitationem illo error libero
+              reprehenderit? Tenetur et commodi porro vel beatae dignissimos
+              odit repudiandae labore architecto sint.
+            </p>
+          </div>
+
+          <div class="image-div flex-initial w-[500px] h-56">
+            <img
+              class="object-cover w-full h-full"
+              :src="item.url"
+              alt="service image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="staff">
+        <h3 class="text-4xl font-semibold text-center mb-10">Meet The Team</h3>
+        <p class="text-center text-lg w-2/3 mx-auto">
+          Our dedicated team of professionals is committed to providing
+          exceptional service and support at every stage of your journey.
+        </p>
+
+        <div
+          class="rounded-full w-[300px] h-[300px] overflow-hidden"
+          v-for="(item, index) in staff"
+          :key="index"
+        >
+          <img
+            :src="item.url"
+            alt="staff profile"
+            class="w-full h-full object-fit"
+          />
+        </div>
+      </section>
+    </main>
   </div>
 </template>
+
+<script>
+import { useHead } from "@vueuse/head";
+
+export default {
+  name: "contactPage",
+
+  data() {
+    return {
+      services: [
+        {
+          url: require("@/assets/images/flight_b.jpg"),
+          title: "Flight Booking",
+          desc: "",
+          reverse: false,
+        },
+        {
+          url: require("@/assets/images/hotel_b.jpg"),
+          title: "Hotel Booking",
+          desc: "",
+          reverse: true,
+        },
+        {
+          url: require("@/assets/images/travel.jpg"),
+          title: "Vacation Packages",
+          desc: "",
+          reverse: false,
+        },
+        {
+          url: require("@/assets/images/job.jpg"),
+          title: "Job Placement Packages",
+          desc: "",
+          reverse: true,
+        },
+      ],
+      staff: [
+        {
+          name: "David Kabera",
+          title: "Director",
+          url: require("@/assets/images/director.jpeg"),
+        },
+        {
+          name: "Samuel Ikinya",
+          title: "Manager",
+          url: require("@/assets/images/manager.jpeg"),
+        },
+        {
+          name: "Edwin Gitonga",
+          title: "Accounts Manager",
+          url: require("@/assets/images/ac_manager.jpeg"),
+        },
+        {
+          name: "Ian Munene",
+          title: "Marketing Manager",
+          url: require("@/assets/images/mr_manager.jpeg"),
+        },
+      ],
+    };
+  },
+
+  mounted() {
+    useHead({
+      title: "About Us | Halisi Travels",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Learn more about us, our vision and values, and get to know our team",
+        },
+        {
+          property: "og:title",
+          content: "About Us | Halisi Travels",
+        },
+      ],
+    });
+  },
+};
+</script>

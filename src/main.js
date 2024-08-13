@@ -2,5 +2,40 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import { createHead, useHead } from "@vueuse/head";
 
-createApp(App).use(store).use(router).mount("#app");
+// import tailwind
+import "./index.css";
+
+// global components
+import Navbar from "@/components/AppBar.vue";
+import Footer from "@/components/Footer.vue";
+
+const head = createHead();
+
+useHead({
+  title: "Halisi Travels",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Get a brief introduction into what our company does and the services we offer.",
+    },
+    {
+      property: "og:title",
+      content: "Halisi Travels",
+    },
+    {
+      property: "og:description",
+      content: "Simple, Tranparent. Reliable",
+    },
+  ],
+});
+
+createApp(App)
+  .use(store)
+  .use(router)
+  .use(head)
+  .component("AppNav", Navbar)
+  .component("AppFooter", Footer)
+  .mount("#app");

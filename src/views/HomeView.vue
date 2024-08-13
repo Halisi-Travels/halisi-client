@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <p>xnsojpsdkx</p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { useHead } from "@vueuse/head";
 
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
+
+  mounted() {
+    useHead({
+      title: "Homepage | Halisi Travels",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Based in Nairobi, Kenya, Halisi Travels takes pride in offering a diverse array of flight booking, hotel booking, vacation, and job placement packages to our valued clients.",
+        },
+        {
+          property: "og:title",
+          content: "Homepage | Halisi Travels",
+        },
+      ],
+    });
   },
 };
 </script>
