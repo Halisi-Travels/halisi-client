@@ -1,7 +1,7 @@
 <template>
   <div id="job-details-page">
     <header
-      class="h-[50vh] bg-gray-600 text-white flex flex-col items-center justify-center gap-y-10"
+      class="h-[50vh] bg-gray-600 text-white flex flex-col items-center justify-center gap-y-10 relative"
     >
       <p class="font-bold text-4xl uppercase">Civil Engineering</p>
 
@@ -20,6 +20,12 @@
           <i class="bx bx-calendar text-xl"></i>
           <p>Our Client</p>
         </div>
+
+        <button
+          class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 uppercase transfom mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
+        >
+          Apply For Job
+        </button>
       </div>
 
       <h4 class="uppercase font-bold">Full Time</h4>

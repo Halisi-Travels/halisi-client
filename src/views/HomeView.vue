@@ -85,6 +85,7 @@
           </p>
           <button
             class="bg-secondary text-white p-3 rounded-md font-semibold w-6/12 mt-2"
+            @click="$router.push('/contact')"
           >
             CONTACT US
           </button>

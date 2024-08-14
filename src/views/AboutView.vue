@@ -6,7 +6,7 @@
       <p class="font-bold text-4xl">ABOUT US</p>
     </header>
 
-    <main class="my-10 w-9/12 mx-auto">
+    <main class="my-10 w-10/12 mx-auto">
       <section class="intro flex flex-col gap-5 text-lg">
         <p>
           We at Halisi Travels are dedicated to providing exceptional travel
@@ -36,10 +36,10 @@
         </p>
       </section>
 
-      <section class="services my-16 flex flex-col gap-12">
+      <section class="services my-16 flex flex-col gap-12 w-11/12 mx-auto">
         <h3 class="text-4xl font-semibold text-center mb-10">Our Services</h3>
         <div
-          class="service flex justify-between"
+          class="service flex justify-center gap-20"
           v-for="(item, index) in services"
           :key="index"
           :class="{ 'flex-row-reverse': item.reverse }"
@@ -79,7 +79,9 @@
             v-for="(item, index) in staff"
             :key="index"
           >
-            <div class="rounded-full w-[300px] h-[300px] overflow-hidden">
+            <div
+              class="rounded-full min-w-[200px] max-w-[250px] min-h-[200px] max-h-[250px] overflow-hidden"
+            >
               <img
                 :src="item.url"
                 alt="staff profile"
@@ -89,7 +91,7 @@
 
             <div class="flex flex-col items-center mt-3">
               <h3 class="text-xl font-bold">{{ item.name }}</h3>
-              <p>{{ item.title }}</p>
+              <p class="font-semibold text-gray-400">{{ item.title }}</p>
             </div>
           </div>
         </div>

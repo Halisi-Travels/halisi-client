@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: "/job/:id",
-    name: "contact",
+    name: "job description",
     component: () => import("../views/JobPage.vue"),
   },
 ];
@@ -27,6 +27,13 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior: (to, from, savedPosition) => {
+    if (savedPosition) {
+      return savedPosition;
+    }
+
+    return { top: 0, left: 0 };
+  },
 });
 
 export default router;

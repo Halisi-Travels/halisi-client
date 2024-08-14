@@ -17,6 +17,7 @@
 
         <button
           class="bg-secondary rounded-full py-3 px-4 absolute top-[-1.5rem] right-7"
+          @click="scrollToTop"
         >
           <i class="bx bx-chevron-up text-2xl text-white"></i>
         </button>
@@ -134,6 +135,15 @@ export default {
     return {
       year: new Date().getFullYear(),
     };
+  },
+
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
   },
 };
 </script>
