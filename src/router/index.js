@@ -17,6 +17,11 @@ const routes = [
     name: "contact",
     component: () => import("../views/ContactView.vue"),
   },
+  {
+    path: "/job/:id",
+    name: "contact",
+    component: () => import("../views/JobPage.vue"),
+  },
 ];
 
 const router = createRouter({

@@ -66,23 +66,32 @@
         </div>
       </section>
 
-      <section class="staff">
+      <section class="staff mb-28">
         <h3 class="text-4xl font-semibold text-center mb-10">Meet The Team</h3>
         <p class="text-center text-lg w-2/3 mx-auto">
           Our dedicated team of professionals is committed to providing
           exceptional service and support at every stage of your journey.
         </p>
 
-        <div
-          class="rounded-full w-[300px] h-[300px] overflow-hidden"
-          v-for="(item, index) in staff"
-          :key="index"
-        >
-          <img
-            :src="item.url"
-            alt="staff profile"
-            class="w-full h-full object-fit"
-          />
+        <div class="flex justify-between mt-16">
+          <div
+            class="flex flex-col"
+            v-for="(item, index) in staff"
+            :key="index"
+          >
+            <div class="rounded-full w-[300px] h-[300px] overflow-hidden">
+              <img
+                :src="item.url"
+                alt="staff profile"
+                class="w-full h-full object-fit"
+              />
+            </div>
+
+            <div class="flex flex-col items-center mt-3">
+              <h3 class="text-xl font-bold">{{ item.name }}</h3>
+              <p>{{ item.title }}</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

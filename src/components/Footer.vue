@@ -78,12 +78,16 @@
             <div class="hours text-gray-400">
               <p class="font-bold">Hours</p>
               <p>
-                <span class="font-semibold">Monday - Friday: </span>8.00am -
-                5.00pm
+                <em>
+                  <span class="font-semibold">Monday - Friday: </span>8.00am -
+                  5.00pm
+                </em>
               </p>
               <p>
-                <span class="font-semibold">Saturday & Sunday: </span>11.00am -
-                3.00pm
+                <em>
+                  <span class="font-semibold">Saturday & Sunday: </span>11.00am
+                  - 3.00pm
+                </em>
               </p>
             </div>
           </div>
@@ -107,7 +111,7 @@
             </a>
           </div>
 
-          <p class="font-bold text-xl">LET US HELP YOU FIND YOUR DREAM JOB</p>
+          <p class="font-bold text-xl">LET US DISCUSS YOUR CAREER GOALS</p>
         </section>
       </div>
 
