@@ -18,7 +18,7 @@
 
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bx-calendar text-xl"></i>
-          <p>Our Client</p>
+          <p>Posted 3 days ago</p>
         </div>
 
         <button

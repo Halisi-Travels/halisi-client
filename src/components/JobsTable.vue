@@ -23,13 +23,15 @@
                 {{ job.title }}
               </div>
               <div class="text-sm text-gray-500">
-                <span class="font-semibold">Suitable for:</span>
-                {{ job.candidate }}
+                <span class="font-semibold">Our Client:</span>
+                {{ job.client }}
               </div>
             </td>
+
             <td class="px-6 py-4">
               <div class="text-sm text-gray-500">{{ job.location }}</div>
             </td>
+
             <td class="px-6 py-4">
               <span
                 class="px-2 inline-flex text-xs leading-5 font-semibold uppercase rounded-full bg-green-100 text-green-800"
@@ -52,21 +54,21 @@ export default {
         {
           id: 1,
           title: "Software Engineer",
-          candidate: "BSc in Computer Science",
+          client: "Company YUIJ",
           location: "New York, NY",
           type: "Full-Time",
         },
         {
           id: 2,
           title: "Data Analyst",
-          candidate: "Experience in Data Analytics",
+          client: "Company SWER",
           location: "San Francisco, CA",
           type: "Part-Time",
         },
         {
           id: 3,
           title: "Project Manager",
-          candidate: "PMP Certification",
+          client: "Company XYZ",
           location: "Remote",
           type: "Contract",
         },

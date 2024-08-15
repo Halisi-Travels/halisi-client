@@ -10,6 +10,7 @@
 
           <button
             class="rounded-full bg-secondary px-8 py-1 h-[50px] text-white font-semibold hover:border-b-4 border-orange-900 transition-all duration-300"
+            @click="$router.push('/jobs')"
           >
             FIND A JOB
           </button>
