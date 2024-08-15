@@ -84,7 +84,7 @@
             architecto unde?
           </p>
           <button
-            class="bg-secondary text-white p-3 rounded-md font-semibold w-6/12 mt-2"
+            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-6/12 mt-2"
             @click="$router.push('/contact')"
           >
             CONTACT US

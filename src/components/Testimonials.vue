@@ -10,8 +10,8 @@
         v-for="(tst, index) in testimonials"
         :key="index"
       >
-        <p class="text-lg font-semibold text-gray-100">{{ tst.message }}</p>
-        <h3 class="mt-4 text-gray-200 font-bold">{{ tst.author }}</h3>
+        <p class="text-xl font-semibold text-gray-100">{{ tst.message }}</p>
+        <h3 class="mt-4 text-gray-400 font-bold">~ {{ tst.author }} ~</h3>
       </div>
     </div>
 
