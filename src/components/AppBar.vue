@@ -1,7 +1,7 @@
 <template>
   <div
     id="app-navbar"
-    class="flex justify-between z-10 items-center px-10 py-2"
+    class="flex justify-between z-10 items-center px-10 py-2 h-[80px]"
     :class="{
       'fixed top-0 left-0 right-0 shadow-lg bg-white': isFixed,
       relative: !isFixed,
@@ -66,21 +66,21 @@
 
     <div
       class="mobile-menu-icon hover:cursor-pointer block lg:hidden"
-      @click="openNav"
+      @click="toggleDrawer"
     >
-      <i class="bx bx-menu text-3xl"></i>
+      <i
+        class="bx text-4xl transition-all duration-300"
+        :class="[drawerOpen ? 'bx-x' : 'bx-menu']"
+      ></i>
     </div>
 
     <div
-      class="mobile-nav absolute top-0 left-0 flex flex-col items-center gap-14 text-white font-bold text-2xl bg-black/60 backdrop-blur-lg overflow-hidden h-screen w-0 transition-all duration-500"
+      class="mobile-nav absolute top-[80px] left-0 flex flex-col items-center gap-14 text-white font-bold text-2xl bg-black/60 backdrop-blur-lg overflow-hidden w-screen h-0 transition-all duration-500"
+      :class="{ 'h-[100vh]': drawerOpen }"
     >
-      <i
-        class="bx bx-x font-bold text-4xl text-secondary relative left-11/12 hover:cursor-pointer"
-        @click="closeNav"
-      ></i>
       <router-link
         exact-active-class="text-secondary"
-        class="hover:text-secondary transition-all duration-300"
+        class="hover:text-secondary transition-all duration-300 mt-10"
         to="/"
       >
         HOME
@@ -133,6 +133,7 @@ export default {
   data() {
     return {
       isFixed: false,
+      drawerOpen: false,
     };
   },
 
@@ -145,19 +146,13 @@ export default {
   },
 
   methods: {
-    closeNav() {
-      let navbar = document.getElementsByClassName("mobile-nav")[0];
-      navbar.style.width = "0";
+    toggleDrawer() {
+      this.drawerOpen = !this.drawerOpen;
     },
-    openNav() {
-      let navbar = document.getElementsByClassName("mobile-nav")[0];
-      navbar.style.width = "90%";
-    },
+
     handleScroll() {
       this.isFixed = window.scrollY > 150;
     },
   },
 };
 </script>
-
-<style scoped lang="scss"></style>
