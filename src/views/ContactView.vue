@@ -8,10 +8,10 @@
 
     <main>
       <div
-        class="contact-div flex md:flex-row flex-col gap-14 justify-around md:w-10/12 mx-auto my-12"
+        class="contact-div flex md:flex-row flex-col gap-14 justify-around md:w-11/12 mx-auto my-12"
       >
         <div class="info flex flex-col gap-10">
-          <div class="contact-info flex flex-col gap-2">
+          <section class="contact-info flex flex-col gap-2 mx-3 md:mx-0">
             <p class="section-title text-3xl font-semibold mb-3 text-primary">
               Contact Info
             </p>
@@ -28,9 +28,9 @@
               Cianda House. <br />
               Koinange Str, Nairobi
             </p>
-          </div>
+          </section>
 
-          <div class="business-hours flex flex-col gap-2">
+          <section class="business-hours flex flex-col gap-2 mx-3 md:mx-0">
             <p class="section-title text-3xl font-semibold mb-3 text-primary">
               Business Hours
             </p>
@@ -42,9 +42,9 @@
               <span class="font-semibold">Saturday & Sunday: </span>11.00am -
               3.00pm
             </p>
-          </div>
+          </section>
 
-          <div class="business-hours">
+          <secion class="social-media mx-3 md:mx-0">
             <p class="section-title text-3xl font-semibold mb-3 text-primary">
               Social Media
             </p>
@@ -80,9 +80,9 @@
                 </a>
               </li>
             </ul>
-          </div>
+          </secion>
 
-          <div class="map h-full">
+          <section class="map h-full">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8175055376323!2d36.81569657421936!3d-1.2833555987044385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d3dd7dfc47%3A0xfd9e361041633eb7!2sCianda%20House!5e0!3m2!1sen!2ske!4v1722362238548!5m2!1sen!2ske"
               width="100%"
@@ -92,10 +92,13 @@
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-          </div>
+          </section>
         </div>
 
-        <form class="form md:w-5/12 flex flex-col gap-6" @submit.prevent="">
+        <form
+          class="form w-11/12 mx-auto lg:w-5/12 flex flex-col gap-6"
+          @submit.prevent=""
+        >
           <p class="section-title text-3xl font-semibold text-primary">
             Feedback Form
           </p>
@@ -127,7 +130,7 @@
 
           <button
             type="submit"
-            class="bg-primary rounded flex-initial w-[120px] px-4 py-2 text-white font-semibold"
+            class="bg-primary rounded flex-initial lg:w-1/2 px-4 py-2 text-white font-semibold"
           >
             SUBMIT
           </button>

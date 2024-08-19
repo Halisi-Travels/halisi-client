@@ -7,9 +7,9 @@
     </header>
 
     <main class="my-28">
-      <section class="jobs-table w-8/12 mx-auto">
-        <div class="filter flex justify-between items-end mb-5">
-          <div class="inputs w-3/4 grid grid-cols-2 gap-2.5">
+      <section class="jobs-table w-11/12 lg:w-8/12 mx-auto">
+        <div class="filter flex justify-between items-end mb-5 gap-2">
+          <div class="inputs w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2.5">
             <input
               type="text"
               name="keywords"
@@ -31,7 +31,7 @@
           </div>
 
           <button
-            class="bg-secondary px-3 rounded h-[40px] font-bold text-center text-white"
+            class="bg-secondary px-3 rounded h-[40px] font-bold text-center text-sm md:text-lg text-white"
           >
             SEARCH JOBS
           </button>
