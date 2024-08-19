@@ -27,6 +27,16 @@ const routes = [
     name: "jobs",
     component: () => import("../views/JobsView.vue"),
   },
+  {
+    path: "/auth",
+    name: "authentication",
+    component: () => import("../views/AuthView.vue"),
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: () => import("../views/ProfileView.vue"),
+  },
 ];
 
 const router = createRouter({

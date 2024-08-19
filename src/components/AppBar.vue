@@ -1,5 +1,12 @@
 <template>
-  <div id="app-navbar" class="flex justify-between items-center px-10 py-2">
+  <div
+    id="app-navbar"
+    class="flex justify-between z-10 items-center px-10 py-2"
+    :class="{
+      'fixed top-0 left-0 right-0 shadow-lg bg-white': isFixed,
+      relative: !isFixed,
+    }"
+  >
     <div class="logo-div">
       <img
         width="100px"
@@ -50,7 +57,7 @@
       </router-link>
 
       <router-link
-        to="/"
+        to="/auth"
         class="rounded-full border-2 border-secondary px-4 py-2 text-secondary hover:bg-secondary hover:text-white transition-all duration-300"
       >
         LOG IN / SIGNUP
@@ -112,7 +119,7 @@
       </router-link>
 
       <router-link
-        to="/"
+        to="/auth"
         class="rounded-full border-2 border-secondary px-4 py-2 text-secondary hover:bg-secondary hover:text-white transition-all duration-300"
       >
         LOG IN / SIGNUP
@@ -123,6 +130,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isFixed: false,
+    };
+  },
+
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
   methods: {
     closeNav() {
       let navbar = document.getElementsByClassName("mobile-nav")[0];
@@ -131,6 +152,9 @@ export default {
     openNav() {
       let navbar = document.getElementsByClassName("mobile-nav")[0];
       navbar.style.width = "90%";
+    },
+    handleScroll() {
+      this.isFixed = window.scrollY > 150;
     },
   },
 };

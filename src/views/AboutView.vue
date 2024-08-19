@@ -44,18 +44,11 @@
           class="service flex flex-col lg:flex-row justify-center gap-20"
           v-for="(item, index) in services"
           :key="index"
-          :class="{ 'flex-row-reverse': item.reverse }"
+          :class="{ 'lg:flex-row-reverse': item.reverse }"
         >
           <div class="text lg:flex-initial lg:w-[500px]">
             <h3 class="text-xl font-semibold mb-3">{{ item.title }}</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-              nihil ut accusamus hic enim beatae qui voluptates adipisci numquam
-              error! Atque doloribus sit facilis nostrum eligendi, esse quidem
-              a, maiores vero non magnam exercitationem illo error libero
-              reprehenderit? Tenetur et commodi porro vel beatae dignissimos
-              odit repudiandae labore architecto sint.
-            </p>
+            <p>{{ item.desc }}</p>
           </div>
 
           <div class="image-div flex-initial lg:w-[500px] h-56">
@@ -68,7 +61,7 @@
         </div>
       </section>
 
-      <section class="staff mb-28">
+      <section class="staff mb-28 lg:w-11/12 mx-auto">
         <h3 class="text-4xl font-semibold text-center mb-10">Meet The Team</h3>
         <p class="text-center text-lg w-11/12 mx-auto">
           Our dedicated team of professionals is committed to providing
@@ -114,25 +107,25 @@ export default {
         {
           url: require("@/assets/images/flight_b.jpg"),
           title: "Flight Booking",
-          desc: "",
+          desc: "Our flight booking service is designed to make your travel planning seamless and stress-free. Whether you're booking a domestic flight or planning an international journey, we offer a wide range of options to suit your schedule and budget. With access to the best deals and a user-friendly booking process, we ensure you get the most value for your money. Our team is here to assist you with any special requests, from selecting preferred seats to arranging in-flight amenities, so you can enjoy a smooth and comfortable travel experience from takeoff to landing.",
           reverse: false,
         },
         {
           url: require("@/assets/images/hotel_b.jpg"),
           title: "Hotel Booking",
-          desc: "",
+          desc: "Our hotel booking service is tailored to provide you with the perfect stay, no matter where your travels take you. We partner with a wide selection of hotels, from luxurious resorts to budget-friendly accommodations, ensuring there's something to suit every taste and budget. With our easy-to-use booking platform, you can compare prices, read reviews, and choose the amenities that matter most to you. Whether you're looking for a cozy boutique hotel or a family-friendly stay, we take care of every detail, so you can focus on enjoying your trip. Let us help you find the ideal place to rest and recharge during your travels.",
           reverse: true,
         },
         {
           url: require("@/assets/images/travel.jpg"),
           title: "Vacation Packages",
-          desc: "",
+          desc: "Our vacation packages are crafted to offer you a complete and worry-free travel experience. Each package is thoughtfully curated to include everything you need for an unforgettable getaway—from flights and accommodations to guided tours and unique experiences. Whether you're dreaming of a romantic escape, a family adventure, or an all-inclusive resort stay, we have options to suit every preference and budget. With our vacation packages, you can explore new destinations, indulge in local cultures, and enjoy seamless travel planning, all while saving time and money. Let us handle the details, so you can relax and immerse yourself in the joy of your vacation.",
           reverse: false,
         },
         {
           url: require("@/assets/images/job.jpg"),
           title: "Job Placement Packages",
-          desc: "",
+          desc: "Our job placement packages are designed to streamline your journey to finding the perfect career opportunity. We offer comprehensive services that include resume building, personalized job matching, interview preparation, and career coaching. Whether you're a recent graduate looking to start your career, a professional seeking advancement, or someone transitioning into a new field, our tailored packages provide the support and resources you need. With our expertise, you'll gain access to exclusive job openings, receive guidance on navigating the job market, and ultimately secure a position that aligns with your skills, experience, and career goals. Let us help you take the next step towards your dream job.",
           reverse: true,
         },
       ],

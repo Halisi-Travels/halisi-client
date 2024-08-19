@@ -59,10 +59,16 @@
         >
           <h3 class="text-xl font-semibold">LOOKING FOR A JOB</h3>
           <p class="text-center lg:text-start">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
-            tenetur vel in quibusdam praesentium, animi ex laborum dignissimos
-            odio culpa quia vero odit accusamus fugit at quos explicabo
-            architecto unde?
+            We excel at connecting you with the right job at the right time,
+            ensuring a perfect match between your skills and the ideal company.
+            Our approach is thorough and strategic, covering every aspect of the
+            hiring process. From identifying potential job openings to
+            understanding the specific requirements, evaluating candidates,
+            conducting interviews, and ultimately matching the best fit for both
+            the company and the candidate, we are dedicated to your success.
+            Whether you’re looking for the next step in your career, exploring
+            new opportunities, or aiming for a significant career move, our
+            expertise guarantees a smooth and successful transition.
           </p>
           <button
             class="bg-secondary text-white p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
@@ -89,10 +95,16 @@
         >
           <h3 class="text-xl font-semibold">PLANNING YOUR NEXT VACATION</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
-            tenetur vel in quibusdam praesentium, animi ex laborum dignissimos
-            odio culpa quia vero odit accusamus fugit at quos explicabo
-            architecto unde?
+            Planning your next vacation can be an exciting and fulfilling
+            experience. Start by envisioning your ideal getaway—whether it's a
+            relaxing beach retreat, an adventurous mountain trek, or an
+            immersive cultural exploration. Consider your budget, travel dates,
+            and the type of experience you're seeking. Research destinations
+            that match your preferences, and explore accommodations, activities,
+            and local attractions. Don’t forget to check for travel deals and
+            packages that can offer great value. With careful planning, you can
+            create a memorable vacation that perfectly suits your desires and
+            needs.
           </p>
           <button
             class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
@@ -120,14 +132,15 @@
               LET'S FIND YOU THAT DREAM JOB
             </h2>
             <p class="text-center">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-              odit asperiores dolorem eligendi repellat, possimus optio
-              provident quae tenetur est totam vel quasi illum laboriosam fugit
-              debitis quisquam tempore sapiente modi aspernatur dolorum. Debitis
-              voluptatibus delectus dolor laborum eveniet eius nam ratione
-              repellat pariatur minus, modi nihil? Est harum voluptate
-              asperiores facere vero, aut tempora mollitia necessitatibus ipsam
-              commodi? Adipisci?
+              Start by identifying your strengths, skills, and passions—what
+              makes you unique in the job market? With this clarity, we can
+              target the right opportunities that align with your aspirations.
+              From refining your resume and crafting compelling cover letters to
+              preparing you for interviews and negotiations, we're here to
+              support you every step of the way. Together, we'll navigate the
+              job search process, connect you with the best opportunities, and
+              help you secure a position that not only matches your
+              qualifications but also fulfills your career ambitions.
             </p>
             <button
               class="rounded-full px-5 py-3 bg-white text-black font-bold hover:border-b-4 border-gray-600 transition-all duration-300"
