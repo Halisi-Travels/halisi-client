@@ -7,8 +7,8 @@
           class="find-job flex flex-col md:flex-row gap-10 items-center justify-between py-10"
         >
           <div class="text-3xl font-bold md:w-8/12 mt-8 lg:mt-0">
-            <p class="text-center md:text-start">
-              BETTER JOB, BETTER LIFE, JOIN US & EXPLORE
+            <p class="text-center md:text-start uppercase">
+              Enhanced Career, Enhanced Life—Connect with Us and Discover
             </p>
           </div>
 
