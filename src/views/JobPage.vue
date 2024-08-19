@@ -3,9 +3,13 @@
     <header
       class="h-[50vh] bg-gray-600 text-white flex flex-col items-center justify-center gap-y-10 relative"
     >
-      <p class="font-bold text-4xl uppercase">Civil Engineering</p>
+      <p class="font-bold text-xl md:text-2xl lg:text-4xl uppercase">
+        Civil Engineering
+      </p>
 
-      <div class="flex justify-center w-auto gap-5 font-semibold text-lg">
+      <div
+        class="flex justify-center flex-col lg:flex-row w-auto gap-5 font-semibold text-lg"
+      >
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bxs-user-account text-xl"></i>
           <p>Our Client</p>
@@ -31,12 +35,14 @@
       <h4 class="uppercase font-bold">Full Time</h4>
     </header>
 
-    <main class="w-8/12 mx-auto flex justify-between my-28">
-      <div class="job-desc">
+    <main
+      class="w-11/12 md:w-10/12 lg:w-8/12 mx-auto flex flex-col lg:flex-row gap-9 justify-between my-28"
+    >
+      <section class="job-desc">
         <h3 class="uppercase font-bold text-2xl tracking-wider">Procument</h3>
-        <div class="flex gap-4 items-center mt-2">
+        <div class="flex flex-col lg:flex-row gap-4 lg:items-center mt-2">
           <p
-            class="rounded-full px-4 py-2 bg-green-800 text-sm uppercase text-white"
+            class="rounded-full px-4 py-2 bg-green-800 w-auto md:w-1/2 lg:w-auto text-sm uppercase text-white"
           >
             Full Time
           </p>
@@ -81,9 +87,10 @@
         >
           APPLY
         </button>
-      </div>
-      <div class="company-details flex-1">
-        <div class="border p-4 w-1/2 mx-auto">
+      </section>
+
+      <section class="company-details flex-1">
+        <div class="border p-4 lg:w-1/2 mx-auto">
           <img
             class="w-[200px] mx-auto"
             :src="require('@/assets/logo.png')"
@@ -93,7 +100,7 @@
           <p class="italic font-semibold">Our Client</p>
           <p class="text-gray-500 font-medium">Engineering Company</p>
         </div>
-      </div>
+      </section>
     </main>
   </div>
 </template>
