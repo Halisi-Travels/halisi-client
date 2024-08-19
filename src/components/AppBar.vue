@@ -145,6 +145,12 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
 
+  watch: {
+    $route() {
+      this.drawerOpen = false; // Close the drawer on route change
+    },
+  },
+
   methods: {
     toggleDrawer() {
       this.drawerOpen = !this.drawerOpen;
