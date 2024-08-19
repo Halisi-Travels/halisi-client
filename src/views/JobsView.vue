@@ -8,7 +8,10 @@
 
     <main class="my-28">
       <section class="jobs-table w-11/12 lg:w-8/12 mx-auto">
-        <div class="filter flex justify-between items-end mb-5 gap-2">
+        <div
+          v-if="jobs.length > 0"
+          class="filter flex justify-between items-end mb-5 gap-2"
+        >
           <div class="inputs w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2.5">
             <input
               type="text"
@@ -36,8 +39,19 @@
             SEARCH JOBS
           </button>
         </div>
+        <p
+          v-if="jobs.length <= 0"
+          class="text-gray-500 font-semibold p-3 bg-gray-200 border-l-4 border-gray-500"
+        >
+          There are no jobs posted!
+        </p>
 
-        <JobsTable />
+        <div v-else class="job-count">
+          <p class="text-gray-400 font-semibold text-xl mb-4">
+            (Available jobs: {{ jobs.length }})
+          </p>
+          <JobsTable :jobs="jobs" />
+        </div>
       </section>
     </main>
   </div>
@@ -45,12 +59,17 @@
 
 <script>
 import JobsTable from "@/components/JobsTable.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "JobsPage",
 
   components: {
     JobsTable,
+  },
+
+  computed: {
+    ...mapGetters(["jobs"]),
   },
 };
 </script>

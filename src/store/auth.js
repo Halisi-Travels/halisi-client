@@ -7,12 +7,12 @@ export default {
   },
 
   mutations: {
-    setUser(state, payload) {
+    SET_USER(state, payload) {
       state.user = payload.user;
       state.token = payload.token;
     },
 
-    logout(state) {
+    LOGOUT(state) {
       state.user = null;
       state.token = "";
       state.error = null;
@@ -20,11 +20,40 @@ export default {
   },
 
   actions: {
+    async signup({ commit }, payload) {
+      try {
+        commit("SET_LOADING", true);
+        commit("CLEAR_ERROR");
+
+        const res = await axios.post("/auth/register", {
+          name: payload.get("name"),
+          email: payload.get("email"),
+          password: payload.get("password"),
+          role: payload.get("role"),
+        });
+
+        if (res.status == 200) {
+          let user = res.data.loadedUser;
+          let token = res.data.token;
+
+          commit("SET_USER", { user, token });
+
+          localStorage.setItem("token", token);
+          axios.defaults.headers.common["Authorization"] = token;
+        }
+      } catch (err) {
+        commit("SET_ERROR", err.response?.data?.message || "signup failed");
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
+
     async login({ commit }, payload) {
       try {
-        commit("setLoading", true);
+        commit("SET_LOADING", true);
+        commit("CLEAR_ERROR");
 
-        const res = await axios.post("/owner/login", {
+        const res = await axios.post("/auth/login", {
           email: payload.get("email"),
           password: payload.get("password"),
         });
@@ -36,27 +65,26 @@ export default {
           localStorage.setItem("token", token);
           axios.defaults.headers.common["Authorization"] = token;
 
-          commit("setUser", { user, token });
-          commit("clearError");
+          commit("SET_USER", { user, token });
         }
       } catch (err) {
-        commit("setError", err.response.data.message);
+        commit("SET_ERROR", err.response.data.message);
         localStorage.removeItem("token");
       } finally {
-        commit("setLoading", false);
+        commit("SET_LOADING", false);
       }
     },
 
     logout({ commit }) {
-      commit("setLoading", true);
-
-      commit("logout");
-      commit("clearError");
+      commit("SET_LOADING", true);
+      commit("CLEAR_ERROR");
+      commit("CLEAR_JOBS");
+      commit("LOGOUT");
 
       localStorage.removeItem("token");
       delete axios.defaults.headers.common["Authorization"];
 
-      commit("setLoading", false);
+      commit("SET_LOADING", false);
     },
   },
 

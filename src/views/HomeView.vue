@@ -46,7 +46,14 @@
 
     <main class="my-20">
       <section class="jobs-table w-11/12 md:w-10/12 lg:w-8/12 mx-auto">
-        <JobsTable />
+        <p
+          v-if="jobs.length <= 0"
+          class="text-gray-500 font-semibold p-3 bg-gray-200 border-l-4 border-gray-500"
+        >
+          There are no jobs posted!
+        </p>
+
+        <JobsTable v-else :jobs="filteredJobs" />
       </section>
 
       <hr class="my-20" />
@@ -164,6 +171,7 @@
 import Testimonials from "@/components/Testimonials.vue";
 import JobsTable from "@/components/JobsTable.vue";
 import { useHead } from "@vueuse/head";
+import { mapGetters } from "vuex";
 
 export default {
   name: "HomeView",
@@ -171,6 +179,14 @@ export default {
   components: {
     Testimonials,
     JobsTable,
+  },
+
+  computed: {
+    ...mapGetters(["jobs"]),
+
+    filteredJobs() {
+      return this.jobs.slice(0, 5);
+    },
   },
 
   mounted() {

@@ -4,7 +4,7 @@
       class="h-[50vh] bg-gray-600 text-white flex flex-col items-center justify-center gap-y-10 relative"
     >
       <p class="font-bold text-xl md:text-2xl lg:text-4xl uppercase">
-        Civil Engineering
+        {{ job.title }}
       </p>
 
       <div
@@ -12,17 +12,17 @@
       >
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bxs-user-account text-xl"></i>
-          <p>Our Client</p>
+          <p>{{ job.client }}</p>
         </div>
 
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bx-map text-xl"></i>
-          <p>Nairobi, Kenya</p>
+          <p>{{ job.location }}</p>
         </div>
 
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bx-calendar text-xl"></i>
-          <p>Posted 3 days ago</p>
+          <p>Posted on {{ formatDate(job.createdAt) }}</p>
         </div>
 
         <button
@@ -32,39 +32,38 @@
         </button>
       </div>
 
-      <h4 class="uppercase font-bold">Full Time</h4>
+      <h4 class="uppercase font-bold">{{ job.type }}</h4>
     </header>
 
     <main
       class="w-11/12 md:w-10/12 lg:w-8/12 mx-auto flex flex-col lg:flex-row gap-9 justify-between my-28"
     >
       <section class="job-desc">
-        <h3 class="uppercase font-bold text-2xl tracking-wider">Procument</h3>
+        <h3 class="uppercase font-bold text-2xl tracking-wider">
+          {{ job.title }}
+        </h3>
         <div class="flex flex-col lg:flex-row gap-4 lg:items-center mt-2">
           <p
             class="rounded-full px-4 py-2 bg-green-800 w-auto md:w-1/2 lg:w-auto text-sm uppercase text-white"
           >
             Full Time
           </p>
+          <p class="text-secondary font-semibold uppercase">Engineering</p>
           <p class="text-secondary font-semibold uppercase">
-            Civil Engineering
-          </p>
-          <p class="text-secondary font-semibold uppercase">
-            <i class="bx bxs-map text-gray-400"></i>Nairobi, Kenya (Remote)
+            <i class="bx bxs-map text-gray-400"></i>{{ job.location }}
           </p>
         </div>
 
         <div class="text-center uppercase text-gray-400 font-semibold">
-          Posted 5 days ago
+          Posted on {{ formatDate(job.createdAt) }}
         </div>
 
         <div class="requirements text-gray-500">
           <p class="italic font-semibold">Requirements</p>
           <ul class="flex flex-col gap-3 mt-3">
-            <li v-for="(item, index) in 8" :key="index">
+            <li v-for="(item, index) in job.requirements" :key="index">
               <p>
-                <i class="bx bx-right-arrow-alt text-lg"></i> Lorem ipsum, dolor
-                amet consectetur adipisicing elit. Laboriosam, eos?
+                <i class="bx bx-right-arrow-alt text-lg mr-2"></i>{{ item }}
               </p>
             </li>
           </ul>
@@ -73,10 +72,9 @@
         <div class="responsibilities mt-5 text-gray-500">
           <p class="italic font-semibold">Roles and Responsibilities</p>
           <ul class="flex flex-col gap-3 mt-3">
-            <li v-for="(item, index) in 8" :key="index">
+            <li v-for="(item, index) in job.roles" :key="index">
               <p>
-                <i class="bx bx-right-arrow-alt text-lg"></i> Lorem ipsum, dolor
-                amet consectetur adipisicing elit. Laboriosam, eos?
+                <i class="bx bx-right-arrow-alt text-lg mr-2"></i>{{ item }}
               </p>
             </li>
           </ul>
@@ -98,7 +96,7 @@
           />
           <br />
           <p class="italic font-semibold">Our Client</p>
-          <p class="text-gray-500 font-medium">Engineering Company</p>
+          <p class="text-gray-500 font-medium">{{ job.client }}</p>
         </div>
       </section>
     </main>
@@ -106,11 +104,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  data() {
-    return {
-      key: "",
-    };
+  computed: {
+    ...mapGetters(["job"]),
   },
 };
 </script>

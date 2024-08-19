@@ -15,8 +15,8 @@
           <tr
             v-for="(job, index) in jobs"
             :key="index"
-            class="hover:bg-gray-50 hover:border-l-2 border-secondary cursor-pointer"
-            @click="$router.push(`/job/${job.id}`)"
+            class="hover:bg-gray-50 hover:border-l-4 hover:border-secondary hover:cursor-pointer"
+            @click="$router.push(`/job/${job._id}`)"
           >
             <td class="px-6 py-4">
               <div class="text-sm font-medium text-gray-900 uppercase">
@@ -48,32 +48,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      jobs: [
-        {
-          id: 1,
-          title: "Software Engineer",
-          client: "Company YUIJ",
-          location: "New York, NY",
-          type: "Full-Time",
-        },
-        {
-          id: 2,
-          title: "Data Analyst",
-          client: "Company SWER",
-          location: "San Francisco, CA",
-          type: "Part-Time",
-        },
-        {
-          id: 3,
-          title: "Project Manager",
-          client: "Company XYZ",
-          location: "Remote",
-          type: "Contract",
-        },
-      ],
-    };
-  },
+  props: ["jobs"],
 };
 </script>

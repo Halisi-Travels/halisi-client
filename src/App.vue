@@ -8,6 +8,26 @@
   </div>
 </template>
 
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["user"]),
+  },
+
+  watch: {
+    user(val) {
+      if (val != null || val != undefined) {
+        this.$router.push("/");
+      } else {
+        this.$router.push("/auth");
+      }
+    },
+  },
+};
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

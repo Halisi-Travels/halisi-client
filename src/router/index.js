@@ -1,11 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import store from "@/store";
 
 const routes = [
   {
     path: "/",
     name: "home",
     component: HomeView,
+    beforeEnter: (to, from, next) => {
+      store
+        .dispatch("fetchJobs")
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
   },
   {
     path: "/about",
@@ -21,6 +33,17 @@ const routes = [
     path: "/job/:id",
     name: "job description",
     component: () => import("../views/JobPage.vue"),
+    beforeEnter: (to, _, next) => {
+      store
+        .dispatch("fetchJob", to.params.id)
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
   },
   {
     path: "/jobs",

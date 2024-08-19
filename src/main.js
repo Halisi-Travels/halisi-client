@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import axios from "axios";
+import { format } from "date-fns";
 import { createHead, useHead } from "@vueuse/head";
 
 // import tailwind
@@ -10,6 +12,9 @@ import "./index.css";
 // global components
 import Navbar from "@/components/AppBar.vue";
 import Footer from "@/components/Footer.vue";
+
+axios.defaults.withCredentials = false;
+axios.defaults.baseURL = "http://localhost:4000/api/v1";
 
 const head = createHead();
 
@@ -33,6 +38,13 @@ useHead({
 });
 
 createApp(App)
+  .mixin({
+    methods: {
+      formatDate: function (date) {
+        return format(new Date(date), "MMMM do, yyyy");
+      },
+    },
+  })
   .use(store)
   .use(router)
   .use(head)

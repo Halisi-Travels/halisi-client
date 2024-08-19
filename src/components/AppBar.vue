@@ -49,6 +49,7 @@
       </router-link>
 
       <router-link
+        v-if="isAuthenticated"
         active-class="text-secondary"
         to="/profile"
         class="hover:text-secondary transition-all duration-300"
@@ -57,6 +58,7 @@
       </router-link>
 
       <router-link
+        v-else
         to="/auth"
         class="rounded-full border-2 border-secondary px-4 py-2 text-secondary hover:bg-secondary hover:text-white transition-all duration-300"
       >
@@ -111,6 +113,7 @@
       </router-link>
 
       <router-link
+        v-if="isAuthenticated"
         active-class="text-secondary"
         to="/profile"
         class="hover:text-secondary transition-all duration-300"
@@ -119,6 +122,7 @@
       </router-link>
 
       <router-link
+        v-else
         to="/auth"
         class="rounded-full border-2 border-secondary px-4 py-2 text-secondary hover:bg-secondary hover:text-white transition-all duration-300"
       >
@@ -129,6 +133,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
@@ -143,6 +149,10 @@ export default {
 
   beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+  },
+
+  computed: {
+    ...mapGetters(["isAuthenticated", "user"]),
   },
 
   watch: {

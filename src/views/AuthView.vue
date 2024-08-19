@@ -7,60 +7,103 @@
     </header>
 
     <main class="lg:w-8/12 md:w-10/12 w-11/12 mx-auto my-28">
-      <!-- <p
-        class="p-3 bg-green-200 tracking-wider font-semibold uppercase text-sm"
+      <p
+        v-if="showSuccessMessage"
+        class="p-3 bg-green-200 text-green-700 border-l-4 border-green-700 tracking-wider font-semibold uppercase text-sm mb-8"
       >
-        A mail has been sent to your Sign Up email address. Please follow the
-        link to activate your account If you don't get an email, please check
-        your spam folder
+        Successfully Registered. you are being redirected to your profile
       </p>
 
       <p
-        class="p-3 bg-green-200 tracking-wider font-semibold uppercase text-sm"
+        v-if="error"
+        class="p-3 bg-red-200 text-red-600 border-l-4 border-red-600 tracking-wider font-semibold uppercase text-sm mb-8"
       >
-        Your account has been activated, you can
-        <span class="text-secondary/70">LOG IN Now</span>
-      </p> -->
+        {{ error }}
+      </p>
 
       <div class="flex gap-20 flex-col lg:flex-row">
         <section class="login flex-1">
-          <form action="POST" class="flex flex-col gap-2">
+          <form
+            @submit.prevent="userLogin"
+            action="POST"
+            class="flex flex-col gap-2"
+          >
             <h2 class="text-2xl font-bold">LOGIN</h2>
 
-            <input type="email" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
+            <input
+              v-model="loginForm.email"
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
+            <input
+              v-model="loginForm.password"
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
 
             <button
+              id="login_btn"
               type="submit"
-              class="rounded-md px-4 py-2 font-bold bg-secondary text-white w-fit h-fit"
+              :disabled="loading"
+              class="relative flex items-center rounded-md px-4 py-2 font-bold bg-secondary text-white w-fit h-fit disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              LOGIN
+              <span
+                v-if="loading"
+                class="absolute left-4 inline-block w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin"
+              ></span>
+              <span v-if="!loading">LOGIN</span>
+              <span v-else>Logging in...</span>
             </button>
 
-            <div class="remember flex justify-between mt-4">
-              <div class="flex gap-2 text-sm">
-                <input type="checkbox" name="remember" id="remember" />
-                <p>Remember me</p>
-              </div>
-
+            <div class="remember flex justify-end mt-4 hover:cursor-pointer">
               <p class="text-secondary/70">forgot password?</p>
             </div>
           </form>
         </section>
+
         <hr class="lg:hidden" />
+
         <section class="signup flex-1">
-          <form action="POST" class="flex flex-col gap-2">
+          <form
+            @submit.prevent="userSignup"
+            action="POST"
+            class="flex flex-col gap-2"
+          >
             <h2 class="text-2xl font-bold">REGISTER</h2>
 
-            <input type="name" name="name" placeholder="Name" />
-            <input type="email" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
+            <input
+              v-model="registerForm.name"
+              type="name"
+              name="name"
+              placeholder="Name"
+            />
+            <input
+              v-model="registerForm.email"
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
+            <input
+              v-model="registerForm.password"
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
 
             <button
+              id="login_btn"
               type="submit"
-              class="rounded-md px-4 py-2 font-bold bg-secondary text-white w-fit"
+              :disabled="loading"
+              class="relative flex items-center rounded-md px-4 py-2 font-bold bg-secondary text-white w-fit h-fit disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              SUBMIT
+              <span
+                v-if="loading"
+                class="absolute left-4 inline-block w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin"
+              ></span>
+              <span v-if="!loading">SUBMIT</span>
+              <span v-else>registering...</span>
             </button>
           </form>
         </section>
@@ -68,6 +111,67 @@
     </main>
   </div>
 </template>
+
+<script>
+import { mapGetters, mapActions } from "vuex";
+
+export default {
+  data() {
+    return {
+      rememberMe: false,
+      showSuccessMessage: false,
+      loginForm: {
+        email: "",
+        password: "",
+      },
+      registerForm: {
+        name: "",
+        email: "",
+        password: "",
+      },
+    };
+  },
+
+  computed: {
+    ...mapGetters(["isAuthenticated", "error", "loading"]),
+  },
+
+  methods: {
+    ...mapActions(["login", "register", "setError"]),
+
+    async userLogin() {
+      if (this.loginForm.email != "" && this.loginForm.password != "") {
+        let userData = new FormData();
+
+        userData.append("email", this.loginForm.email);
+        userData.append("password", this.loginForm.password);
+
+        this.login(userData);
+      } else {
+        this.setError("Email and Password is required!");
+      }
+    },
+
+    userSignup() {
+      if (
+        this.registerForm.name != "" &&
+        this.registerForm.email != "" &&
+        this.registerForm.password != ""
+      ) {
+        let userData = new FormData();
+
+        userData.append("name", this.registerForm.name);
+        userData.append("email", this.registerForm.email);
+        userData.append("password", this.registerForm.password);
+
+        this.register(userData);
+      } else {
+        this.setError("All fields are required!");
+      }
+    },
+  },
+};
+</script>
 
 <style scoped lang="scss">
 input {

@@ -33,6 +33,7 @@
 
           <div
             class="p-3 hover:bg-gray-300 hover:border-l-4 hover:cursor-pointer border-gray-400 transition-all ease-in-out duration-300 flex items-center gap-2"
+            @click="logout"
           >
             <i class="bx bx-log-out text-2xl mr-2"></i>
             <p>Logout</p>
@@ -55,7 +56,9 @@
               <p class="text-4xl lg:text-6xl font-semibold text-secondary">
                 Welcome,
               </p>
-              <p class="text-2xl lg:text-4xl font-semibold">Brian Mawira</p>
+              <p class="text-2xl lg:text-4xl font-semibold">
+                {{ user ? user.name : "Null" }}
+              </p>
               <p class="mt-2 text-gray-600">
                 <span class="font-semibold">0</span> applications
               </p>
@@ -66,10 +69,34 @@
 
           <div class="flex">
             <p class="font-semibold">Email:</p>
-            <p>mawira@gmail.com</p>
+            <p>{{ user ? user.email : "Null" }}</p>
           </div>
         </section>
       </div>
     </main>
   </div>
 </template>
+
+<script>
+import { mapActions, mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["user"]),
+  },
+
+  watch: {
+    user(val) {
+      if (val != null || val != undefined) {
+        this.$router.push("/");
+      } else {
+        this.$router.push("/auth");
+      }
+    },
+  },
+
+  methods: {
+    ...mapActions(["logout"]),
+  },
+};
+</script>
