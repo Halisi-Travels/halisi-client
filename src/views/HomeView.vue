@@ -212,6 +212,10 @@ input {
     margin-bottom: 10px;
   }
 }
+.page-title,
+.slogan {
+  font-family: "Montserrat Subrayada";
+}
 
 .dream-job {
   background-image: url("@/assets/images/job_banner.jpg");

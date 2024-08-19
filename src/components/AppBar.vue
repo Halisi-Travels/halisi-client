@@ -162,3 +162,11 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+a {
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+</style>
