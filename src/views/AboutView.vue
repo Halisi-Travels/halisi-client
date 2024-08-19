@@ -6,8 +6,10 @@
       <p class="font-bold text-4xl">ABOUT US</p>
     </header>
 
-    <main class="my-10 w-10/12 mx-auto">
-      <section class="intro flex flex-col gap-5 text-lg">
+    <main class="my-10">
+      <section
+        class="intro flex flex-col gap-5 text-lg w-11/12 text-center lg:text-start md:w-10/12 mx-auto"
+      >
         <p>
           We at Halisi Travels are dedicated to providing exceptional travel
           experiences that are seamless, personalized, and memorable. Our team
@@ -39,12 +41,12 @@
       <section class="services my-16 flex flex-col gap-12 w-11/12 mx-auto">
         <h3 class="text-4xl font-semibold text-center mb-10">Our Services</h3>
         <div
-          class="service flex justify-center gap-20"
+          class="service flex flex-col lg:flex-row justify-center gap-20"
           v-for="(item, index) in services"
           :key="index"
           :class="{ 'flex-row-reverse': item.reverse }"
         >
-          <div class="text flex-initial w-[500px]">
+          <div class="text lg:flex-initial lg:w-[500px]">
             <h3 class="text-xl font-semibold mb-3">{{ item.title }}</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
@@ -56,7 +58,7 @@
             </p>
           </div>
 
-          <div class="image-div flex-initial w-[500px] h-56">
+          <div class="image-div flex-initial lg:w-[500px] h-56">
             <img
               class="object-cover w-full h-full"
               :src="item.url"
@@ -68,24 +70,24 @@
 
       <section class="staff mb-28">
         <h3 class="text-4xl font-semibold text-center mb-10">Meet The Team</h3>
-        <p class="text-center text-lg w-2/3 mx-auto">
+        <p class="text-center text-lg w-11/12 mx-auto">
           Our dedicated team of professionals is committed to providing
           exceptional service and support at every stage of your journey.
         </p>
 
-        <div class="flex justify-between mt-16">
+        <div class="flex justify-between flex-col lg:flex-row mt-16">
           <div
-            class="flex flex-col"
+            class="flex flex-col items-center"
             v-for="(item, index) in staff"
             :key="index"
           >
             <div
-              class="rounded-full min-w-[200px] max-w-[250px] min-h-[200px] max-h-[250px] overflow-hidden"
+              class="rounded-full w-[280px] lg:w-[200px] h-[280px] lg:h-[200px] overflow-hidden bg-red-600"
             >
               <img
                 :src="item.url"
                 alt="staff profile"
-                class="w-full h-full object-fit"
+                class="w-full h-full object-cover"
               />
             </div>
 

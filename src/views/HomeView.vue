@@ -1,16 +1,20 @@
 <template>
   <div class="home">
-    <header>
+    <header class="h-[50vh] md:h-[70vh] bg-cover bg-fixed">
       <div
-        class="w-full h-full bg-black/30 flex flex-col items-center justify-center text-white gap-8"
+        class="w-full h-full bg-black/30 flex flex-col items-center justify-center text-white gap-8 p-4 md:p-0"
       >
-        <h1 class="page-title text-6xl font-bold">Halisi Recruitment Agency</h1>
-        <p class="slogan font-semibold text-xl">
+        <h1 class="page-title text-3xl md:text-6xl font-bold">
+          Halisi Recruitment Agency
+        </h1>
+        <p class="slogan font-semibold text-sm md:text-xl text-center">
           YOUR GLOBAL RECRUITMENT PARTNER IN KENYA, UK, DUBAI
         </p>
 
         <div class="search container flex w-auto mt-7">
-          <div class="flex gap-4 p-3 bg-white/40 rounded-tl-md rounded-bl-md">
+          <div
+            class="md:flex gap-4 p-3 bg-white/40 rounded-tl-md rounded-bl-md"
+          >
             <input
               type="text"
               name="keywords"
@@ -41,30 +45,34 @@
     </header>
 
     <main class="my-20">
-      <section class="jobs-table w-8/12 mx-auto">
+      <section class="jobs-table w-11/12 md:w-10/12 lg:w-8/12 mx-auto">
         <JobsTable />
       </section>
 
       <hr class="my-20" />
 
-      <section class="job-search flex justify-between gap-3 w-8/12 mx-auto">
-        <div class="info w-2/4 flex flex-col gap-7">
+      <section
+        class="job-search flex flex-col-reverse lg:flex-row justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto"
+      >
+        <div
+          class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
+        >
           <h3 class="text-xl font-semibold">LOOKING FOR A JOB</h3>
-          <p>
+          <p class="text-center lg:text-start">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
             tenetur vel in quibusdam praesentium, animi ex laborum dignissimos
             odio culpa quia vero odit accusamus fugit at quos explicabo
             architecto unde?
           </p>
           <button
-            class="bg-secondary text-white p-3 rounded-md font-semibold w-6/12 mt-2"
+            class="bg-secondary text-white p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
             @click="$router.push('/jobs')"
           >
             SEARCH
           </button>
         </div>
 
-        <div class="image w-[400px] h-[300px] overflow-hidden">
+        <div class="image lg:w-[400px] h-[300px] overflow-hidden">
           <img
             class="w-full h-full object-cover"
             :src="require('@/assets/images/job_search.webp')"
@@ -74,9 +82,11 @@
       </section>
 
       <section
-        class="vacation flex flex-row-reverse justify-between gap-3 w-8/12 mx-auto my-20"
+        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
       >
-        <div class="info w-2/4 flex flex-col gap-7">
+        <div
+          class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
+        >
           <h3 class="text-xl font-semibold">PLANNING YOUR NEXT VACATION</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
@@ -85,14 +95,14 @@
             architecto unde?
           </p>
           <button
-            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-6/12 mt-2"
+            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
             @click="$router.push('/contact')"
           >
             CONTACT US
           </button>
         </div>
 
-        <div class="image w-[400px] h-[300px] overflow-hidden">
+        <div class="image lg:w-[400px] h-[300px] overflow-hidden">
           <img
             class="w-full h-full object-cover"
             :src="require('@/assets/images/vacation.png')"
@@ -102,9 +112,11 @@
       </section>
 
       <section class="dream-job">
-        <div class="bg-black/60 p-8 text-white">
-          <div class="w-1/2 mx-auto flex flex-col items-center gap-8">
-            <h2 class="text-2xl font-semibold">
+        <div class="bg-black/60 p-4 md:p-8 text-white">
+          <div
+            class="w-11/12 md:2-10/12 lg:w-1/2 mx-auto flex flex-col items-center gap-8"
+          >
+            <h2 class="text-xl md:text-2xl font-semibold text-center">
               LET'S FIND YOU THAT DREAM JOB
             </h2>
             <p class="text-center">
@@ -126,8 +138,8 @@
         </div>
       </section>
 
-      <section class="testimonials my-28">
-        <h3 class="text-2xl font-semibold text-center mb-20">TESTIMONIALS</h3>
+      <section class="testimonials mt-20 w-11/12 md:10/12 lg:w-8/12 mx-auto">
+        <h3 class="text-2xl font-semibold text-center mb-10">TESTIMONIALS</h3>
 
         <Testimonials />
       </section>
@@ -169,18 +181,22 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  height: 80vh;
   background-image: url("@/assets/images/h_banner.webp");
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 input {
   padding: 5px 10px;
   border-radius: 0.375rem;
   color: black;
+  width: 100%;
   &:focus {
     outline: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  input:not(:last-child) {
+    margin-bottom: 10px;
   }
 }
 

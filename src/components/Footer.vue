@@ -2,14 +2,18 @@
 <template>
   <div id="app-footer" class="relative bg-secondary">
     <div class="bg-black/40 text-white">
-      <div class="w-9/12 mx-auto">
-        <section class="find-job flex justify-between py-10">
-          <div class="text-3xl font-bold w-8/12">
-            <p>BETTER JOB, BETTER LIFE, JOIN US & EXPLORE</p>
+      <div class="w-11/12 md:w-9/12 mx-auto">
+        <section
+          class="find-job flex flex-col md:flex-row gap-10 items-center justify-between py-10"
+        >
+          <div class="text-3xl font-bold md:w-8/12 mt-8 lg:mt-0">
+            <p class="text-center md:text-start">
+              BETTER JOB, BETTER LIFE, JOIN US & EXPLORE
+            </p>
           </div>
 
           <button
-            class="rounded-full bg-secondary px-8 py-1 h-[50px] text-white font-semibold hover:border-b-4 border-orange-900 transition-all duration-300"
+            class="rounded-full bg-secondary px-8 py-1 h-[50px] text-sm lg:text-lg text-white font-semibold hover:border-b-4 border-orange-900 transition-all duration-300"
             @click="$router.push('/jobs')"
           >
             FIND A JOB
@@ -25,8 +29,10 @@
 
         <hr />
 
-        <section class="info flex gap-8 justify-between my-20">
-          <div class="our-info flex-initial w-[300px]">
+        <section
+          class="info flex flex-col lg:flex-row gap-8 justify-between my-20"
+        >
+          <div class="our-info flex-initial lg:w-[300px]">
             <p class="text-xl font-bold">WHO WE ARE</p>
             <div class="divider w-1/12 h-[3px] bg-secondary mt-2 mb-4" />
             <p class="text-gray-400">
@@ -40,7 +46,7 @@
             </p>
           </div>
 
-          <div class="our-work flex-initial w-[300px]">
+          <div class="our-work flex-initial lg:w-[300px]">
             <p class="text-xl font-bold">WHAT WE DO</p>
             <div class="divider w-1/12 h-[3px] bg-secondary mt-2 mb-4" />
 
