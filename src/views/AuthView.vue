@@ -11,7 +11,8 @@
         v-if="showSuccessMessage"
         class="p-3 bg-green-200 text-green-700 border-l-4 border-green-700 tracking-wider font-semibold uppercase text-sm mb-8"
       >
-        Successfully Registered. you are being redirected to your profile
+        Account Successfully Registered. Use your credentials to
+        <span class="text-secondary/60">LOGIN NOW</span>
       </p>
 
       <p
@@ -93,7 +94,7 @@
             />
 
             <button
-              id="login_btn"
+              id="signup_btn"
               type="submit"
               :disabled="loading"
               class="relative flex items-center rounded-md px-4 py-2 font-bold bg-secondary text-white w-fit h-fit disabled:opacity-50 disabled:cursor-not-allowed"
@@ -137,7 +138,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["login", "register", "setError"]),
+    ...mapActions(["login", "signup", "setError"]),
 
     async userLogin() {
       if (this.loginForm.email != "" && this.loginForm.password != "") {
@@ -146,13 +147,17 @@ export default {
         userData.append("email", this.loginForm.email);
         userData.append("password", this.loginForm.password);
 
-        this.login(userData);
+        await this.login(userData);
+
+        // clear the fields
+        this.loginForm.email = "";
+        this.loginForm.password = "";
       } else {
         this.setError("Email and Password is required!");
       }
     },
 
-    userSignup() {
+    async userSignup() {
       if (
         this.registerForm.name != "" &&
         this.registerForm.email != "" &&
@@ -164,7 +169,20 @@ export default {
         userData.append("email", this.registerForm.email);
         userData.append("password", this.registerForm.password);
 
-        this.register(userData);
+        await this.signup(userData);
+
+        if (!this.error) {
+          this.showSuccessMessage = true;
+
+          // clear the fields
+          this.registerForm.name = "";
+          this.registerForm.email = "";
+          this.registerForm.password = "";
+
+          setTimeout(() => {
+            this.showSuccessMessage = false;
+          }, 3000);
+        }
       } else {
         this.setError("All fields are required!");
       }

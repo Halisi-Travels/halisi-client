@@ -14,7 +14,7 @@ import Navbar from "@/components/AppBar.vue";
 import Footer from "@/components/Footer.vue";
 
 axios.defaults.withCredentials = false;
-axios.defaults.baseURL = "http://localhost:4000/api/v1";
+axios.defaults.baseURL = "https://halisi-api-v1.vercel.app/api/v1";
 
 const head = createHead();
 

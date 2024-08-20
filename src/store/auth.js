@@ -29,7 +29,6 @@ export default {
           name: payload.get("name"),
           email: payload.get("email"),
           password: payload.get("password"),
-          role: payload.get("role"),
         });
 
         if (res.status == 200) {
