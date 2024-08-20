@@ -16,7 +16,6 @@ import Footer from "@/components/Footer.vue";
 axios.defaults.withCredentials = false;
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
-// "https://halisi-api-v1.vercel.app/api/v1"
 const head = createHead();
 
 useHead({
