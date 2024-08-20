@@ -12,7 +12,7 @@
           <h4 class="text-xl font-semibold">Your Account</h4>
           <p class="flex-initial w-3/4">
             You are currently signed in as
-            <span class="font-semibold">{{ user.email }}. </span>
+            <span class="font-semibold">{{ user ? user.email : "Null" }} </span>
             <span
               class="font-semibold text-secondary/90 uppercase text-sm hover:cursor-pointer"
               @click="logout"

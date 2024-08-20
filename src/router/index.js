@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import store from "@/store";
+import NProgress from "@/nprogress-config";
 
 const routes = [
   {
@@ -65,6 +66,9 @@ const routes = [
     path: "/jobs/new",
     name: "new job",
     component: () => import("../views/NewJob.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/auth",
@@ -75,6 +79,9 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: () => import("../views/ProfileView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
 ];
 
@@ -88,6 +95,24 @@ const router = createRouter({
 
     return { top: 0, left: 0 };
   },
+});
+
+router.beforeEach((to, _, next) => {
+  NProgress.start();
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (store.getters.isAuthenticated) {
+      next();
+      return;
+    }
+
+    next("/auth");
+  } else {
+    next();
+  }
+});
+
+router.afterEach(() => {
+  NProgress.done();
 });
 
 export default router;
