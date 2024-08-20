@@ -149,9 +149,11 @@ export default {
 
         await this.login(userData);
 
-        // clear the fields
-        this.loginForm.email = "";
-        this.loginForm.password = "";
+        if (!this.error) {
+          // clear the fields
+          this.loginForm.email = "";
+          this.loginForm.password = "";
+        }
       } else {
         this.setError("Email and Password is required!");
       }
