@@ -104,12 +104,17 @@
           </p>
 
           <div>
-            <label for="name">Your name</label>
+            <label for="name">Full Name</label>
             <input type="name" name="name" />
           </div>
 
           <div>
-            <label for="email">Your email</label>
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" />
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
             <input type="email" name="email" />
           </div>
 
@@ -119,7 +124,7 @@
           </div>
 
           <div>
-            <label for="name">Your name</label>
+            <label for="name">Message</label>
             <textarea
               name="message"
               id="message"

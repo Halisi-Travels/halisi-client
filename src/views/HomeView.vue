@@ -8,7 +8,7 @@
           Halisi Recruitment Agency
         </h1>
         <p class="slogan font-semibold text-sm md:text-xl text-center">
-          YOUR GLOBAL RECRUITMENT PARTNER IN KENYA, UK, DUBAI
+          YOUR GLOBAL RECRUITMENT PARTNER IN KENYA
         </p>
 
         <div class="search container flex w-auto mt-7">

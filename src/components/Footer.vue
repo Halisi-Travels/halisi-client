@@ -60,6 +60,9 @@
               <p class="text-gray-400">Vacation Packages</p>
             </div>
             <div class="border-b border-gray-200 w-full py-3">
+              <p class="text-gray-400">Visa Applications</p>
+            </div>
+            <div class="border-b border-gray-200 w-full py-3">
               <p class="text-gray-400">Job Placement Packages</p>
             </div>
           </div>
