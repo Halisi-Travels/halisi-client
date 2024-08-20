@@ -16,7 +16,7 @@
             v-for="(job, index) in jobs"
             :key="index"
             class="hover:bg-gray-50 hover:border-l-4 hover:border-secondary hover:cursor-pointer"
-            @click="$router.push(`/job/${job._id}`)"
+            @click="$router.push(`/jobs/${job._id}`)"
           >
             <td class="px-6 py-4">
               <div class="text-sm font-medium text-gray-900 uppercase">
@@ -24,12 +24,14 @@
               </div>
               <div class="text-sm text-gray-500">
                 <span class="font-semibold">Our Client:</span>
-                {{ job.client }}
+                {{ job.client.name }}
               </div>
             </td>
 
             <td class="px-6 py-4">
-              <div class="text-sm text-gray-500">{{ job.location }}</div>
+              <div class="text-sm text-gray-500">
+                <p>{{ job.location }}, {{ job.country }}</p>
+              </div>
             </td>
 
             <td class="px-6 py-4">

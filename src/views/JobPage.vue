@@ -12,12 +12,14 @@
       >
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bxs-user-account text-xl"></i>
-          <p>{{ job.client }}</p>
+          <p>{{ job.client.name }}</p>
         </div>
 
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bx-map text-xl"></i>
-          <p>{{ job.location }}</p>
+          <p>
+            {{ job.location }}, <span>{{ job.country }}</span>
+          </p>
         </div>
 
         <div class="item flex justify-center items-center gap-2">
@@ -32,21 +34,24 @@
         </button>
       </div>
 
-      <h4 class="uppercase font-bold">{{ job.type }}</h4>
+      <h4 class="uppercase font-bold">
+        {{ job.type }}
+      </h4>
     </header>
 
     <main
       class="w-11/12 md:w-10/12 lg:w-8/12 mx-auto flex flex-col lg:flex-row gap-9 justify-between my-28"
     >
-      <section class="job-desc">
+      <section class="job flex-1">
         <h3 class="uppercase font-bold text-2xl tracking-wider">
           {{ job.title }}
         </h3>
         <div class="flex flex-col lg:flex-row gap-4 lg:items-center mt-2">
           <p
-            class="rounded-full px-4 py-2 bg-green-800 w-auto md:w-1/2 lg:w-auto text-sm uppercase text-white"
+            class="rounded-full px-4 py-2 bg-green-800 w-auto md:w-1/2 lg:w-auto text-sm uppercase text-white font-bold"
           >
-            Full Time
+            {{ job.type }}
+            <span>({{ job.remote ? "REMOTE" : "ON-SITE" }})</span>
           </p>
           <p class="text-secondary font-semibold uppercase">Engineering</p>
           <p class="text-secondary font-semibold uppercase">
@@ -58,12 +63,22 @@
           Posted on {{ formatDate(job.createdAt) }}
         </div>
 
-        <div class="requirements text-gray-500">
+        <div class="job-desc text-gray-500 mt-5">
+          <p class="italic font-semibold">Job Description</p>
+          <p class="text-sm">{{ capitalize(job.desc) }}</p>
+        </div>
+
+        <div class="requirements text-gray-500 mt-5">
           <p class="italic font-semibold">Requirements</p>
           <ul class="flex flex-col gap-3 mt-3">
-            <li v-for="(item, index) in job.requirements" :key="index">
+            <li
+              v-for="(item, index) in job.requirements"
+              :key="index"
+              class="flex gap-1"
+            >
+              <i class="bx bx-right-arrow-alt text-lg"></i>
               <p>
-                <i class="bx bx-right-arrow-alt text-lg mr-2"></i>{{ item }}
+                {{ capitalize(item) }}
               </p>
             </li>
           </ul>
@@ -72,23 +87,63 @@
         <div class="responsibilities mt-5 text-gray-500">
           <p class="italic font-semibold">Roles and Responsibilities</p>
           <ul class="flex flex-col gap-3 mt-3">
-            <li v-for="(item, index) in job.roles" :key="index">
+            <li
+              v-for="(item, index) in job.requirements"
+              :key="index"
+              class="flex gap-1"
+            >
+              <i class="bx bx-right-arrow-alt text-lg"></i>
               <p>
-                <i class="bx bx-right-arrow-alt text-lg mr-2"></i>{{ item }}
+                {{ capitalize(item) }}
               </p>
             </li>
           </ul>
         </div>
 
-        <button
-          class="mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
-        >
-          APPLY
-        </button>
+        <div class="btns flex justify-between">
+          <button
+            class="mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
+          >
+            APPLY
+          </button>
+
+          <button
+            class="mt-10 rounded-full bg-red-600 px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300 uppercase"
+            @click="showDeleteDialog = true"
+          >
+            Delete
+          </button>
+
+          <div
+            v-if="showDeleteDialog"
+            class="fixed inset-0 z-10 flex items-center justify-center bg-black/50"
+          >
+            <div
+              class="bg-white p-12 rounded shadow-lg flex flex-col items-center w-4/12"
+            >
+              <i class="bx bx-alarm-exclamation text-9xl text-red-700"></i>
+              <p class="mb-4 text-2xl font-semibold uppercase">Are you sure?</p>
+              <div class="flex justify-center gap-2">
+                <button
+                  @click="deleteJob"
+                  class="bg-red-500 text-white px-4 py-2 rounded"
+                >
+                  Yes
+                </button>
+                <button
+                  @click="showDeleteDialog = false"
+                  class="bg-gray-200 px-4 py-2 rounded"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="company-details flex-1">
-        <div class="border p-4 lg:w-1/2 mx-auto">
+        <div class="border p-4 mx-auto">
           <img
             class="w-[200px] mx-auto"
             :src="require('@/assets/logo.png')"
@@ -96,7 +151,16 @@
           />
           <br />
           <p class="italic font-semibold">Our Client</p>
-          <p class="text-gray-500 font-medium">{{ job.client }}</p>
+          <p class="text-gray-500 font-semibold">{{ job.client.name }}</p>
+          <p class="text-gray-500 font-medium">
+            <a
+              :href="job.client.website"
+              target="_blank"
+              class="text-blue-700 hover:underline"
+            >
+              {{ job.client.website }}
+            </a>
+          </p>
         </div>
       </section>
     </main>
@@ -104,11 +168,32 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
+  data() {
+    return {
+      showDeleteDialog: false,
+    };
+  },
+
   computed: {
     ...mapGetters(["job"]),
+  },
+
+  methods: {
+    ...mapActions(["removeJob"]),
+
+    capitalize(text) {
+      if (!text) return "";
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    },
+
+    async deleteJob() {
+      await this.removeJob(this.job._id);
+
+      this.$router.push("/jobs");
+    },
   },
 };
 </script>

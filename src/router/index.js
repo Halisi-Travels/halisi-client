@@ -7,7 +7,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (_, __, next) => {
       store
         .dispatch("fetchJobs")
         .then(() => {
@@ -30,7 +30,7 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
-    path: "/job/:id",
+    path: "/jobs/:id",
     name: "job description",
     component: () => import("../views/JobPage.vue"),
     beforeEnter: (to, _, next) => {
@@ -49,6 +49,17 @@ const routes = [
     path: "/jobs",
     name: "jobs",
     component: () => import("../views/JobsView.vue"),
+    beforeEnter: (_, __, next) => {
+      store
+        .dispatch("fetchJobs")
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
   },
   {
     path: "/jobs/new",
