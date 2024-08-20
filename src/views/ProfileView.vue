@@ -3,8 +3,9 @@
     <header
       class="h-[50vh] bg-gray-600 text-white flex items-center justify-center"
     >
-      <p class="font-bold text-4xl">USER PROFILE</p>
+      <p class="page-title font-bold text-4xl">USER PROFILE</p>
     </header>
+
     <main class="my-20 lg:my-28 md:w-10/12 lg:w-8/12 mx-auto">
       <div class="flex gap-1 md:gap-5">
         <section

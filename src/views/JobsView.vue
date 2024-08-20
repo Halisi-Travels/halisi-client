@@ -1,12 +1,19 @@
 <template>
   <div id="jobs-page">
     <header
-      class="h-[50vh] bg-gray-600 text-white flex items-center justify-center"
+      class="relative h-[50vh] bg-gray-600 text-white flex items-center justify-center"
     >
-      <p class="font-bold text-4xl">Find A Job</p>
+      <p class="page-title font-bold text-4xl">Find A Job</p>
+
+      <button
+        class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 uppercase transfom mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg hover:border-b-4 border-orange-700 transition-all duration-300"
+        @click="$router.push('/jobs/new')"
+      >
+        Post A Job
+      </button>
     </header>
 
-    <main class="my-28">
+    <main class="my-20">
       <section class="jobs-table w-11/12 lg:w-8/12 mx-auto">
         <div
           v-if="jobs.length > 0"

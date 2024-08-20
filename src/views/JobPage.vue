@@ -3,7 +3,7 @@
     <header
       class="h-[50vh] bg-gray-600 text-white flex flex-col items-center justify-center gap-y-10 relative"
     >
-      <p class="font-bold text-xl md:text-2xl lg:text-4xl uppercase">
+      <p class="page-title font-bold text-xl md:text-2xl lg:text-4xl uppercase">
         {{ job.title }}
       </p>
 

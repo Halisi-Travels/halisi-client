@@ -35,6 +35,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.page-title,
+.slogan {
+  font-family: "Montserrat Subrayada";
+}
+
 nav {
   padding: 30px;
 

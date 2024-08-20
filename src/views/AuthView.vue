@@ -3,7 +3,7 @@
     <header
       class="h-[50vh] bg-gray-600 text-white flex items-center justify-center"
     >
-      <p class="font-bold text-4xl">LOGIN</p>
+      <p class="page-title font-bold text-4xl">LOGIN</p>
     </header>
 
     <main class="lg:w-8/12 md:w-10/12 w-11/12 mx-auto my-28">
