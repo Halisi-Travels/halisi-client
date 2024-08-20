@@ -68,6 +68,7 @@ const routes = [
     component: () => import("../views/NewJob.vue"),
     meta: {
       requiresAuth: true,
+      requiresAdmin: true,
     },
   },
   {
@@ -82,6 +83,11 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
+  },
+  {
+    path: "/unauthorized",
+    name: "unauthorized",
+    component: () => import("../views/UnauthorizedView.vue"),
   },
 ];
 
@@ -98,14 +104,31 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _, next) => {
+  const userRole = store.getters.role;
+  const isAuthenticated = store.getters.isAuthenticated;
+
   NProgress.start();
+
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (store.getters.isAuthenticated) {
+    if (isAuthenticated) {
       next();
       return;
     }
 
     next("/auth");
+  } else {
+    next();
+  }
+
+  if (to.matched.some((record) => record.meta.requiresAdmin)) {
+    console.log(userRole);
+
+    if (userRole == "employer" || userRole == "admin") {
+      next();
+      return;
+    }
+
+    next("/unauthorized");
   } else {
     next();
   }

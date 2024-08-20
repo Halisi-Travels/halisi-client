@@ -6,6 +6,7 @@
       <p class="page-title font-bold text-4xl">Find A Job</p>
 
       <button
+        v-show="user && user.role != 'candidate'"
         class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 uppercase transfom mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg hover:border-b-4 border-orange-700 transition-all duration-300"
         @click="$router.push('/jobs/new')"
       >
@@ -76,7 +77,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["jobs"]),
+    ...mapGetters(["jobs", "user"]),
   },
 };
 </script>

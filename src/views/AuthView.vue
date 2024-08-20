@@ -73,6 +73,15 @@
             class="flex flex-col gap-2"
           >
             <h2 class="text-2xl font-bold">REGISTER</h2>
+            <select
+              id="userType"
+              name="userType"
+              class="border rounded px-3 py-2"
+              v-model="registerForm.role"
+            >
+              <option value="candidate">Candidate</option>
+              <option value="employer">Employer</option>
+            </select>
 
             <input
               v-model="registerForm.name"
@@ -126,6 +135,7 @@ export default {
         password: "",
       },
       registerForm: {
+        role: "candidate",
         name: "",
         email: "",
         password: "",
@@ -194,7 +204,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-input {
+input,
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid grey;
@@ -204,7 +215,8 @@ input {
   }
 }
 
-form input:not(:last-child) {
+form input:not(:last-child),
+select {
   margin-bottom: 10px;
 }
 </style>

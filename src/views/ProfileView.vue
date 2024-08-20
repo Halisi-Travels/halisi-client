@@ -68,9 +68,15 @@
 
           <hr class="my-10" />
 
-          <div class="flex">
-            <p class="font-semibold">Email:</p>
-            <p>{{ user ? user.email : "Null" }}</p>
+          <div class="more-info text-gray-600">
+            <div class="flex gap-1 uppercase">
+              <p class="font-bold">Email:</p>
+              <p>{{ user ? user.email : "Null" }}</p>
+            </div>
+            <div class="flex gap-1 uppercase">
+              <p class="font-bold">Role:</p>
+              <p>{{ user ? user.role : "Null" }}</p>
+            </div>
           </div>
         </section>
       </div>

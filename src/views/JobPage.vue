@@ -108,6 +108,7 @@
           </button>
 
           <button
+            v-if="user && user.role == 'admin'"
             class="mt-10 rounded-full bg-red-600 px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300 uppercase"
             @click="showDeleteDialog = true"
           >
@@ -178,7 +179,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["job"]),
+    ...mapGetters(["job", "user"]),
   },
 
   methods: {
