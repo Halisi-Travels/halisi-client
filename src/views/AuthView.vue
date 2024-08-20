@@ -149,7 +149,7 @@ export default {
 
         await this.login(userData);
 
-        if (!this.error) {
+        if (this.error != null) {
           // clear the fields
           this.loginForm.email = "";
           this.loginForm.password = "";
