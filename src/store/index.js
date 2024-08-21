@@ -5,12 +5,14 @@ import persistedState from "vuex-persistedstate";
 import Jobs from "./jobs";
 import Auth from "./auth";
 import Shared from "./shared";
+import Application from "./application";
 
 export default createStore({
   modules: {
     Jobs,
     Auth,
     Shared,
+    Application,
   },
   plugins: [persistedState()],
 });
