@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 import store from "@/store";
 import NProgress from "@/nprogress-config";
+
+import HomeView from "../views/HomeView.vue";
+// import Unknown from "@/views/UnknownView.vue";
 
 const routes = [
   {
@@ -88,6 +90,12 @@ const routes = [
     path: "/unauthorized",
     name: "unauthorized",
     component: () => import("../views/UnauthorizedView.vue"),
+  },
+  // Catch-all route for handling 404 - Not Found
+  {
+    path: "/:catchAll(.*)",
+    name: "notfound",
+    component: () => import("@/views/UnknownView.vue"),
   },
 ];
 

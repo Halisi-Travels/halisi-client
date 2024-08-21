@@ -19,7 +19,7 @@ export default {
   watch: {
     user(val) {
       if (val != null || val != undefined) {
-        this.$router.push("/");
+        this.$router.push("/profile");
       } else {
         this.$router.push("/auth");
       }
