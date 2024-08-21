@@ -296,11 +296,16 @@ export default {
 
       await this.newApplication(formData);
 
-      this.showSuccessMessage = true;
+      if (!this.error) {
+        this.showSuccessMessage = true;
 
-      setTimeout(() => {
-        this.showSuccessMessage = false;
-      }, 2000);
+        setTimeout(() => {
+          this.showSuccessMessage = false;
+          if (this.user) {
+            // this.$router.push("/profile");
+          }
+        }, 2000);
+      }
     },
   },
 };

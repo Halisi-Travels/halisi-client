@@ -37,8 +37,6 @@ export default {
       commit("CLEAR_ERROR");
 
       try {
-        console.log(payload);
-
         const res = await axios.post("/applications", payload);
         const application = res.data.result;
 
