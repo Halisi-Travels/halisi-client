@@ -87,6 +87,11 @@ const routes = [
     },
   },
   {
+    path: "/apply",
+    name: "apply page",
+    component: () => import("../views/ResumeView.vue"),
+  },
+  {
     path: "/unauthorized",
     name: "unauthorized",
     component: () => import("../views/UnauthorizedView.vue"),
