@@ -30,7 +30,7 @@
 
       <form method="POST" enctype="multipart/form-data" @submit.prevent>
         <section class="w-11/12 lg:w-8/12 mx-auto">
-          <div class="flex justify-between py-5 text-gray-400">
+          <div class="flex justify-between py-5 text-gray-400" v-if="user">
             <h4 class="text-xl font-semibold">Your Account</h4>
             <p class="flex-initial w-3/4">
               You are currently signed in as
@@ -47,7 +47,7 @@
             </p>
           </div>
 
-          <hr />
+          <hr v-if="user" />
 
           <div class="flex justify-between py-5 text-gray-400">
             <h4 class="text-xl font-semibold">Your name</h4>
@@ -201,7 +201,7 @@
         </section>
 
         <section
-          class="submit-btn w-11/12 lg:w-8/12 mx-auto flex justify-between mt-10"
+          class="submit-btn w-11/12 lg:w-8/12 mx-auto flex flex-col md:flex-row gap-4 justify-between mt-10"
         >
           <button
             type="button"
@@ -213,14 +213,14 @@
 
           <div
             v-if="showSuccessMessage"
-            class="p-3 bg-green-200 text-green-700 border-r-4 border-green-700 w-1/2 font-bold uppercase text-sm text-center"
+            class="p-3 bg-green-200 text-green-700 border-r-4 border-green-700 md:w-10/12 lg:w-1/2 font-bold uppercase text-sm text-center"
           >
             The application has been submitted succesfully
           </div>
 
           <div
             v-if="error"
-            class="p-3 bg-red-200 text-red-700 border-r-4 border-red-700 w-1/2 font-bold uppercase text-sm text-center"
+            class="p-3 bg-red-200 text-red-700 border-r-4 border-red-700 md:w-10/12 lg:w-1/2 font-bold uppercase text-sm text-center"
           >
             {{ error }}
           </div>
