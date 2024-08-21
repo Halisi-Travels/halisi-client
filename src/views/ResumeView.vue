@@ -7,6 +7,25 @@
     </header>
 
     <main class="mt-10 mb-20">
+      <section
+        class="w-11/12 lg:w-8/12 mx-auto job-details text-gray-500 flex flex-col gap-3"
+      >
+        <h2 class="font-bold text-3xl md:text-5xl">{{ job.title }}</h2>
+        <div class="job-detail">
+          <h3 class="font-bold text-lg">Job Description</h3>
+          <p class="italic">{{ job.desc }}</p>
+        </div>
+        <div class="job-detail">
+          <h3 class="font-bold text-lg">Job Location</h3>
+          <p>
+            {{ job.location }}, {{ job.country }}
+            <span>({{ job.remote ? "Remote" : "On-Site" }})</span>
+          </p>
+        </div>
+
+        <hr class="my-6" />
+      </section>
+
       <section class="w-11/12 lg:w-8/12 mx-auto">
         <div class="flex justify-between py-5 text-gray-400">
           <h4 class="text-xl font-semibold">Your Account</h4>
