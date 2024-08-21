@@ -69,16 +69,19 @@
           <hr class="my-10" />
 
           <div class="more-info text-gray-600">
-            <div class="flex gap-1 uppercase">
+            <div class="flex gap-1">
               <p class="font-bold">Email:</p>
               <p>{{ user ? user.email : "Null" }}</p>
             </div>
-            <div class="flex gap-1 uppercase">
+            <div class="flex gap-1">
               <p class="font-bold">Role:</p>
               <p>{{ user ? user.role : "Null" }}</p>
             </div>
           </div>
         </section>
+
+        <section id="applications"></section>
+        <section id="applications"></section>
       </div>
     </main>
   </div>
@@ -94,9 +97,7 @@ export default {
 
   watch: {
     user(val) {
-      if (val != null || val != undefined) {
-        this.$router.push("/");
-      } else {
+      if (val == null || val == undefined) {
         this.$router.push("/auth");
       }
     },

@@ -104,31 +104,30 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _, next) => {
-  const userRole = store.getters.role;
   const isAuthenticated = store.getters.isAuthenticated;
 
   NProgress.start();
 
+  // user needs to be logged in
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (isAuthenticated) {
+      const userRole = store.getters.role;
+      // user needs to be an admin or employer
+      if (to.matched.some((record) => record.meta.requiresAdmin)) {
+        if (userRole == "employer" || userRole == "admin") {
+          next();
+          return;
+        }
+
+        next("/unauthorized");
+        return;
+      }
+
       next();
       return;
     }
 
     next("/auth");
-  } else {
-    next();
-  }
-
-  if (to.matched.some((record) => record.meta.requiresAdmin)) {
-    console.log(userRole);
-
-    if (userRole == "employer" || userRole == "admin") {
-      next();
-      return;
-    }
-
-    next("/unauthorized");
   } else {
     next();
   }

@@ -277,7 +277,7 @@ export default {
 
         setTimeout(() => {
           this.showSuccessMessage = false;
-          this.$router.push(`/jobs/${this.job._id}`);
+          this.$router.push(`/jobs`);
         }, 2000);
       }
     },
