@@ -12,6 +12,10 @@
 import { mapGetters } from "vuex";
 
 export default {
+  mounted() {
+    this.$store.dispatch("clearError");
+  },
+
   computed: {
     ...mapGetters(["user"]),
   },
