@@ -90,6 +90,9 @@ const routes = [
     path: "/apply",
     name: "apply page",
     component: () => import("../views/ResumeView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/unauthorized",
@@ -125,6 +128,7 @@ router.beforeEach((to, _, next) => {
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (isAuthenticated) {
       const userRole = store.getters.role;
+
       // user needs to be an admin or employer
       if (to.matched.some((record) => record.meta.requiresAdmin)) {
         if (userRole == "employer" || userRole == "admin") {

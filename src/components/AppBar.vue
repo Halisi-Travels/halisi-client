@@ -7,7 +7,7 @@
       relative: !isFixed,
     }"
   >
-    <div class="logo-div">
+    <div class="logo-div hover:cursor-pointer" @click="$router.push('/')">
       <img
         width="100px"
         :src="require('@/assets/logo.png')"
