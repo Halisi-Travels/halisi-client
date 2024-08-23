@@ -127,7 +127,6 @@
                   </p>
                 </div>
               </div>
-              <p>{{ skills.length }}</p>
             </div>
           </div>
 
@@ -250,6 +249,10 @@ export default {
       urls: [],
       cv: null,
     };
+  },
+
+  mounted() {
+    this.name = this.user.name;
   },
 
   computed: {

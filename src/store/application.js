@@ -49,6 +49,24 @@ export default {
         commit("SET_LOADING", false);
       }
     },
+
+    async getUserApplications({ commit }) {
+      commit("SET_LOADING", true);
+      commit("CLEAR_ERROR");
+
+      try {
+        const res = await axios.get(`/applications/user`);
+        const applications = res.data.applications;
+
+        if (res.status == 200) {
+          commit("SET_USER_APPLICATIONS", applications);
+        }
+      } catch (err) {
+        commit("SET_ERROR", err.response.data.message);
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
   },
 
   getters: {

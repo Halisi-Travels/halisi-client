@@ -21,18 +21,21 @@
         >
           <div class="inputs w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2.5">
             <input
+              v-model="filters.keywords"
               type="text"
               name="keywords"
               id="keywords"
               placeholder="KEYWORDS"
             />
             <input
+              v-model="filters.location"
               type="text"
               name="location"
               id="location"
               placeholder="LOCATION"
             />
             <input
+              v-model="filters.category"
               type="text"
               name="category"
               id="category"
@@ -42,6 +45,7 @@
 
           <button
             class="bg-secondary px-3 rounded h-[40px] font-bold text-center text-sm md:text-lg text-white"
+            @click="filterJobs"
           >
             SEARCH JOBS
           </button>
@@ -66,7 +70,7 @@
 
 <script>
 import JobsTable from "@/components/JobsTable.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "JobsPage",
@@ -75,8 +79,27 @@ export default {
     JobsTable,
   },
 
+  data() {
+    return {
+      filters: {
+        keywords: "",
+        location: "",
+        category: "",
+      },
+    };
+  },
+
   computed: {
     ...mapGetters(["jobs", "user"]),
+  },
+
+  methods: {
+    ...mapActions(["jobsFilter"]),
+
+    async filterJobs() {
+      const params = new URLSearchParams(this.filters).toString();
+      await this.jobsFilter(params);
+    },
   },
 };
 </script>

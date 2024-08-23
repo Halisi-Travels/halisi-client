@@ -82,6 +82,17 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: () => import("../views/ProfileView.vue"),
+    beforeEnter: (_, __, next) => {
+      store
+        .dispatch("getUserApplications")
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
     meta: {
       requiresAuth: true,
     },
@@ -89,7 +100,7 @@ const routes = [
   {
     path: "/apply",
     name: "apply page",
-    component: () => import("../views/ResumeView.vue"),
+    component: () => import("../views/ApplyView.vue"),
     meta: {
       requiresAuth: true,
     },

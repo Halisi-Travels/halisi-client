@@ -13,7 +13,7 @@
 
         <div class="search container flex w-auto mt-7">
           <div
-            class="md:flex gap-4 p-3 bg-white/40 rounded-tl-md rounded-bl-md"
+            class="flex flex-col lg:flex-row gap-4 p-3 bg-white/40 rounded-tl-md rounded-bl-md"
           >
             <input
               type="text"

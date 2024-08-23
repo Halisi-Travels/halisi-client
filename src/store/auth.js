@@ -25,21 +25,11 @@ export default {
         commit("SET_LOADING", true);
         commit("CLEAR_ERROR");
 
-        const res = await axios.post("/auth/register", {
+        await axios.post("/auth/register", {
           name: payload.get("name"),
           email: payload.get("email"),
           password: payload.get("password"),
         });
-
-        if (res.status == 200) {
-          let user = res.data.loadedUser;
-          let token = res.data.token;
-
-          commit("SET_USER", { user, token });
-
-          localStorage.setItem("token", token);
-          axios.defaults.headers.common["Authorization"] = token;
-        }
       } catch (err) {
         commit("SET_ERROR", err.response?.data?.message || "signup failed");
       } finally {
@@ -61,10 +51,10 @@ export default {
           let user = res.data.loadedUser;
           let token = res.data.token;
 
+          commit("SET_USER", { user, token });
+
           localStorage.setItem("token", token);
           axios.defaults.headers.common["Authorization"] = token;
-
-          commit("SET_USER", { user, token });
         }
       } catch (err) {
         commit("SET_ERROR", err.response.data.message);
@@ -78,6 +68,7 @@ export default {
       commit("SET_LOADING", true);
       commit("CLEAR_ERROR");
       commit("CLEAR_JOBS");
+      commit("CLEAR_APPLICATIONS");
       commit("LOGOUT");
 
       localStorage.removeItem("token");

@@ -85,11 +85,11 @@
           </ul>
         </div>
 
-        <div class="responsibilities mt-5 text-gray-500">
+        <div class="roles mt-5 text-gray-500">
           <p class="italic font-semibold">Roles and Responsibilities</p>
           <ul class="flex flex-col gap-3 mt-3">
             <li
-              v-for="(item, index) in job.requirements"
+              v-for="(item, index) in job.roles"
               :key="index"
               class="flex gap-1"
             >
@@ -200,5 +200,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
