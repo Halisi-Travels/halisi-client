@@ -21,11 +21,11 @@
         >
           <div class="inputs w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2.5">
             <input
-              v-model="filters.keywords"
+              v-model="filters.tags"
               type="text"
-              name="keywords"
-              id="keywords"
-              placeholder="KEYWORDS"
+              name="tags"
+              id="tags"
+              placeholder="TAGS"
             />
             <input
               v-model="filters.location"
@@ -82,7 +82,7 @@ export default {
   data() {
     return {
       filters: {
-        keywords: "",
+        tags: "",
         location: "",
         category: "",
       },
