@@ -15,17 +15,14 @@
 
     <main class="my-20">
       <section class="jobs-table w-11/12 lg:w-8/12 mx-auto">
-        <div
-          v-if="jobs.length > 0"
-          class="filter flex justify-between items-end mb-5 gap-2"
-        >
+        <div class="filter flex justify-between items-end mb-5 gap-2">
           <div class="inputs w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2.5">
             <input
-              v-model="filters.tags"
+              v-model="filters.country"
               type="text"
-              name="tags"
-              id="tags"
-              placeholder="TAGS"
+              name="country"
+              id="country"
+              placeholder="COUNTRY"
             />
             <input
               v-model="filters.location"
@@ -50,6 +47,7 @@
             SEARCH JOBS
           </button>
         </div>
+
         <p
           v-if="jobs.length <= 0"
           class="text-gray-500 font-semibold p-3 bg-gray-200 border-l-4 border-gray-500"
@@ -82,7 +80,7 @@ export default {
   data() {
     return {
       filters: {
-        tags: "",
+        country: "",
         location: "",
         category: "",
       },

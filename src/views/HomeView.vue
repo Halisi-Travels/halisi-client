@@ -16,18 +16,21 @@
             class="flex flex-col lg:flex-row gap-4 p-3 bg-white/40 rounded-tl-md rounded-bl-md"
           >
             <input
+              v-model="filters.country"
               type="text"
-              name="keywords"
-              id="keywords"
-              placeholder="KEYWORDS"
+              name="country"
+              id="country"
+              placeholder="COUNTRY"
             />
             <input
+              v-model="filters.location"
               type="text"
               name="location"
               id="location"
               placeholder="LOCATION"
             />
             <input
+              v-model="filters.category"
               type="text"
               name="category"
               id="category"
@@ -36,7 +39,9 @@
           </div>
 
           <button
-            class="bg-secondary text-white p-3 rounded-tr-md rounded-br-md font-semibold"
+            :disabled="loading"
+            class="bg-secondary text-white p-3 rounded-tr-md rounded-br-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+            @click="filterJobs"
           >
             SEARCH
           </button>
@@ -171,7 +176,7 @@
 import Testimonials from "@/components/Testimonials.vue";
 import JobsTable from "@/components/JobsTable.vue";
 import { useHead } from "@vueuse/head";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "HomeView",
@@ -181,8 +186,18 @@ export default {
     JobsTable,
   },
 
+  data() {
+    return {
+      filters: {
+        country: "",
+        location: "",
+        category: "",
+      },
+    };
+  },
+
   computed: {
-    ...mapGetters(["jobs"]),
+    ...mapGetters(["jobs", "loading"]),
 
     filteredJobs() {
       return this.jobs.slice(0, 5);
@@ -204,6 +219,16 @@ export default {
         },
       ],
     });
+  },
+
+  methods: {
+    ...mapActions(["jobsFilter"]),
+
+    async filterJobs() {
+      const params = new URLSearchParams(this.filters).toString();
+      await this.jobsFilter(params);
+      this.$router.push("/jobs");
+    },
   },
 };
 </script>

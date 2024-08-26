@@ -12,12 +12,12 @@
       >
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bxs-user-account text-xl"></i>
-          <p>{{ job.client.name }}</p>
+          <p class="capitalize">{{ job.client.name }}</p>
         </div>
 
         <div class="item flex justify-center items-center gap-2">
           <i class="bx bx-map text-xl"></i>
-          <p>
+          <p class="capitalize">
             {{ job.location }}, <span>{{ job.country }}</span>
           </p>
         </div>
@@ -154,7 +154,9 @@
           />
           <br />
           <p class="italic font-semibold">Our Client</p>
-          <p class="text-gray-500 font-semibold">{{ job.client.name }}</p>
+          <p class="text-gray-500 font-semibold capitalize">
+            {{ job.client.name }}
+          </p>
           <p class="text-gray-500 font-medium">
             <a
               :href="job.client.website"

@@ -82,6 +82,27 @@
               <p class="font-bold">Role:</p>
               <p>{{ user ? user.role : "Null" }}</p>
             </div>
+            <div class="flex gap-2 items-center" v-if="user && user.cvUrl">
+              <h3>Uploaded CV:</h3>
+              <a class="border-2 p-1" :href="user.cvUrl" target="_blank">
+                View CV
+              </a>
+              <p
+                class="text-blue-600 underline hover:cursor-pointer"
+                @click="showDialog = true"
+              >
+                update CV
+              </p>
+            </div>
+
+            <div class="flex gap-2 items-center" v-if="user && !user.cvUrl">
+              <p
+                class="text-blue-600 underline hover:cursor-pointer"
+                @click="showDialog = true"
+              >
+                upload CV
+              </p>
+            </div>
           </div>
         </section>
 
@@ -106,6 +127,37 @@
             </div>
           </div>
         </section>
+
+        <div
+          v-if="showDialog"
+          class="fixed inset-0 z-10 flex items-center justify-center bg-black/50"
+        >
+          <div
+            class="bg-white p-12 rounded shadow-lg flex flex-col items-center w-4/12"
+          >
+            <input
+              type="file"
+              ref="file"
+              name="cv"
+              @change="handleFileUpload"
+            />
+            <div class="flex justify-center gap-2">
+              <button
+                @click="uploadCV"
+                class="bg-red-500 text-white px-4 py-2 rounded"
+              >
+                Yes
+              </button>
+
+              <button
+                @click="showDialog = false"
+                class="bg-gray-200 px-4 py-2 rounded"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
@@ -118,11 +170,13 @@ export default {
   data() {
     return {
       showPersonalDetails: true,
+      showDialog: false,
+      cv: "",
     };
   },
 
   computed: {
-    ...mapGetters(["user", "userApplications"]),
+    ...mapGetters(["user", "userApplications", "error"]),
   },
 
   watch: {
@@ -134,7 +188,25 @@ export default {
   },
 
   methods: {
-    ...mapActions(["logout"]),
+    ...mapActions(["logout", "cvUpload"]),
+
+    handleFileUpload(e) {
+      this.cv = e.target.files[0];
+    },
+
+    async uploadCV() {
+      const formData = new FormData();
+
+      formData.append("cv", this.cv);
+
+      await this.cvUpload(formData);
+
+      if (!this.error) {
+        this.showDialog = false;
+
+        alert("cv updated");
+      }
+    },
   },
 };
 </script>

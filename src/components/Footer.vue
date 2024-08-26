@@ -47,23 +47,48 @@
           </div>
 
           <div class="our-work flex-initial lg:w-[300px]">
-            <p class="text-xl font-bold">WHAT WE DO</p>
+            <p class="text-xl font-bold">OUR SERVICES</p>
             <div class="divider w-1/12 h-[3px] bg-secondary mt-2 mb-4" />
 
             <div class="border-b border-gray-200 w-full py-3">
-              <p class="text-gray-400">Flight Booking</p>
+              <router-link
+                class="text-gray-400 hover:text-white hover:cursor-pointer"
+                :to="{ path: '/about', hash: '#service1' }"
+              >
+                Flight Booking
+              </router-link>
             </div>
             <div class="border-b border-gray-200 w-full py-3">
-              <p class="text-gray-400">Hotel Booking</p>
+              <router-link
+                class="text-gray-400 hover:text-white hover:cursor-pointer"
+                :to="{ path: '/about', hash: '#service2' }"
+              >
+                Hotel Booking
+              </router-link>
             </div>
             <div class="border-b border-gray-200 w-full py-3">
-              <p class="text-gray-400">Vacation Packages</p>
+              <router-link
+                class="text-gray-400 hover:text-white hover:cursor-pointer"
+                :to="{ path: '/about', hash: '#service3' }"
+              >
+                Vacation Packages
+              </router-link>
             </div>
             <div class="border-b border-gray-200 w-full py-3">
-              <p class="text-gray-400">Visa Applications</p>
+              <router-link
+                class="text-gray-400 hover:text-white hover:cursor-pointer"
+                :to="{ path: '/about', hash: '#service4' }"
+              >
+                Visa Applications
+              </router-link>
             </div>
             <div class="border-b border-gray-200 w-full py-3">
-              <p class="text-gray-400">Job Placement Packages</p>
+              <router-link
+                class="text-gray-400 hover:text-white hover:cursor-pointer"
+                :to="{ path: '/about', hash: '#service5' }"
+              >
+                Job Placement Packages
+              </router-link>
             </div>
           </div>
 

@@ -117,13 +117,13 @@
         <hr />
 
         <div class="flex justify-between py-5 text-gray-400">
-          <h4 class="text-xl font-semibold">Job tags</h4>
+          <h4 class="text-xl font-semibold">Job Category</h4>
           <div class="w-3/4">
             <input
-              v-model="tags"
+              v-model="category"
               type="text"
-              name="tags"
-              id="tags"
+              name="category"
+              id="category"
               placeholder="e.g. Engineering, Software, Caregiving"
             />
           </div>
@@ -239,7 +239,7 @@ export default {
       remote: false,
       requirements: "",
       roles: "",
-      tags: "",
+      category: "",
       desc: "",
       applicationEmail: "",
       companyName: "",
@@ -265,7 +265,7 @@ export default {
         companyName: this.companyName,
         website: this.website,
         requirements: this.requirements,
-        tags: this.tags,
+        category: this.category,
         desc: this.desc,
         roles: this.roles,
       };

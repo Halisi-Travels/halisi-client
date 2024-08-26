@@ -29,7 +29,7 @@
             </td>
 
             <td class="px-6 py-4">
-              <div class="text-sm text-gray-500">
+              <div class="text-sm text-gray-500 capitalize">
                 <p>{{ job.location }}, {{ job.country }}</p>
               </div>
             </td>

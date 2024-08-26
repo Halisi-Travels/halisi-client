@@ -106,6 +106,14 @@ const routes = [
     },
   },
   {
+    path: "/applications",
+    name: "applications page",
+    component: () => import("../views/ApplicationsView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: "/unauthorized",
     name: "unauthorized",
     component: () => import("../views/UnauthorizedView.vue"),
@@ -122,6 +130,12 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior: (to, from, savedPosition) => {
+    if (to.hash) {
+      return {
+        selector: to.hash,
+        behavior: "smooth",
+      };
+    }
     if (savedPosition) {
       return savedPosition;
     }

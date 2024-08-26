@@ -8,8 +8,11 @@ export default {
 
   mutations: {
     SET_USER(state, payload) {
-      state.user = payload.user;
-      state.token = payload.token;
+      state.user = payload;
+    },
+
+    SET_TOKEN(state, payload) {
+      state.token = payload;
     },
 
     LOGOUT(state) {
@@ -51,10 +54,31 @@ export default {
           let user = res.data.loadedUser;
           let token = res.data.token;
 
-          commit("SET_USER", { user, token });
+          commit("SET_USER", user);
+          commit("SET_TOKEN", token);
 
           localStorage.setItem("token", token);
           axios.defaults.headers.common["Authorization"] = token;
+        }
+      } catch (err) {
+        commit("SET_ERROR", err.response.data.message);
+        localStorage.removeItem("token");
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
+
+    async cvUpload({ commit }, payload) {
+      try {
+        commit("SET_LOADING", true);
+        commit("CLEAR_ERROR");
+
+        const res = await axios.post("/auth/upload", payload);
+
+        if (res.status == 201) {
+          let user = res.data.updatedUser;
+
+          commit("SET_USER", user);
         }
       } catch (err) {
         commit("SET_ERROR", err.response.data.message);

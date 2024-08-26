@@ -45,6 +45,7 @@
           v-for="(item, index) in services"
           :key="index"
           :class="{ 'lg:flex-row-reverse': item.reverse }"
+          :id="`service${index + 1}`"
         >
           <div class="text lg:flex-initial lg:w-[500px]">
             <h3 class="text-xl font-semibold mb-3">{{ item.title }}</h3>
@@ -158,6 +159,19 @@ export default {
         },
       ],
     };
+  },
+
+  watch: {
+    "$route.hash"(newHash) {
+      if (newHash) {
+        this.$nextTick(() => {
+          const element = document.querySelector(newHash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      }
+    },
   },
 
   mounted() {

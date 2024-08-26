@@ -41,8 +41,6 @@ export default {
     },
 
     async jobsFilter({ commit }, payload) {
-      console.log(payload);
-
       commit("SET_LOADING", true);
       commit("CLEAR_ERROR");
 
