@@ -1,8 +1,6 @@
 <template>
   <div id="applications-page">
-    <main>
-      <JobTable />
-    </main>
+    <main></main>
   </div>
 </template>
 
