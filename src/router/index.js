@@ -111,7 +111,7 @@ const routes = [
     component: () => import("../views/ApplicationsView.vue"),
     beforeEnter: (_, __, next) => {
       store
-        .dispatch("getApplcations")
+        .dispatch("getApplications")
         .then(() => {
           next();
         })
@@ -130,7 +130,7 @@ const routes = [
     component: () => import("../views/AppDetails.vue"),
     beforeEnter: (_, __, next) => {
       store
-        .dispatch("getApplcation")
+        .dispatch("getApplication")
         .then(() => {
           next();
         })

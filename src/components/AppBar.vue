@@ -170,7 +170,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["isAuthenticated", "user"]),
+    ...mapGetters(["isAuthenticated", "user", "role"]),
   },
 
   watch: {

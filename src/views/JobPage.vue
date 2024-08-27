@@ -1,6 +1,7 @@
 <template>
   <div id="job-details-page">
     <header
+      v-if="user"
       class="h-[50vh] bg-gray-600 text-white flex flex-col items-center justify-center gap-y-10 relative"
     >
       <p class="page-title font-bold text-xl md:text-2xl lg:text-4xl uppercase">
@@ -28,6 +29,7 @@
         </div>
 
         <button
+          v-if="role == 'candidate'"
           class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 uppercase transfom mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
           @click="$router.push('/apply')"
         >
@@ -41,6 +43,7 @@
     </header>
 
     <main
+      v-if="user"
       class="w-11/12 md:w-10/12 lg:w-8/12 mx-auto flex flex-col lg:flex-row gap-9 justify-between my-28"
     >
       <section class="job flex-1">
@@ -103,6 +106,7 @@
 
         <div class="btns flex justify-between">
           <button
+            v-if="role == 'candidate'"
             class="mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
             @click="$router.push('/apply')"
           >
@@ -110,7 +114,7 @@
           </button>
 
           <button
-            v-if="user && user.role == 'admin'"
+            v-if="role == 'admin' || user._id === job.postedBy"
             class="mt-10 rounded-full bg-red-600 px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300 uppercase"
             @click="showDeleteDialog = true"
           >
@@ -183,7 +187,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["job", "user"]),
+    ...mapGetters(["job", "user", "role"]),
   },
 
   methods: {

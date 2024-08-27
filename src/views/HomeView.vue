@@ -105,7 +105,7 @@
         <div
           class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
         >
-          <h3 class="text-xl font-semibold">PLANNING YOUR NEXT VACATION</h3>
+          <h3 class="text-xl font-bold uppercase">are you a recruiter</h3>
           <p>
             Planning your next vacation can be an exciting and fulfilling
             experience. Start by envisioning your ideal getaway—whether it's a
@@ -120,9 +120,9 @@
           </p>
           <button
             class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
-            @click="$router.push('/contact')"
+            @click="$router.push('/jobs/new')"
           >
-            CONTACT US
+            POST JOB
           </button>
         </div>
 
@@ -160,6 +160,42 @@
               SIGN UP TO JOIN
             </button>
           </div>
+        </div>
+      </section>
+
+      <section
+        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
+      >
+        <div
+          class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
+        >
+          <h3 class="text-xl font-semibold">PLANNING YOUR NEXT VACATION</h3>
+          <p>
+            Planning your next vacation can be an exciting and fulfilling
+            experience. Start by envisioning your ideal getaway—whether it's a
+            relaxing beach retreat, an adventurous mountain trek, or an
+            immersive cultural exploration. Consider your budget, travel dates,
+            and the type of experience you're seeking. Research destinations
+            that match your preferences, and explore accommodations, activities,
+            and local attractions. Don’t forget to check for travel deals and
+            packages that can offer great value. With careful planning, you can
+            create a memorable vacation that perfectly suits your desires and
+            needs.
+          </p>
+          <button
+            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
+            @click="$router.push('/contact')"
+          >
+            CONTACT US
+          </button>
+        </div>
+
+        <div class="image lg:w-[400px] h-[300px] overflow-hidden">
+          <img
+            class="w-full h-full object-cover"
+            :src="require('@/assets/images/vacation.png')"
+            alt="job search image"
+          />
         </div>
       </section>
 

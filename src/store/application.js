@@ -68,12 +68,29 @@ export default {
       }
     },
 
-    async getApplcations({ commit }) {
+    async jobsFilter({ commit }, payload) {
       commit("SET_LOADING", true);
       commit("CLEAR_ERROR");
 
       try {
-        const res = await axios.get(`/applications`);
+        const res = await axios.get(`/jobs?${payload}`);
+
+        if (res.status == 200) {
+          commit("SET_JOBS", res.data.jobs);
+        }
+      } catch (err) {
+        commit("SET_ERROR", err.response.data.message);
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
+
+    async getApplications({ commit }, payload) {
+      commit("SET_LOADING", true);
+      commit("CLEAR_ERROR");
+
+      try {
+        const res = await axios.get(`/applications?${payload}`);
         const applications = res.data.applications;
 
         if (res.status == 200) {
@@ -86,7 +103,7 @@ export default {
       }
     },
 
-    async getApplcation({ commit }, payload) {
+    async getApplication({ commit }, payload) {
       commit("SET_LOADING", true);
       commit("CLEAR_ERROR");
 
