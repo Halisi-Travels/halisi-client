@@ -40,7 +40,8 @@ export default {
 }
 
 .page-title,
-.slogan {
+.slogan,
+.section-title {
   font-family: "Montserrat Subrayada";
 }
 

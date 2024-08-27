@@ -199,6 +199,7 @@ router.beforeEach((to, _, next) => {
       return;
     }
 
+    alert("An account is required");
     next("/auth");
   } else {
     next();

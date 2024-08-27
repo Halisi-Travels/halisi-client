@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <header class="h-[50vh] md:h-[70vh] bg-cover bg-fixed">
+    <header class="h-full md:h-[70vh] bg-cover bg-fixed">
       <div
         class="w-full h-full bg-black/30 flex flex-col items-center justify-center text-white gap-8 p-4 md:p-0"
       >
-        <h1 class="page-title text-3xl md:text-6xl font-bold">
+        <!-- <h1 class="page-title text-3xl md:text-6xl font-bold text-center">
           Halisi Recruitment Agency
-        </h1>
+        </h1> -->
         <p class="slogan font-semibold text-sm md:text-xl text-center">
           YOUR GLOBAL RECRUITMENT PARTNER IN KENYA
         </p>
@@ -46,6 +46,14 @@
             SEARCH
           </button>
         </div>
+
+        <div
+          class="cv-upload flex gap-2 items-center bg-white text-black p-2 rounded-md hover:cursor-pointer font-bold"
+          @click="$router.push('/profile')"
+        >
+          <i class="bx bx-upload text-xl"></i>
+          <p>Upload CV</p>
+        </div>
       </div>
     </header>
 
@@ -64,12 +72,32 @@
       <hr class="my-20" />
 
       <section
+        class="visa-applications w-11/12 lg:w-7/12 mx-auto text-center mb-20"
+      >
+        <h2 class="section-title text-3xl font-bold mb-6 uppercase">
+          Visa Applications
+        </h2>
+        <p class="text-xl">
+          Planning to explore new opportunities or enjoy a vacation abroad? Our
+          visa application services for the
+          <span class="font-semibold">USA, Canada</span> and
+          <span class="font-semibold">Europe</span> are designed to make your
+          travel process seamless and stress-free. Whether you're applying for a
+          tourist, business, student, or work visa, our team of experts is here
+          to guide you through each step. We offer comprehensive assistance,
+          including document preparation, submission, and tracking, ensuring
+          that you meet all requirements and deadlines. Start your journey with
+          confidence, knowing that your visa application is in capable hands.
+        </p>
+      </section>
+
+      <section
         class="job-search flex flex-col-reverse lg:flex-row justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto"
       >
         <div
           class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
         >
-          <h3 class="text-xl font-semibold">LOOKING FOR A JOB</h3>
+          <h3 class="section-title text-xl font-semibold">LOOKING FOR A JOB</h3>
           <p class="text-center lg:text-start">
             We excel at connecting you with the right job at the right time,
             ensuring a perfect match between your skills and the ideal company.
@@ -105,7 +133,9 @@
         <div
           class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
         >
-          <h3 class="text-xl font-bold uppercase">are you a recruiter</h3>
+          <h3 class="section-title text-xl font-bold uppercase">
+            are you a recruiter
+          </h3>
           <p>
             Planning your next vacation can be an exciting and fulfilling
             experience. Start by envisioning your ideal getaway—whether it's a
@@ -129,7 +159,7 @@
         <div class="image lg:w-[400px] h-[300px] overflow-hidden">
           <img
             class="w-full h-full object-cover"
-            :src="require('@/assets/images/vacation.png')"
+            :src="require('@/assets/images/recruit.webp')"
             alt="job search image"
           />
         </div>
@@ -169,7 +199,9 @@
         <div
           class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
         >
-          <h3 class="text-xl font-semibold">PLANNING YOUR NEXT VACATION</h3>
+          <h3 class="section-title text-xl font-semibold">
+            PLANNING YOUR NEXT VACATION
+          </h3>
           <p>
             Planning your next vacation can be an exciting and fulfilling
             experience. Start by envisioning your ideal getaway—whether it's a
@@ -200,7 +232,9 @@
       </section>
 
       <section class="testimonials mt-20 w-11/12 md:10/12 lg:w-8/12 mx-auto">
-        <h3 class="text-2xl font-semibold text-center mb-10">TESTIMONIALS</h3>
+        <h3 class="section-title text-2xl font-semibold text-center mb-10">
+          TESTIMONIALS
+        </h3>
 
         <Testimonials />
       </section>
