@@ -67,6 +67,42 @@ export default {
         commit("SET_LOADING", false);
       }
     },
+
+    async getApplcations({ commit }) {
+      commit("SET_LOADING", true);
+      commit("CLEAR_ERROR");
+
+      try {
+        const res = await axios.get(`/applications`);
+        const applications = res.data.applications;
+
+        if (res.status == 200) {
+          commit("SET_APPLICATIONS", applications);
+        }
+      } catch (err) {
+        commit("SET_ERROR", err.response.data.message);
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
+
+    async getApplcation({ commit }, payload) {
+      commit("SET_LOADING", true);
+      commit("CLEAR_ERROR");
+
+      try {
+        const res = await axios.get(`/applications/${payload}`);
+        const application = res.data.application;
+
+        if (res.status == 200) {
+          commit("SET_APPLICATION", application);
+        }
+      } catch (err) {
+        commit("SET_ERROR", err.response.data.message);
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
   },
 
   getters: {

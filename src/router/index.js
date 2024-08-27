@@ -109,6 +109,36 @@ const routes = [
     path: "/applications",
     name: "applications page",
     component: () => import("../views/ApplicationsView.vue"),
+    beforeEnter: (_, __, next) => {
+      store
+        .dispatch("getApplcations")
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/applications/:id",
+    name: "application details page",
+    component: () => import("../views/AppDetails.vue"),
+    beforeEnter: (_, __, next) => {
+      store
+        .dispatch("getApplcation")
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
     meta: {
       requiresAuth: true,
     },

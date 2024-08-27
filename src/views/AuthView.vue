@@ -135,7 +135,7 @@ export default {
         password: "",
       },
       registerForm: {
-        role: "candidate",
+        role: "",
         name: "",
         email: "",
         password: "",
@@ -171,6 +171,7 @@ export default {
 
     async userSignup() {
       if (
+        this.registerForm.role != "" &&
         this.registerForm.name != "" &&
         this.registerForm.email != "" &&
         this.registerForm.password != ""
@@ -179,6 +180,7 @@ export default {
 
         userData.append("name", this.registerForm.name);
         userData.append("email", this.registerForm.email);
+        userData.append("role", this.registerForm.role);
         userData.append("password", this.registerForm.password);
 
         await this.signup(userData);

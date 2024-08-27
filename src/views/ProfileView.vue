@@ -9,11 +9,12 @@
     <main class="my-20 lg:my-28 md:w-10/12 lg:w-8/12 mx-auto">
       <div class="flex gap-5">
         <section
+          v-if="user"
           class="menu w-1/2 lg:w-4/12 bg-gray-100 text-gray-600 font-semibold"
         >
           <div
             class="p-3 hover:bg-primary/30 hover:border-l-4 hover:cursor-pointer hover:text-primary border-primary transition-all ease-in-out duration-300 flex items-center gap-2"
-            @click="showPersonalDetails = true"
+            @click="displayProfile"
             :class="{
               'bg-primary/30 text-primary border-l-4': showPersonalDetails,
             }"
@@ -23,10 +24,23 @@
           </div>
 
           <div
+            v-if="role == 'employer'"
             class="p-3 hover:bg-primary/30 hover:border-l-4 hover:cursor-pointer hover:text-primary border-primary transition-all ease-in-out duration-300 flex items-center gap-2"
-            @click="showPersonalDetails = false"
+            @click="displayJobs"
             :class="{
-              'bg-primary/30 text-primary border-l-4': !showPersonalDetails,
+              'bg-primary/30 text-primary border-l-4': showJobs,
+            }"
+          >
+            <i class="bx bxs-briefcase text-2xl mr-2"></i>
+            <p>Jobs</p>
+          </div>
+
+          <div
+            v-if="role == 'candidate'"
+            class="p-3 hover:bg-primary/30 hover:border-l-4 hover:cursor-pointer hover:text-primary border-primary transition-all ease-in-out duration-300 flex items-center gap-2"
+            @click="displayApps"
+            :class="{
+              'bg-primary/30 text-primary border-l-4': showApplications,
             }"
           >
             <i class="bx bxs-badge-check text-2xl mr-2"></i>
@@ -65,7 +79,7 @@
               <p class="text-2xl lg:text-4xl font-semibold">
                 {{ user ? user.name : "Null" }}
               </p>
-              <p class="mt-2 text-gray-600">
+              <p class="mt-2 text-gray-600" v-if="user && role == 'candidate'">
                 <span class="font-semibold">0</span> applications
               </p>
             </div>
@@ -80,33 +94,40 @@
             </div>
             <div class="flex gap-1">
               <p class="font-bold">Role:</p>
-              <p>{{ user ? user.role : "Null" }}</p>
-            </div>
-            <div class="flex gap-2 items-center" v-if="user && user.cvUrl">
-              <h3>Uploaded CV:</h3>
-              <a class="border-2 p-1" :href="user.cvUrl" target="_blank">
-                View CV
-              </a>
-              <p
-                class="text-blue-600 underline hover:cursor-pointer"
-                @click="showDialog = true"
-              >
-                update CV
-              </p>
+              <p class="capitalize">{{ user ? role : "Null" }}</p>
             </div>
 
-            <div class="flex gap-2 items-center" v-if="user && !user.cvUrl">
-              <p
-                class="text-blue-600 underline hover:cursor-pointer"
-                @click="showDialog = true"
-              >
-                upload CV
-              </p>
+            <div v-if="user && role == 'candidate'" class="cv-div">
+              <div class="flex gap-2 items-center" v-if="user.cvUrl">
+                <h3>Uploaded CV:</h3>
+                <a class="border-2 p-1" :href="user.cvUrl" target="_blank">
+                  View CV
+                </a>
+                <p
+                  class="text-blue-600 underline hover:cursor-pointer"
+                  @click="showDialog = true"
+                >
+                  update CV
+                </p>
+              </div>
+
+              <div class="flex gap-2 items-center" v-if="user && !user.cvUrl">
+                <p
+                  class="text-blue-600 underline hover:cursor-pointer"
+                  @click="showDialog = true"
+                >
+                  upload CV
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section v-else id="applications" class="applications w-full">
+        <section
+          v-if="showApplications"
+          id="applications"
+          class="applications w-full"
+        >
           <h3 class="text-2xl font-bold mb-3 text-gray-600">
             {{ userApplications.length }} Applications
           </h3>
@@ -126,6 +147,12 @@
               <p class="italic text-sm">{{ app.createdAt }}</p>
             </div>
           </div>
+        </section>
+
+        <section v-if="showJobs" id="jobs" class="jobs w-full">
+          <h3 class="text-2xl font-bold mb-3 text-gray-600">Jobs section</h3>
+
+          <hr class="my-5" />
         </section>
 
         <div
@@ -170,13 +197,16 @@ export default {
   data() {
     return {
       showPersonalDetails: true,
+      showApplications: false,
+      showJobs: false,
+
       showDialog: false,
       cv: "",
     };
   },
 
   computed: {
-    ...mapGetters(["user", "userApplications", "error"]),
+    ...mapGetters(["user", "userApplications", "error", "role"]),
   },
 
   watch: {
@@ -206,6 +236,24 @@ export default {
 
         alert("cv updated");
       }
+    },
+
+    displayJobs() {
+      this.showApplications = false;
+      this.showPersonalDetails = false;
+      this.showJobs = true;
+    },
+
+    displayProfile() {
+      this.showApplications = false;
+      this.showPersonalDetails = true;
+      this.showJobs = false;
+    },
+
+    displayApps() {
+      this.showApplications = true;
+      this.showPersonalDetails = false;
+      this.showJobs = false;
     },
   },
 };

@@ -31,6 +31,7 @@ export default {
         await axios.post("/auth/register", {
           name: payload.get("name"),
           email: payload.get("email"),
+          role: payload.get("role"),
           password: payload.get("password"),
         });
       } catch (err) {
