@@ -97,7 +97,10 @@
 
         <form
           class="form w-11/12 mx-auto lg:w-5/12 flex flex-col gap-6"
-          @submit.prevent=""
+          action="https://formkeep.com/f/54d6ddca3ff0"
+          accept-charset="UTF-8"
+          enctype="multipart/form-data"
+          method="POST"
         >
           <p class="section-title text-3xl font-semibold text-primary">
             Feedback Form
