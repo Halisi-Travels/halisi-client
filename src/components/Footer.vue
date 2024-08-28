@@ -53,7 +53,7 @@
             <div class="border-b border-gray-200 w-full py-3">
               <router-link
                 class="text-gray-400 hover:text-white hover:cursor-pointer"
-                :to="{ path: '/about', hash: '#service1' }"
+                :to="{ path: '/services', params: { scrollTo: 'service1' } }"
               >
                 Flight Booking
               </router-link>
@@ -61,7 +61,7 @@
             <div class="border-b border-gray-200 w-full py-3">
               <router-link
                 class="text-gray-400 hover:text-white hover:cursor-pointer"
-                :to="{ path: '/about', hash: '#service2' }"
+                :to="{ path: '/services', params: { scrollTo: 'service2' } }"
               >
                 Hotel Booking
               </router-link>
@@ -69,7 +69,7 @@
             <div class="border-b border-gray-200 w-full py-3">
               <router-link
                 class="text-gray-400 hover:text-white hover:cursor-pointer"
-                :to="{ path: '/about', hash: '#service3' }"
+                :to="{ path: '/services', params: { scrollTo: 'service3' } }"
               >
                 Vacation Packages
               </router-link>
@@ -77,7 +77,7 @@
             <div class="border-b border-gray-200 w-full py-3">
               <router-link
                 class="text-gray-400 hover:text-white hover:cursor-pointer"
-                :to="{ path: '/about', hash: '#service4' }"
+                :to="{ path: '/services', params: { scrollTo: 'service4' } }"
               >
                 Visa Applications
               </router-link>
@@ -85,7 +85,7 @@
             <div class="border-b border-gray-200 w-full py-3">
               <router-link
                 class="text-gray-400 hover:text-white hover:cursor-pointer"
-                :to="{ path: '/about', hash: '#service5' }"
+                :to="{ name: 'our services', params: { scrollTo: service5 } }"
               >
                 Job Placement Packages
               </router-link>
