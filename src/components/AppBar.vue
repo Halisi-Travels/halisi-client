@@ -33,6 +33,14 @@
       </router-link>
 
       <router-link
+        active-class="text-secondary  transition-all duration-500"
+        to="/services"
+        class="hover:text-secondary transition-all duration-300"
+      >
+        OUR SERVICES
+      </router-link>
+
+      <router-link
         active-class="text-secondary"
         to="/jobs"
         class="hover:text-secondary transition-all duration-300"
@@ -103,6 +111,14 @@
         class="hover:text-secondary transition-all duration-300"
       >
         ABOUT US
+      </router-link>
+
+      <router-link
+        active-class="text-secondary  transition-all duration-500"
+        to="/services"
+        class="hover:text-secondary transition-all duration-300"
+      >
+        OUR SERVICES
       </router-link>
 
       <router-link
