@@ -132,6 +132,15 @@
         <hr />
 
         <div class="flex justify-between py-5 text-gray-400">
+          <h4 class="text-xl font-semibold">Salary</h4>
+          <div class="w-3/4">
+            <input v-model="salary" type="text" name="salary" id="salary" />
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="flex justify-between py-5 text-gray-400">
           <h4 class="text-xl font-semibold">Description*</h4>
           <div class="w-3/4">
             <textarea
@@ -237,6 +246,7 @@ export default {
       country: "",
       type: "",
       remote: false,
+      salary: "",
       requirements: "",
       roles: "",
       category: "",
@@ -261,6 +271,7 @@ export default {
         country: this.country,
         type: this.type,
         remote: this.remote,
+        salary: this.salary,
         applicationEmail: this.applicationEmail,
         companyName: this.companyName,
         website: this.website,

@@ -7,7 +7,7 @@
         <!-- <h1 class="page-title text-3xl md:text-6xl font-bold text-center">
           Halisi Recruitment Agency
         </h1> -->
-        <p class="slogan font-semibold text-sm md:text-xl text-center">
+        <p class="slogan font-semibold text-md md:text-xl text-center">
           YOUR GLOBAL RECRUITMENT PARTNER IN KENYA
         </p>
 
@@ -25,16 +25,16 @@
             <input
               v-model="filters.location"
               type="text"
-              name="location"
-              id="location"
-              placeholder="LOCATION"
+              name="position"
+              id="position"
+              placeholder="POSITION"
             />
             <input
               v-model="filters.category"
               type="text"
-              name="category"
-              id="category"
-              placeholder="CATEGORY"
+              name="salary"
+              id="salary"
+              placeholder="SALARY"
             />
           </div>
 
@@ -260,8 +260,8 @@ export default {
     return {
       filters: {
         country: "",
-        location: "",
-        category: "",
+        salary: "",
+        position: "",
       },
     };
   },

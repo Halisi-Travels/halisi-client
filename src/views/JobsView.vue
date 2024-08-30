@@ -25,26 +25,27 @@
               placeholder="COUNTRY"
             />
             <input
-              v-model="filters.location"
+              v-model="filters.position"
               type="text"
-              name="location"
-              id="location"
-              placeholder="LOCATION"
+              name="position"
+              id="position"
+              placeholder="POSITION"
             />
             <input
-              v-model="filters.category"
+              v-model="filters.salary"
               type="text"
-              name="category"
-              id="category"
-              placeholder="CATEGORY"
+              name="salary"
+              id="salary"
+              placeholder="SALARY"
             />
           </div>
 
           <button
-            class="bg-secondary px-3 rounded h-[40px] font-bold text-center text-sm md:text-lg text-white"
+            :disabled="loading"
+            class="bg-secondary px-3 rounded h-[40px] font-bold text-center text-sm md:text-lg text-white disabled:opacity-50 disabled:cursor-not-allowed"
             @click="filterJobs"
           >
-            SEARCH JOBS
+            FILTER
           </button>
         </div>
 
@@ -81,14 +82,14 @@ export default {
     return {
       filters: {
         country: "",
-        location: "",
-        category: "",
+        position: "",
+        salary: "",
       },
     };
   },
 
   computed: {
-    ...mapGetters(["jobs", "user"]),
+    ...mapGetters(["jobs", "user", "loading"]),
   },
 
   methods: {
