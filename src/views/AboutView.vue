@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <header
-      class="h-[50vh] bg-gray-600 text-white flex items-center justify-center"
+      class="h-[50vh] bg-cover bg-center text-white flex items-center justify-center"
     >
       <p class="page-title font-bold text-4xl">ABOUT US</p>
     </header>
@@ -136,3 +136,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+header {
+  background-image: url("@/assets/images/about_b.png");
+}
+</style>

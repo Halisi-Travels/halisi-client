@@ -1,10 +1,8 @@
 <template>
   <div id="contact-page">
     <header
-      class="h-[50vh] bg-gray-600 text-white flex items-center justify-center"
-    >
-      <p class="page-title font-bold text-4xl">CONTACT US</p>
-    </header>
+      class="h-[50vh] bg-cover bg-center text-white flex items-center justify-center"
+    ></header>
 
     <main>
       <div
@@ -19,7 +17,7 @@
               <p class="font-semibold">Head Office Address:</p>
               <div>
                 <p>
-                  Cianda Hse 10th Flr, Suite 1011. <br />
+                  Cianda Hse 10th Flr, Suite 1011 <br />
                   Koinange Str, Opp CJ's Restaurant Nairobi Kenya
                 </p>
               </div>
@@ -187,6 +185,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+header {
+  background-image: url("@/assets/images/contact_b.jpeg");
+}
+
 label {
   display: block;
 }
