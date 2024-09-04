@@ -15,19 +15,30 @@
             <p class="section-title text-3xl font-semibold mb-3 text-primary">
               Contact Info
             </p>
-            <p>
-              <span class="font-semibold">Phone number: </span>
-              +254745313519/+254747393209
-            </p>
-            <p>
-              <span class="font-semibold">Email: </span
-              >customerhappiness@halisitravels.com
-            </p>
-            <p>
-              <span class="font-semibold">Head Office Address: </span>10th Flr,
-              Cianda House. <br />
-              Koinange Str, Nairobi
-            </p>
+            <div class="flex gap-1">
+              <p class="font-semibold">Head Office Address:</p>
+              <div>
+                <p>
+                  Cianda Hse 10th Flr, Suite 1011. <br />
+                  Koinange Str, Opp CJ's Restaurant Nairobi Kenya
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-1">
+              <p class="font-semibold">Email:</p>
+              <div>
+                <p>bookings@halisitravels.com</p>
+                <p>jobs@halisitravels.com</p>
+              </div>
+            </div>
+            <div class="flex gap-1">
+              <p class="font-semibold">Tel:</p>
+              <div class="flex gap-1">
+                <p>0745313519,</p>
+                <p>0747393209,</p>
+                <p>0797385816</p>
+              </div>
+            </div>
           </section>
 
           <section class="business-hours flex flex-col gap-2 mx-3 md:mx-0">
