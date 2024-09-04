@@ -47,7 +47,7 @@
 
         <div class="flex justify-between flex-col lg:flex-row mt-16">
           <div
-            class="flex flex-col items-center"
+            class="flex flex-col items-center mb-10 lg:mb-0"
             v-for="(item, index) in staff"
             :key="index"
           >

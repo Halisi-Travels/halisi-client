@@ -1,6 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div id="app-footer" class="relative bg-secondary">
+  <div
+    id="app-footer"
+    class="relative bg-secondary bg-cover bg-fixed bg-center"
+  >
     <div class="bg-black/40 text-white">
       <div class="w-11/12 md:w-9/12 mx-auto">
         <section
@@ -186,7 +189,5 @@ export default {
 <style scoped lang="scss">
 #app-footer {
   background-image: url("@/assets/images/choice.jpg");
-  background-size: cover;
-  background-attachment: fixed;
 }
 </style>

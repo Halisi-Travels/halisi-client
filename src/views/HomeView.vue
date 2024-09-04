@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <header class="h-full md:h-[70vh] bg-cover bg-fixed">
+    <header class="h-full md:h-[70vh] bg-cover bg-fixed bg-center">
       <div
         class="w-full h-full bg-black/30 flex flex-col items-center justify-center text-white gap-8 p-4 md:p-0"
       >
