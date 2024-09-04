@@ -101,17 +101,21 @@
 
             <div class="head-office text-gray-400 mb-4">
               <p class="font-bold">Head Office Address:</p>
-              <em>10th Flr, Cianda House, Koinange Str, Nairobi</em>
+              <em>
+                Cianda Hse 10th Flr, Suite 1011 <br />
+                Koinange Str, Opp CJ's Restaurant Nairobi Kenya
+              </em>
             </div>
 
             <div class="contacts text-gray-400 mb-4">
               <p class="font-bold">Email Address:</p>
-              <em class="text-gray-400">customerhappiness@halisitravels.com</em>
+              <em class="text-gray-400">bookings@halisitravels.com, </em>
+              <em class="text-gray-400">jobs@halisitravels.com</em>
             </div>
 
             <div class="phone text-gray-400 mb-4">
               <p class="font-bold">Phone Number:</p>
-              <em class="">+254745313519/+254747393209</em>
+              <em class="">0745313519/0747393209/0797385816</em>
             </div>
 
             <div class="hours text-gray-400">
