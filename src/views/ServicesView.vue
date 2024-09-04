@@ -91,8 +91,6 @@ export default {
       ],
     });
 
-    console.log(this.$route.query);
-
     if (this.$route.query.scrollTo) {
       document.getElementById(this.$route.query.scrollTo).scrollIntoView();
     }
