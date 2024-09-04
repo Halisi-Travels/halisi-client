@@ -1,7 +1,7 @@
 <template>
   <div id="services-page">
     <header
-      class="h-[50vh] bg-cover bg-fixed bg-center text-black flex items-center justify-center"
+      class="h-[50vh] bg-cover bg-center text-white flex items-center justify-center"
     >
       <p class="page-title font-bold text-4xl">OUR SERVICES</p>
     </header>
@@ -100,6 +100,6 @@ export default {
 
 <style scoped>
 header {
-  background-image: url("@/assets/images/services.webp");
+  background-image: url("@/assets/images/services.jpg");
 }
 </style>
