@@ -8,6 +8,16 @@ module.exports = {
         primary: "#002570",
         secondary: "#F98A16",
       },
+      keyframes: {
+        scrollLeft: {
+          to: {
+            left: "-200px",
+          },
+        },
+      },
+      animation: {
+        scrollLeft: "scrollLeft 10s linear infinite",
+      },
     },
   },
   plugins: [],

@@ -234,19 +234,22 @@
         </div>
       </section>
 
-      <section class="testimonials mt-20 w-11/12 md:10/12 lg:w-8/12 mx-auto">
+      <section class="testimonials mt-20 w-12/12 md:10/12 lg:w-8/12 mx-auto">
         <h3 class="section-title text-2xl font-semibold text-center mb-10">
           TESTIMONIALS
         </h3>
 
-        <Testimonials />
+        <InfiniteScroll />
+
+        <!-- <Testimonials /> -->
       </section>
     </main>
   </div>
 </template>
 
 <script>
-import Testimonials from "@/components/Testimonials.vue";
+// import Testimonials from "@/components/Testimonials.vue";
+import InfiniteScroll from "@/components/InfiniteScroll.vue";
 import SlickCarousel from "@/components/JobsCarousel.vue";
 import { useHead } from "@vueuse/head";
 import { mapActions, mapGetters } from "vuex";
@@ -255,8 +258,9 @@ export default {
   name: "HomeView",
 
   components: {
-    Testimonials,
+    // Testimonials,
     SlickCarousel,
+    InfiniteScroll,
   },
 
   data() {
