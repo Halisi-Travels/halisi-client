@@ -70,7 +70,7 @@
       <div
         v-for="(item, index) in testimonials"
         :key="index"
-        class="w-11/12 mx-auto flex flex-col items-center gap-3 shadow-xl rounded-xl py-3"
+        class="w-11/12 mx-auto flex flex-col items-center gap-3 shadow-xl rounded-xl p-3"
       >
         <img
           :src="item.image"
