@@ -18,7 +18,7 @@ const routes = [
         })
         .catch((err) => {
           console.error(err);
-          next(false);
+          next();
         });
     },
   },
