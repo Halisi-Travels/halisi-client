@@ -39,6 +39,7 @@
           </div>
 
           <button
+            name="search"
             :disabled="loading"
             class="bg-secondary text-white p-3 rounded-tr-md rounded-br-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             @click="filterJobs"
@@ -114,6 +115,7 @@
             expertise guarantees a smooth and successful transition.
           </p>
           <button
+            name="search job"
             class="bg-secondary text-white p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
             @click="$router.push('/jobs')"
           >
@@ -152,6 +154,7 @@
             needs.
           </p>
           <button
+            name="post job"
             class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
             @click="$router.push('/jobs/new')"
           >
@@ -188,6 +191,7 @@
               qualifications but also fulfills your career ambitions.
             </p>
             <button
+              name="signup"
               class="rounded-full px-5 py-3 bg-white text-black font-bold hover:border-b-4 border-gray-600 transition-all duration-300"
             >
               SIGN UP TO JOIN
@@ -218,6 +222,7 @@
             needs.
           </p>
           <button
+            name="contact us"
             class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
             @click="$router.push('/contact')"
           >

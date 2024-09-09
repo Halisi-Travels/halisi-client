@@ -164,6 +164,7 @@
               </div>
 
               <button
+                name="add url"
                 type="button"
                 class="text-secondary hover:bg-secondary/30 p-2 rounded-sm"
                 @click.prevent="addUrlCount"
@@ -203,6 +204,7 @@
           class="submit-btn w-11/12 lg:w-8/12 mx-auto flex flex-col md:flex-row gap-4 justify-between mt-10"
         >
           <button
+            name="submit"
             type="button"
             class="bg-primary rounded flex-initial lg:w-[180px] px-4 py-2 text-white font-semibold uppercase hover:bg-secondary transition-all duration-500 ease-in-out"
             @click.prevent="submitApplication"

@@ -45,6 +45,7 @@
             />
 
             <button
+              name="login button"
               id="login_btn"
               type="submit"
               :disabled="loading"
@@ -103,6 +104,7 @@
             />
 
             <button
+              name="signup"
               id="signup_btn"
               type="submit"
               :disabled="loading"

@@ -16,6 +16,7 @@
           </div>
 
           <button
+            name="find job"
             class="rounded-full bg-secondary px-8 py-1 h-[50px] text-sm lg:text-lg text-white font-semibold hover:border-b-4 border-orange-900 transition-all duration-300"
             @click="$router.push('/jobs')"
           >
@@ -24,6 +25,7 @@
         </section>
 
         <button
+          name="scroll to top"
           class="bg-secondary rounded-full py-3 px-4 absolute top-[-1.5rem] right-7"
           @click="scrollToTop"
         >

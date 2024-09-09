@@ -146,6 +146,7 @@
           </div>
 
           <button
+            name="submit feedback"
             type="submit"
             class="bg-primary rounded flex-initial lg:w-1/2 px-4 py-2 text-white font-semibold"
           >

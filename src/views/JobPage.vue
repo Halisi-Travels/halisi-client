@@ -28,6 +28,7 @@
         </div>
 
         <button
+          name="apply"
           class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 uppercase transfom mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
           @click="$router.push('/apply')"
         >
@@ -103,6 +104,7 @@
 
         <div class="btns flex justify-between">
           <button
+            name="apply"
             class="mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
             @click="$router.push('/apply')"
           >
@@ -110,6 +112,7 @@
           </button>
 
           <button
+            name="delete"
             v-if="user && (role == 'admin' || user._id === job.postedBy)"
             class="mt-10 rounded-full bg-red-600 px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300 uppercase"
             @click="showDeleteDialog = true"
@@ -128,12 +131,14 @@
               <p class="mb-4 text-2xl font-semibold uppercase">Are you sure?</p>
               <div class="flex justify-center gap-2">
                 <button
+                  name="delete"
                   @click="deleteJob"
                   class="bg-red-500 text-white px-4 py-2 rounded"
                 >
                   Yes
                 </button>
                 <button
+                  name="cancel"
                   @click="showDeleteDialog = false"
                   class="bg-gray-200 px-4 py-2 rounded"
                 >

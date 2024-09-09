@@ -206,6 +206,7 @@
         class="submit-btn w-11/12 lg:w-8/12 mx-auto flex justify-between mt-10"
       >
         <button
+          name="upload"
           @click="uploadJob"
           :disabled="loading"
           class="bg-primary rounded flex-initial lg:w-[180px] px-4 py-2 text-white font-semibold uppercase hover:bg-secondary transition-all duration-500 ease-in-out disabled:cursor-not-allowed disabled:bg-gray-600"

@@ -21,6 +21,7 @@
         </p>
         <p class="font-semibold uppercase">{{ job.type }}</p>
         <button
+          name="see more"
           class="border-b hover:text-secondary hover:border-secondary"
           @click="$router.push(`/jobs/${job._id}`)"
         >
@@ -31,6 +32,7 @@
 
     <!-- Navigation Buttons -->
     <button
+      name="previous"
       class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg"
       @click="prevSlide"
     >
@@ -38,6 +40,7 @@
     </button>
 
     <button
+      name="next"
       class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg"
       @click="nextSlide"
     >

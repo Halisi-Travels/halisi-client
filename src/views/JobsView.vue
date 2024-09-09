@@ -6,6 +6,7 @@
       <p class="page-title font-bold text-4xl">Find A Job</p>
 
       <button
+        name="post job"
         class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 uppercase transfom mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg hover:border-b-4 border-orange-700 transition-all duration-300"
         @click="$router.push('/jobs/new')"
       >
@@ -41,6 +42,7 @@
           </div>
 
           <button
+            name="filter"
             :disabled="loading"
             class="bg-secondary px-3 rounded h-[40px] font-bold text-center text-sm md:text-lg text-white disabled:opacity-50 disabled:cursor-not-allowed"
             @click="filterJobs"

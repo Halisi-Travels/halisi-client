@@ -170,6 +170,7 @@
             />
             <div class="flex justify-center gap-2">
               <button
+                name="yes"
                 @click="uploadCV"
                 class="bg-red-500 text-white px-4 py-2 rounded"
               >
@@ -177,6 +178,7 @@
               </button>
 
               <button
+                name="cancel"
                 @click="showDialog = false"
                 class="bg-gray-200 px-4 py-2 rounded"
               >
