@@ -143,15 +143,24 @@
         <section class="social-media flex flex-col gap-6 items-center py-12">
           <div class="social-icons flex gap-9">
             <a
+              aria-label="whatsapp channel for Halisi"
               href="https://www.whatsapp.com/channel/0029VaLOeK4HVvTYWRSC6v28"
               target="_blank"
             >
               <i class="bx bxl-whatsapp text-3xl"></i>
             </a>
-            <a href="https://www.tiktok.com/@halisi.travel" target="_blank">
+            <a
+              aria-label="tiktok channel for Halisi"
+              href="https://www.tiktok.com/@halisi.travel"
+              target="_blank"
+            >
               <i class="bx bxl-tiktok text-3xl"></i>
             </a>
-            <a href="https://www.instagram.com/halisi.travels" target="_blank">
+            <a
+              aria-label="instagram account for Halisi"
+              href="https://www.instagram.com/halisi.travels"
+              target="_blank"
+            >
               <i class="bx bxl-instagram text-3xl"></i>
             </a>
           </div>
@@ -165,7 +174,12 @@
         <p>
           Developed by
           <span class="font-semibold">
-            <a href="https://mawira.netlify.app" target="_blank">Mawira</a>
+            <a
+              aria-label="The developer portfolio website"
+              href="https://mawira.netlify.app"
+              target="_blank"
+              >Mawira</a
+            >
           </span>
         </p>
       </div>

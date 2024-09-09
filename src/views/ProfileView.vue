@@ -100,7 +100,12 @@
             <div v-if="user && role == 'candidate'" class="cv-div">
               <div class="flex gap-2 items-center" v-if="user.cvUrl">
                 <h3>Uploaded CV:</h3>
-                <a class="border-2 p-1" :href="user.cvUrl" target="_blank">
+                <a
+                  aria-label="view your uploaded CV"
+                  class="border-2 p-1"
+                  :href="user.cvUrl"
+                  target="_blank"
+                >
                   View CV
                 </a>
                 <p

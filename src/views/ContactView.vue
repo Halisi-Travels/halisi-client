@@ -63,6 +63,7 @@
                 class="rounded-full bg-secondary/20 h-[40px] w-[40px] flex items-center justify-center"
               >
                 <a
+                  aria-label="whatsapp channel for Halisi"
                   href="https://whatsapp.com/channel/0029VaLOeK4HVvTYWRSC6v28"
                   target="_blank"
                 >
@@ -73,7 +74,11 @@
               <li
                 class="rounded-full bg-secondary/20 h-[40px] w-[40px] flex items-center justify-center"
               >
-                <a href="https://www.tiktok.com/@halisi.travel" target="_blank">
+                <a
+                  aria-label="tiktok channel for Halisi"
+                  href="https://www.tiktok.com/@halisi.travel"
+                  target="_blank"
+                >
                   <i class="bx bxl-tiktok text-black text-2xl"></i>
                 </a>
               </li>
@@ -82,6 +87,7 @@
                 class="rounded-full bg-secondary/20 h-[40px] w-[40px] flex items-center justify-center"
               >
                 <a
+                  aria-label="instagram account for Halisi"
                   href="https://www.instagram.com/halisi.travels"
                   target="_blank"
                 >

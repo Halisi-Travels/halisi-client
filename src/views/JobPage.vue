@@ -164,6 +164,7 @@
           </p>
           <p class="text-gray-500 font-medium">
             <a
+              :aria-label="job.client.name + 'website link'"
               :href="job.client.website"
               target="_blank"
               class="text-blue-700 hover:underline"
