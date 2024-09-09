@@ -193,7 +193,7 @@ export default {
 
 <style scoped lang="scss">
 header {
-  background-image: url("@/assets/images/contact_b.jpeg");
+  background-image: url("@/assets/images/contact_b.webp");
 }
 
 label {

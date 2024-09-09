@@ -85,22 +85,22 @@ export default {
         {
           name: "David Kabera",
           title: "Director",
-          url: require("@/assets/images/director.jpeg"),
+          url: require("@/assets/images/director.webp"),
         },
         {
           name: "Samuel Ikinya",
           title: "Manager",
-          url: require("@/assets/images/manager.jpeg"),
+          url: require("@/assets/images/manager.webp"),
         },
         {
           name: "Edwin Gitonga",
           title: "Accounts Manager",
-          url: require("@/assets/images/ac_manager.jpeg"),
+          url: require("@/assets/images/ac_manager.webp"),
         },
         {
           name: "Ian Munene",
           title: "Marketing Manager",
-          url: require("@/assets/images/mr_manager.jpeg"),
+          url: require("@/assets/images/mr_manager.webp"),
         },
       ],
     };
@@ -140,6 +140,6 @@ export default {
 
 <style scoped>
 header {
-  background-image: url("@/assets/images/about_b.png");
+  background-image: url("@/assets/images/about_b.webp");
 }
 </style>

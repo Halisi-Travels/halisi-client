@@ -67,7 +67,7 @@
             <div class="overflow-hidden h-[200px] w-[200px]">
               <img
                 loading="lazy"
-                :src="require('@/assets/images/avatar.png')"
+                :src="require('@/assets/images/avatar.webp')"
                 alt=""
                 class="w-full h-full object-cover"
               />

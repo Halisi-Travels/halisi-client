@@ -208,6 +208,6 @@ export default {
 
 <style scoped lang="scss">
 #app-footer {
-  background-image: url("@/assets/images/choice.jpg");
+  background-image: url("@/assets/images/choice.webp");
 }
 </style>

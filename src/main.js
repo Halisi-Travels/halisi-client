@@ -5,7 +5,6 @@ import store from "./store";
 import axios from "axios";
 import { format } from "date-fns";
 import { createHead, useHead } from "@vueuse/head";
-// import lazyload from "./directives/lazyload";
 
 // import tailwind
 import "./index.css";
@@ -49,7 +48,6 @@ createApp(App)
   .use(store)
   .use(router)
   .use(head)
-  // .directive(lazyload)
   .component("AppNav", Navbar)
   .component("AppFooter", Footer)
   .mount("#app");

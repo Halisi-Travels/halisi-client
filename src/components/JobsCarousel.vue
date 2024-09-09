@@ -88,6 +88,6 @@ export default {
 
 <style scoped>
 .carousel-container {
-  background-image: url("@/assets/images/job_banner.jpg");
+  background-image: url("@/assets/images/job_banner.webp");
 }
 </style>

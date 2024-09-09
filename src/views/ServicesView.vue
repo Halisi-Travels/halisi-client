@@ -43,31 +43,31 @@ export default {
     return {
       services: [
         {
-          url: require("@/assets/images/flight_b.jpg"),
+          url: require("@/assets/images/flight_b.webp"),
           title: "Flight Booking",
           desc: "Our flight booking service is designed to make your travel planning seamless and stress-free. Whether you're booking a domestic flight or planning an international journey, we offer a wide range of options to suit your schedule and budget. With access to the best deals and a user-friendly booking process, we ensure you get the most value for your money.",
           reverse: false,
         },
         {
-          url: require("@/assets/images/hotel_b.jpg"),
+          url: require("@/assets/images/hotel_b.webp"),
           title: "Hotel Booking",
           desc: "Our hotel booking service is tailored to provide you with the perfect stay, no matter where your travels take you. We partner with a wide selection of hotels, from luxurious resorts to budget-friendly accommodations, ensuring there's something to suit every taste and budget. Whether you're looking for a cozy boutique hotel or a family-friendly stay, we take care of every detail, so you can focus on enjoying your trip.",
           reverse: true,
         },
         {
-          url: require("@/assets/images/travel.jpg"),
+          url: require("@/assets/images/travel.webp"),
           title: "Vacation Packages",
           desc: "Our vacation packages are crafted to offer you a complete and worry-free travel experience. Each package is thoughtfully curated to include everything you need for an unforgettable getaway—from flights and accommodations to guided tours and unique experiences. Whether you're dreaming of a romantic escape, a family adventure, or an all-inclusive resort stay, we have options to suit every preference and budget. Let us handle the details, so you can relax and immerse yourself in the joy of your vacation.",
           reverse: false,
         },
         {
-          url: require("@/assets/images/visa.jpg"),
+          url: require("@/assets/images/visa.webp"),
           title: "Visa Applications",
           desc: "Our visa application service is designed to simplify the often complex and time-consuming process of obtaining a visa for any country. Whether you're planning a short vacation, a business trip, or a long-term stay, we provide comprehensive support tailored to your specific needs. Our team stays up-to-date with the latest visa requirements and regulations, so you can be confident that your application is complete and accurate.",
           reverse: true,
         },
         {
-          url: require("@/assets/images/job.jpg"),
+          url: require("@/assets/images/job.webp"),
           title: "Job Placement Packages",
           desc: "Our job placement packages are designed to streamline your journey to finding the perfect career opportunity. We offer comprehensive services that include resume building, personalized job matching, interview preparation, and career coaching. Whether you're a recent graduate looking to start your career, a professional seeking advancement, or someone transitioning into a new field, our tailored packages provide the support and resources you need.",
           reverse: false,
@@ -101,6 +101,6 @@ export default {
 
 <style scoped>
 header {
-  background-image: url("@/assets/images/services.jpg");
+  background-image: url("@/assets/images/services.webp");
 }
 </style>

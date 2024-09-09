@@ -236,7 +236,7 @@
           <img
             loading="lazy"
             class="w-full h-full object-cover"
-            :src="require('@/assets/images/vacation.png')"
+            :src="require('@/assets/images/vacation.webp')"
             alt="job search image"
           />
         </div>
@@ -338,7 +338,7 @@ input {
 }
 
 .dream-job {
-  background-image: url("@/assets/images/job_banner.jpg");
+  background-image: url("@/assets/images/job_banner.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -16,7 +16,7 @@
       >
         <img
           loading="lazy"
-          :src="require('../assets/images/dominic.jpeg')"
+          :src="require('../assets/images/dominic.webp')"
           alt="Dominic"
           class="w-full h-full object-contain"
         />
@@ -35,7 +35,7 @@
       >
         <img
           loading="lazy"
-          :src="require('../assets/images/duncan.jpeg')"
+          :src="require('../assets/images/duncan.webp')"
           alt="Dancan"
           class="w-full h-full object-contain"
         />
@@ -54,7 +54,7 @@
       >
         <img
           loading="lazy"
-          :src="require('../assets/images/macharia.jpeg')"
+          :src="require('../assets/images/macharia.webp')"
           alt="macharia"
           class="w-full h-full object-cover"
         />
@@ -100,21 +100,21 @@ export default {
     return {
       testimonials: [
         {
-          image: require("../assets/images/dominic.jpeg"),
+          image: require("../assets/images/dominic.webp"),
           text: "This service exceeded my expectations. The team was professional, and the results were outstanding. I highly recommend them!.",
           name: "Dominic",
           country: "ROMAINIA",
           job: "Cleaner",
         },
         {
-          image: require("../assets/images/duncan.jpeg"),
+          image: require("../assets/images/duncan.webp"),
           text: "An excellent experience from start to finish. The attention to detail and customer service was impeccable.",
           name: "Dancan Onweno",
           country: "QATAR",
           job: "Security Guard",
         },
         {
-          image: require("../assets/images/macharia.jpeg"),
+          image: require("../assets/images/macharia.webp"),
           text: "Fantastic results and a great team to work with. Their innovative approach made my relocation process bearable",
           name: "Joseph Macharia",
           country: "MAURITIUS",
