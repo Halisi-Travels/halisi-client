@@ -23,6 +23,7 @@
 
           <div class="image-div flex-initial lg:w-[500px] h-64">
             <img
+              loading="lazy"
               class="object-cover w-full h-full"
               :src="item.url"
               alt="service image"

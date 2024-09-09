@@ -9,6 +9,7 @@
   >
     <div class="logo-div hover:cursor-pointer" @click="$router.push('/')">
       <img
+        loading="lazy"
         width="100px"
         :src="require('@/assets/logo.png')"
         alt="Agency Logo"

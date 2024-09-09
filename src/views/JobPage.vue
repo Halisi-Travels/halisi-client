@@ -153,6 +153,7 @@
       <section class="company-details flex-1">
         <div class="border p-4 mx-auto">
           <img
+            loading="lazy"
             class="w-[200px] mx-auto"
             :src="require('@/assets/logo.png')"
             alt="company logo"

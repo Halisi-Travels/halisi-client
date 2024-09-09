@@ -15,6 +15,7 @@
         class="marquee item-1 h-[300px] w-[300px] rounded-lg absolute left-full animate-scrollLeft flex flex-col gap-3 items-center"
       >
         <img
+          loading="lazy"
           :src="require('../assets/images/dominic.jpeg')"
           alt="Dominic"
           class="w-full h-full object-contain"
@@ -33,6 +34,7 @@
         class="marquee item-2 h-[300px] w-[300px] rounded-lg absolute left-full animate-scrollLeft flex flex-col items-center gap-3"
       >
         <img
+          loading="lazy"
           :src="require('../assets/images/duncan.jpeg')"
           alt="Dancan"
           class="w-full h-full object-contain"
@@ -51,6 +53,7 @@
         class="marquee item-3 h-[300px] w-[300px] rounded-lg absolute left-full animate-scrollLeft flex flex-col items-center gap-3"
       >
         <img
+          loading="lazy"
           :src="require('../assets/images/macharia.jpeg')"
           alt="macharia"
           class="w-full h-full object-cover"
@@ -73,6 +76,7 @@
         class="w-11/12 mx-auto flex flex-col items-center gap-3 shadow-xl rounded-xl p-3"
       >
         <img
+          loading="lazy"
           :src="item.image"
           alt="Dominic"
           class="w-[250px] h-[250px] rounded-xl object-cover"

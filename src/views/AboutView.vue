@@ -55,6 +55,7 @@
               class="rounded-full w-[280px] lg:w-[200px] h-[280px] lg:h-[200px] overflow-hidden bg-red-600"
             >
               <img
+                loading="lazy"
                 :src="item.url"
                 alt="staff profile"
                 class="w-full h-full object-cover"

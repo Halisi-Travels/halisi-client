@@ -125,6 +125,7 @@
 
         <div class="image lg:w-[400px] h-[300px] overflow-hidden">
           <img
+            loading="lazy"
             class="w-full h-full object-cover"
             :src="require('@/assets/images/job_search.webp')"
             alt="job search image"
@@ -164,6 +165,7 @@
 
         <div class="image lg:w-[400px] h-[300px] overflow-hidden">
           <img
+            loading="lazy"
             class="w-full h-full object-cover"
             :src="require('@/assets/images/recruit.webp')"
             alt="job search image"
@@ -232,6 +234,7 @@
 
         <div class="image lg:w-[400px] h-[300px] overflow-hidden">
           <img
+            loading="lazy"
             class="w-full h-full object-cover"
             :src="require('@/assets/images/vacation.png')"
             alt="job search image"
