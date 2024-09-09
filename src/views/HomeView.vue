@@ -294,7 +294,7 @@ export default {
         {
           name: "description",
           content:
-            "Based in Nairobi, Kenya, Halisi Travels takes pride in offering a diverse array of flight booking, hotel booking, vacation, and job placement packages to our valued clients.",
+            "Halisi Travels is a job recruitment agency that offers a diverse array of services like flight booking, hotel booking, vacation, and job placement packages to our valued clients.",
         },
         {
           property: "og:title",
