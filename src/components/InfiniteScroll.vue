@@ -82,11 +82,10 @@
           class="w-[250px] h-[250px] rounded-xl object-cover"
         />
         <p class="text-center text-sm">
-          This service exceeded my expectations. The team was professional, and
-          the results were outstanding. I highly recommend them!.
+          {{ item.text }}
         </p>
-        <p class="italic text-center">~ Dominic ~</p>
-        <p class="font-bold text-center">Country: ROMANIA</p>
+        <p class="italic text-center">~ {{ item.name }} ~</p>
+        <p class="font-bold text-center">Country: {{ item.country }}</p>
         <!-- <p>Cleaner</p>
   <p>2024</p> -->
       </div>
