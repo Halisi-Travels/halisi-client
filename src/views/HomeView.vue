@@ -49,6 +49,8 @@
         </div>
 
         <div
+          data-aos="zoom-in"
+          data-aos-duration="2000"
           class="cv-upload flex gap-2 items-center bg-white text-black p-2 rounded-md hover:cursor-pointer font-bold"
           @click="$router.push('/profile')"
         >
