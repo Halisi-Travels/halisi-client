@@ -49,14 +49,14 @@
         JOBS
       </router-link>
 
-      <router-link
+      <!-- <router-link
         v-if="isAuthenticated"
         active-class="text-secondary"
         to="/applications"
         class="hover:text-secondary transition-all duration-300"
       >
         APPLICATIONS
-      </router-link>
+      </router-link> -->
 
       <router-link
         active-class="text-secondary"
@@ -130,14 +130,14 @@
         JOBS
       </router-link>
 
-      <router-link
+      <!-- <router-link
         v-if="isAuthenticated"
         active-class="text-secondary"
         to="/applications"
         class="hover:text-secondary transition-all duration-300"
       >
         APPLICATIONS
-      </router-link>
+      </router-link> -->
 
       <router-link
         active-class="text-secondary"
