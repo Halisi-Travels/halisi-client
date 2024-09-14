@@ -35,23 +35,6 @@
         <hr />
 
         <div class="flex justify-between py-5 text-gray-400">
-          <h4 class="text-xl font-semibold">Location (optional)</h4>
-          <div class="w-3/4">
-            <input
-              v-model="location"
-              type="text"
-              name="location"
-              id="location"
-            />
-            <p class="text-gray-400 text-sm mt-2">
-              Leave this blank if location is not important
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="flex justify-between py-5 text-gray-400">
           <h4 class="text-xl font-semibold">Country*</h4>
           <div class="w-3/4">
             <input v-model="country" type="text" name="country" id="country" />
@@ -76,29 +59,32 @@
         <hr />
 
         <div class="flex justify-between py-5 text-gray-400">
-          <h4 class="text-xl font-semibold">Remote Position?*</h4>
-          <div class="w-3/4">
-            <input v-model="remote" type="checkbox" name="remote" id="remote" />
-            <p class="text-gray-400 text-sm mt-2">
-              Check the box if this is a remote job
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="flex justify-between py-5 text-gray-400">
           <h4 class="text-xl font-semibold">Job Requirements*</h4>
           <div class="w-3/4">
             <input
-              v-model="requirements"
+              v-model="req"
               type="text"
               name="requirements"
               id="requirements"
+              @keyup.enter="addReq"
             />
             <p class="text-gray-400 text-sm mt-2">
-              Comma separated values e.g. 5+ years experience, verbal skills
+              press enter to add a requirement to the list
             </p>
+            <div class="flex gap-3">
+              <div
+                class="requirement px-2 py-1 rounded-md bg-secondary/20 text-secondary"
+                v-for="(item, index) in requirements"
+                :key="index"
+              >
+                <p class="flex items-center">
+                  {{ item }}
+                  <span @click="removeReq(index)">
+                    <i class="bx bx-x text-xl hover:cursor-pointer"></i>
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -107,25 +93,30 @@
         <div class="flex justify-between py-5 text-gray-400">
           <h4 class="text-xl font-semibold">Job Roles & Responsibilities*</h4>
           <div class="w-3/4">
-            <input v-model="roles" type="text" name="roles" id="roles" />
-            <p class="text-gray-400 text-sm mt-2">
-              Comma separated values e.g. Analyze big data, supervisory role
-            </p>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="flex justify-between py-5 text-gray-400">
-          <h4 class="text-xl font-semibold">Job Category</h4>
-          <div class="w-3/4">
             <input
-              v-model="category"
+              v-model="role"
               type="text"
-              name="category"
-              id="category"
-              placeholder="e.g. Engineering, Software, Caregiving"
+              name="roles"
+              id="roles"
+              @keyup.enter="addRole"
             />
+            <p class="text-gray-400 text-sm mt-2">
+              press enter to add a role to the list
+            </p>
+            <div class="flex gap-3">
+              <div
+                class="role px-2 py-1 rounded-md bg-secondary/20 text-secondary"
+                v-for="(item, index) in roles"
+                :key="index"
+              >
+                <p class="flex items-center">
+                  {{ item }}
+                  <span @click="removeRole(index)">
+                    <i class="bx bx-x text-xl hover:cursor-pointer"></i>
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -164,39 +155,6 @@
               name="email"
               id="email"
               placeholder="e.g. apply@company.com"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="company-details w-11/12 lg:w-8/12 mx-auto text-gray-500 mt-10"
-      >
-        <h1 class="font-bold text-4xl mb-4">COMPANY DETAILS</h1>
-
-        <div class="flex justify-between py-5 text-gray-400">
-          <h4 class="text-xl font-semibold">Company Name</h4>
-          <div class="w-3/4">
-            <input
-              v-model="companyName"
-              type="text"
-              name="companyName"
-              id="companyName"
-            />
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="flex justify-between py-5 text-gray-400">
-          <h4 class="text-xl font-semibold">Website (optional)</h4>
-          <div class="w-3/4">
-            <input
-              v-model="website"
-              type="url"
-              name="website"
-              id="website"
-              placeholder="http://"
             />
           </div>
         </div>
@@ -243,18 +201,15 @@ export default {
       showSuccessMessage: false,
 
       title: "",
-      location: "",
       country: "",
-      type: "",
-      remote: false,
       salary: "",
-      requirements: "",
-      roles: "",
-      category: "",
+      type: "",
+      req: "",
+      requirements: [],
+      role: "",
+      roles: [],
       desc: "",
-      applicationEmail: "",
-      companyName: "",
-      website: "",
+      applicationEmail: "jobs@halisitravels.com",
     };
   },
 
@@ -265,19 +220,36 @@ export default {
   methods: {
     ...mapActions(["logout", "newJob"]),
 
+    removeReq(index) {
+      if (index > -1) {
+        this.requirements.splice(index, 1);
+      }
+    },
+
+    addReq() {
+      this.requirements.push(this.req);
+      this.req = "";
+    },
+
+    removeRole(index) {
+      if (index > -1) {
+        this.roles.splice(index, 1);
+      }
+    },
+
+    addRole() {
+      this.roles.push(this.role);
+      this.role = "";
+    },
+
     async uploadJob() {
       const jobData = {
         title: this.title,
-        location: this.location,
         country: this.country,
-        type: this.type,
-        remote: this.remote,
         salary: this.salary,
+        type: this.type,
         applicationEmail: this.applicationEmail,
-        companyName: this.companyName,
-        website: this.website,
         requirements: this.requirements,
-        category: this.category,
         desc: this.desc,
         roles: this.roles,
       };

@@ -12,7 +12,9 @@
       <section
         class="w-11/12 lg:w-8/12 mx-auto job-details text-gray-500 flex flex-col gap-3"
       >
-        <h2 class="font-bold text-3xl md:text-5xl">{{ job.title }}</h2>
+        <h2 class="font-bold text-3xl md:text-5xl capitalize">
+          {{ job.title }}
+        </h2>
         <div class="job-detail">
           <h3 class="font-bold text-lg">Job Description</h3>
           <p class="italic">{{ job.desc }}</p>
@@ -20,8 +22,7 @@
         <div class="job-detail">
           <h3 class="font-bold text-lg">Job Location</h3>
           <p>
-            {{ job.location }}, {{ job.country }}
-            <span>({{ job.remote ? "Remote" : "On-Site" }})</span>
+            {{ job.country }}
           </p>
         </div>
 
@@ -53,20 +54,6 @@
             <h4 class="text-xl font-semibold">Your name</h4>
             <div class="w-3/4">
               <input v-model="name" type="text" name="name" id="name" />
-            </div>
-          </div>
-
-          <hr />
-
-          <div class="flex justify-between py-5 text-gray-400">
-            <h4 class="text-xl font-semibold">Location (optional)</h4>
-            <div class="w-3/4">
-              <input
-                v-model="location"
-                type="text"
-                name="location"
-                id="location"
-              />
             </div>
           </div>
 
@@ -127,55 +114,6 @@
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <hr />
-
-          <!-- online urls -->
-          <div class="flex justify-between py-5 text-gray-400">
-            <h4 class="text-xl font-semibold">URL(s) (optional)</h4>
-            <div class="w-3/4 pl-10">
-              <div
-                class="url-item mb-8 border-b-4 pb-4"
-                v-for="(item, index) in urlsCount"
-                :key="index"
-              >
-                <div class="url-div flex justify-between">
-                  <h4 class="font-bold">Name</h4>
-                  <div class="w-3/4">
-                    <input
-                      v-model="urlName"
-                      type="text"
-                      name="urlName"
-                      id="urlName"
-                    />
-                  </div>
-                </div>
-
-                <hr class="my-5" />
-
-                <div class="url-div flex justify-between">
-                  <h4 class="font-bold">URL</h4>
-                  <div class="w-3/4">
-                    <input v-model="url" type="text" name="url" id="url" />
-                  </div>
-                </div>
-              </div>
-
-              <button
-                name="add url"
-                type="button"
-                class="text-secondary hover:bg-secondary/30 p-2 rounded-sm"
-                @click.prevent="addUrlCount"
-              >
-                <i class="bx bx-plus"></i>
-                Add URL
-              </button>
-              <p class="text-gray-400 text-sm mt-2">
-                Optionally provide links to any of your websites or social
-                profiles.
-              </p>
             </div>
           </div>
 
@@ -243,12 +181,10 @@ export default {
       urlsCount: 0,
 
       name: "",
-      location: "",
       country: "",
       pTitle: "",
       skill: "",
       skills: [],
-      urls: [],
       cv: null,
     };
   },
@@ -296,7 +232,6 @@ export default {
       formData.append("country", this.country);
       formData.append("skills", this.skills);
       formData.append("pTitle", this.pTitle);
-      formData.append("urls", this.urls);
       formData.append("cv", this.cv);
 
       await this.newApplication(formData);

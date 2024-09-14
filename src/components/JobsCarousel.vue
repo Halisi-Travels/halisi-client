@@ -13,11 +13,8 @@
         class="bg-black/50 flex-none w-full flex flex-col items-center gap-6 my-4 py-4 border-y-4"
       >
         <h3 class="font-bold text-4xl capitalize">{{ job.title }}</h3>
-        <h4 class="font-semibold font-xl capitalize">
-          Our Client: {{ job.client.name }}
-        </h4>
         <p class="font-semibold text-lg capitalize">
-          {{ job.location }}, {{ job.country }}
+          {{ job.country }}
         </p>
         <p class="font-semibold uppercase">{{ job.type }}</p>
         <button

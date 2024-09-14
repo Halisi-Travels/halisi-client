@@ -7,7 +7,7 @@
         >
           <tr>
             <th class="px-6 py-3">Job Title</th>
-            <th class="px-6 py-3">Location</th>
+            <th class="px-6 py-3">Country</th>
             <th class="px-6 py-3">Job Type</th>
           </tr>
         </thead>
@@ -15,22 +15,18 @@
           <tr
             v-for="(job, index) in jobs"
             :key="index"
-            class="hover:bg-gray-50 hover:border-l-4 hover:border-secondary hover:cursor-pointer"
+            class="hover:bg-gray-50 hover:border-l-4 border-secondary hover:cursor-pointer"
             @click="$router.push(`/jobs/${job._id}`)"
           >
             <td class="px-6 py-4">
-              <div class="text-sm font-medium text-gray-900 uppercase">
+              <div class="text-sm font-bold text-gray-900 uppercase">
                 {{ job.title }}
-              </div>
-              <div class="text-sm text-gray-500">
-                <span class="font-semibold">Our Client:</span>
-                {{ job.client.name }}
               </div>
             </td>
 
             <td class="px-6 py-4">
               <div class="text-sm text-gray-500 capitalize">
-                <p>{{ job.location }}, {{ job.country }}</p>
+                <p>{{ job.country }}</p>
               </div>
             </td>
 

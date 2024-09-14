@@ -11,14 +11,9 @@
         class="flex justify-center flex-col lg:flex-row w-auto gap-5 font-semibold text-lg"
       >
         <div class="item flex justify-center items-center gap-2">
-          <i class="bx bxs-user-account text-xl"></i>
-          <p class="capitalize">{{ job.client.name }}</p>
-        </div>
-
-        <div class="item flex justify-center items-center gap-2">
           <i class="bx bx-map text-xl"></i>
           <p class="capitalize">
-            {{ job.location }}, <span>{{ job.country }}</span>
+            {{ job.country }}
           </p>
         </div>
 
@@ -53,11 +48,9 @@
             class="rounded-full px-4 py-2 bg-green-800 w-auto md:w-1/2 lg:w-auto text-sm uppercase text-white font-bold"
           >
             {{ job.type }}
-            <span>({{ job.remote ? "REMOTE" : "ON-SITE" }})</span>
           </p>
-          <p class="text-secondary font-semibold uppercase">Engineering</p>
           <p class="text-secondary font-semibold uppercase">
-            <i class="bx bxs-map text-gray-400"></i>{{ job.location }}
+            <i class="bx bxs-map text-gray-400"></i>{{ job.country }}
           </p>
         </div>
 
@@ -159,19 +152,9 @@
             alt="company logo"
           />
           <br />
-          <p class="italic font-semibold">Our Client</p>
+          <p class="italic font-semibold">Posted By</p>
           <p class="text-gray-500 font-semibold capitalize">
-            {{ job.client.name }}
-          </p>
-          <p class="text-gray-500 font-medium">
-            <a
-              :aria-label="job.client.name + 'website link'"
-              :href="job.client.website"
-              target="_blank"
-              class="text-blue-700 hover:underline"
-            >
-              {{ job.client.website }}
-            </a>
+            Halisi Recruitment Admin
           </p>
         </div>
       </section>

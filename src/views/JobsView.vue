@@ -19,18 +19,18 @@
         <div class="filter flex justify-between items-end mb-5 gap-2">
           <div class="inputs w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2.5">
             <input
+              v-model="filters.position"
+              type="text"
+              name="title"
+              id="title"
+              placeholder="TITLE"
+            />
+            <input
               v-model="filters.country"
               type="text"
               name="country"
               id="country"
               placeholder="COUNTRY"
-            />
-            <input
-              v-model="filters.position"
-              type="text"
-              name="position"
-              id="position"
-              placeholder="POSITION"
             />
             <input
               v-model="filters.salary"

@@ -1,9 +1,9 @@
 <template>
   <div>
     <div
-      class="partner-logos hidden md:block w-12/12 mx-auto relative h-[750px] overflow-hidden py-4"
+      class="testimonials-div hidden md:block w-full mx-auto relative h-[750px] overflow-hidden py-4"
     >
-      <p class="mb-10 px-10 text-center">
+      <p class="mb-10 px-10 md:w-10/12 mx-auto text-center">
         We are proud to have successfully placed numerous individuals in
         rewarding job opportunities abroad, spanning various industries and
         professions. Our candidates come from diverse backgrounds and bring
@@ -18,7 +18,7 @@
           loading="lazy"
           :src="require('../assets/images/dominic.webp')"
           alt="Dominic"
-          class="w-full h-full object-contain"
+          class="w-full h-full object-cover"
         />
         <p class="text-center text-sm">
           This service exceeded my expectations. The team was professional, and
@@ -126,7 +126,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.partner-logos {
+.testimonials-div {
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),

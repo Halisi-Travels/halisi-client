@@ -318,7 +318,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-image: url("@/assets/images/h_banner.webp");
+  background-image: url("@/assets/images/cbd.jpg");
 }
 
 input {
