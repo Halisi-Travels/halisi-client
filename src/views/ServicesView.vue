@@ -19,6 +19,11 @@
           <div class="text lg:flex-initial lg:w-[500px]">
             <h3 class="text-xl font-semibold mb-3">{{ item.title }}</h3>
             <p>{{ item.desc }}</p>
+            <button
+              class="mt-4 rounded border border-secondary text-secondary p-2"
+            >
+              Apply With Us...
+            </button>
           </div>
 
           <div class="image-div flex-initial lg:w-[500px] h-64">

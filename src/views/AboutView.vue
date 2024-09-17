@@ -83,13 +83,8 @@ export default {
     return {
       staff: [
         {
-          name: "David Kabera",
-          title: "Director",
-          url: require("@/assets/images/director.webp"),
-        },
-        {
           name: "Samuel Ikinya",
-          title: "Manager",
+          title: "CEO",
           url: require("@/assets/images/manager.webp"),
         },
         {
