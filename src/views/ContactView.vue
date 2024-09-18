@@ -111,11 +111,9 @@
         </div>
 
         <form
+          ref="form"
           class="form w-11/12 mx-auto lg:w-5/12 flex flex-col gap-6"
-          action="https://formkeep.com/f/54d6ddca3ff0"
-          accept-charset="UTF-8"
-          enctype="multipart/form-data"
-          method="POST"
+          @submit.prevent="sendEmail"
         >
           <p class="section-title text-3xl font-semibold text-primary">
             Feedback Form
@@ -123,29 +121,50 @@
 
           <div>
             <label for="name">Full Name</label>
-            <input type="name" name="name" />
+            <input v-model="name" type="name" name="name" id="name" required />
           </div>
 
           <div>
             <label for="phone">Phone Number</label>
-            <input type="text" name="phone" />
+            <input
+              v-model="phone"
+              type="text"
+              name="phone"
+              id="phone"
+              required
+            />
           </div>
 
           <div>
             <label for="email">Email Address</label>
-            <input type="email" name="email" />
+            <input
+              v-model="email"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
           </div>
 
           <div>
             <label for="subject">Subject</label>
-            <input type="text" name="subject" />
+            <input
+              v-model="subject"
+              type="text"
+              name="subject"
+              id="subject"
+              required
+            />
           </div>
 
           <div>
             <label for="name">Message</label>
+
             <textarea
               name="message"
+              v-model="message"
               id="message"
+              required
               cols="30"
               rows="10"
             ></textarea>
@@ -166,10 +185,17 @@
 
 <script>
 import { useHead } from "@vueuse/head";
+import axios from "axios";
 
 export default {
   data() {
-    return {};
+    return {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    };
   },
 
   mounted() {
@@ -187,6 +213,38 @@ export default {
         },
       ],
     });
+  },
+
+  methods: {
+    async sendEmail() {
+      var data = {
+        service_id: "service_xktxb8u",
+        template_id: "template_n66bwmf",
+        user_id: "bSAr_2GdgAAtESw31",
+        template_params: {
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          subject: this.subject,
+          message: this.message,
+        },
+      };
+
+      await axios
+        .post("https://api.emailjs.com/api/v1.0/email/send", data)
+        .then(() => {
+          alert("Your feedback has been submitted");
+
+          this.email = "";
+          this.name = "";
+          this.phone = "";
+          this.subject = "";
+          this.message = "";
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
   },
 };
 </script>

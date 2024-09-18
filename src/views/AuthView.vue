@@ -97,6 +97,12 @@
               placeholder="Email"
             />
             <input
+              v-model="registerForm.phone"
+              type="text"
+              name="phone"
+              placeholder="Phone"
+            />
+            <input
               v-model="registerForm.password"
               type="password"
               name="password"
@@ -140,6 +146,7 @@ export default {
         role: "",
         name: "",
         email: "",
+        phone: "",
         password: "",
       },
     };
@@ -176,12 +183,14 @@ export default {
         this.registerForm.role != "" &&
         this.registerForm.name != "" &&
         this.registerForm.email != "" &&
+        this.registerForm.phone != "" &&
         this.registerForm.password != ""
       ) {
         let userData = new FormData();
 
         userData.append("name", this.registerForm.name);
         userData.append("email", this.registerForm.email);
+        userData.append("phone", this.registerForm.phone);
         userData.append("role", this.registerForm.role);
         userData.append("password", this.registerForm.password);
 
@@ -193,6 +202,7 @@ export default {
           // clear the fields
           this.registerForm.name = "";
           this.registerForm.email = "";
+          this.registerForm.phone = "";
           this.registerForm.password = "";
 
           setTimeout(() => {
