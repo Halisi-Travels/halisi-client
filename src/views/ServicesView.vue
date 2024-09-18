@@ -21,6 +21,7 @@
             <p>{{ item.desc }}</p>
             <button
               class="mt-4 rounded border border-secondary text-secondary p-2"
+              @click="$router.push('/services-apply')"
             >
               Apply With Us...
             </button>

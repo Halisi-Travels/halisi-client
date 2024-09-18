@@ -94,7 +94,12 @@
           confidence, knowing that your visa application is in capable hands.
         </p>
 
-        <button class="mt-4 text-secondary p-2">Apply With Us...</button>
+        <button
+          class="mt-4 text-secondary p-2"
+          @click="$router.push('/services-apply')"
+        >
+          Apply With Us...
+        </button>
       </section>
 
       <section

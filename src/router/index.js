@@ -3,7 +3,6 @@ import store from "@/store";
 import NProgress from "@/nprogress-config";
 
 import HomeView from "../views/HomeView.vue";
-// import Unknown from "@/views/UnknownView.vue";
 
 const routes = [
   {
@@ -111,42 +110,9 @@ const routes = [
     },
   },
   {
-    path: "/applications",
-    name: "applications page",
-    component: () => import("../views/ApplicationsView.vue"),
-    beforeEnter: (_, __, next) => {
-      store
-        .dispatch("getApplications")
-        .then(() => {
-          next();
-        })
-        .catch((err) => {
-          console.error(err);
-          next(false);
-        });
-    },
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/applications/:id",
-    name: "application details page",
-    component: () => import("../views/AppDetails.vue"),
-    beforeEnter: (_, __, next) => {
-      store
-        .dispatch("getApplication")
-        .then(() => {
-          next();
-        })
-        .catch((err) => {
-          console.error(err);
-          next(false);
-        });
-    },
-    meta: {
-      requiresAuth: true,
-    },
+    path: "/services-apply",
+    name: "services application page",
+    component: () => import("../views/GenericApply.vue"),
   },
   {
     path: "/unauthorized",
