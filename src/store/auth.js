@@ -93,7 +93,6 @@ export default {
     logout({ commit }) {
       commit("SET_LOADING", true);
       commit("CLEAR_ERROR");
-      commit("CLEAR_JOBS");
       commit("CLEAR_APPLICATIONS");
       commit("LOGOUT");
 

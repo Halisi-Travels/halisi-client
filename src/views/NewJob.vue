@@ -12,7 +12,7 @@
           <h4 class="text-xl font-semibold">Your Account</h4>
           <p class="flex-initial w-3/4">
             You are currently signed in as
-            <span class="font-semibold">{{ user ? user.email : "Null" }} </span>
+            <span class="font-semibold">{{ user ? user.name : "" }} </span>
             <span
               class="font-semibold text-secondary/90 uppercase text-sm hover:cursor-pointer"
               @click="logout"
@@ -143,21 +143,6 @@
             />
           </div>
         </div>
-
-        <hr />
-
-        <div class="flex justify-between py-5 text-gray-400">
-          <h4 class="text-xl font-semibold">Application Email/URL</h4>
-          <div class="w-3/4">
-            <input
-              v-model="applicationEmail"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="e.g. apply@company.com"
-            />
-          </div>
-        </div>
       </section>
 
       <section
@@ -167,9 +152,9 @@
           name="upload"
           @click="uploadJob"
           :disabled="loading"
-          class="bg-primary rounded flex-initial lg:w-[180px] px-4 py-2 text-white font-semibold uppercase hover:bg-secondary transition-all duration-500 ease-in-out disabled:cursor-not-allowed disabled:bg-gray-600"
+          class="bg-primary rounded flex-initial w-auto lg:w-[180px] px-4 py-3 text-white font-semibold uppercase hover:bg-secondary transition-all duration-500 ease-in-out disabled:cursor-not-allowed disabled:bg-gray-600"
         >
-          upload
+          SUBMIT
         </button>
 
         <div
@@ -178,6 +163,13 @@
         >
           The job has been successfully Posted
         </div>
+
+        <!-- <div
+          v-if="!showSuccessMessage"
+          class="p-3 bg-gray-200 text-gray-700 border-r-4 border-gray-700 w-1/2 font-bold uppercase text-sm text-center italic"
+        >
+          Ensure all the required fields are entered
+        </div> -->
 
         <div
           v-if="error"
@@ -209,7 +201,6 @@ export default {
       role: "",
       roles: [],
       desc: "",
-      applicationEmail: "jobs@halisitravels.com",
     };
   },
 
@@ -248,7 +239,6 @@ export default {
         country: this.country,
         salary: this.salary,
         type: this.type,
-        applicationEmail: this.applicationEmail,
         requirements: this.requirements,
         desc: this.desc,
         roles: this.roles,

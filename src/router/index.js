@@ -9,17 +9,6 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    beforeEnter: (_, __, next) => {
-      store
-        .dispatch("fetchJobs")
-        .then(() => {
-          next();
-        })
-        .catch((err) => {
-          console.error(err);
-          next();
-        });
-    },
   },
   {
     path: "/about",
