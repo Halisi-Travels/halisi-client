@@ -170,10 +170,25 @@
             ></textarea>
           </div>
 
+          <div
+            v-if="error"
+            class="p-3 bg-red-200 text-red-700 border-r-4 border-red-700 w-full font-bold uppercase text-sm text-right"
+          >
+            {{ error }}
+          </div>
+
+          <div
+            v-if="showSuccess"
+            class="p-3 bg-green-200 text-green-700 border-r-4 border-green-700 w-full font-bold uppercase text-sm text-right"
+          >
+            Your has been submitted succesfully
+          </div>
+
           <button
             name="submit feedback"
             type="submit"
-            class="bg-primary rounded flex-initial lg:w-1/2 px-4 py-2 text-white font-semibold"
+            :disabled="loading"
+            class="bg-primary rounded flex-initial lg:w-1/2 px-4 py-2 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
           >
             SUBMIT
           </button>
@@ -185,7 +200,7 @@
 
 <script>
 import { useHead } from "@vueuse/head";
-import axios from "axios";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   data() {
@@ -195,7 +210,12 @@ export default {
       phone: "",
       subject: "",
       message: "",
+      showSuccess: false,
     };
+  },
+
+  computed: {
+    ...mapGetters(["error", "loading"]),
   },
 
   mounted() {
@@ -216,34 +236,32 @@ export default {
   },
 
   methods: {
+    ...mapActions(["sendFeedback"]),
+
     async sendEmail() {
       var data = {
-        service_id: "service_xktxb8u",
-        template_id: "template_n66bwmf",
-        user_id: "bSAr_2GdgAAtESw31",
-        template_params: {
-          name: this.name,
-          email: this.email,
-          phone: this.phone,
-          subject: this.subject,
-          message: this.message,
-        },
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        subject: this.subject,
+        message: this.message,
       };
 
-      await axios
-        .post("https://api.emailjs.com/api/v1.0/email/send", data)
-        .then(() => {
-          alert("Your feedback has been submitted");
+      await this.sendFeedback(data);
+
+      if (!this.error) {
+        this.showSuccess = true;
+
+        setTimeout(() => {
+          this.showSuccess = false;
 
           this.email = "";
           this.name = "";
           this.phone = "";
           this.subject = "";
           this.message = "";
-        })
-        .catch((err) => {
-          alert(err);
-        });
+        }, 3000);
+      }
     },
   },
 };

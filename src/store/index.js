@@ -6,6 +6,7 @@ import Jobs from "./jobs";
 import Auth from "./auth";
 import Shared from "./shared";
 import Application from "./application";
+import Feedback from "./feedback";
 
 export default createStore({
   modules: {
@@ -13,6 +14,7 @@ export default createStore({
     Auth,
     Shared,
     Application,
+    Feedback,
   },
   plugins: [persistedState()],
 });
