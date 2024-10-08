@@ -73,21 +73,6 @@
 
           <hr />
 
-          <div class="flex justify-between py-5 text-gray-400">
-            <h4 class="text-xl font-semibold">Professional title</h4>
-            <div class="w-3/4">
-              <input
-                v-model="pTitle"
-                type="text"
-                name="pTitle"
-                id="pTitle"
-                placeholder="e.g. 'Data analyst'"
-              />
-            </div>
-          </div>
-
-          <hr />
-
           <!-- skills -->
           <div class="flex justify-between py-5 text-gray-400">
             <h4 class="text-xl font-semibold">Skills (optional)</h4>
@@ -182,7 +167,6 @@ export default {
 
       name: "",
       country: "",
-      pTitle: "",
       skill: "",
       skills: [],
       cv: null,
@@ -228,10 +212,8 @@ export default {
 
       formData.append("jobId", this.job._id);
       formData.append("name", this.name);
-      formData.append("location", this.location);
       formData.append("country", this.country);
       formData.append("skills", this.skills);
-      formData.append("pTitle", this.pTitle);
       formData.append("cv", this.cv);
 
       await this.newApplication(formData);

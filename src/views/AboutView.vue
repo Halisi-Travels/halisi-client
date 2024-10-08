@@ -95,7 +95,7 @@ export default {
         {
           name: "Ian Munene",
           title: "Marketing Manager",
-          url: require("@/assets/images/mr_manager.webp"),
+          url: require("@/assets/images/mr_manager.jpeg"),
         },
       ],
     };

@@ -7,7 +7,7 @@
     </header>
 
     <main class="mt-10 mb-20">
-      <form @submit.prevent="sendApplication">
+      <form @submit.prevent="apply">
         <section class="w-11/12 lg:w-8/12 mx-auto">
           <div class="flex justify-between py-5 text-gray-400">
             <h4 class="text-xl font-semibold">Your Name</h4>
@@ -51,7 +51,7 @@
           <hr />
 
           <div class="flex justify-between py-5 text-gray-400">
-            <h4 class="text-xl font-semibold">Subject</h4>
+            <h4 class="text-xl font-semibold">Message</h4>
             <div class="w-3/4">
               <textarea
                 v-model="message"
@@ -71,16 +71,16 @@
         >
           <button
             name="submit"
-            type="button"
-            class="bg-primary rounded flex-initial lg:w-[180px] px-4 py-2 text-white font-semibold uppercase hover:bg-secondary transition-all duration-500 ease-in-out"
-            @click.prevent="submitApplication"
+            type="submit"
+            :disabled="loading"
+            class="bg-primary rounded flex-initial lg:w-[180px] px-4 py-2 text-white font-semibold uppercase hover:bg-secondary transition-all duration-500 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
           >
             SEND
           </button>
 
           <div
             v-if="showSuccessMessage"
-            class="p-3 bg-green-200 text-green-700 border-r-4 border-green-700 md:w-10/12 lg:w-1/2 font-bold uppercase text-sm text-center"
+            class="p-3 bg-green-200 text-green-700 border-r-4 border-green-700 md:w-10/12 lg:w-1/2 font-bold uppercase text-sm text-right"
           >
             Your details have been submitted succesfully
           </div>
@@ -91,7 +91,7 @@
 </template>
 
 <script>
-// import axios from "axios";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "ServicesApplyPage",
@@ -105,20 +105,34 @@ export default {
       phone: "",
       message: "",
       country: "",
-      date: new Date(),
     };
   },
 
-  methods: {
-    async sendApplication() {
-      this.showSuccessMessage = true;
+  computed: {
+    ...mapGetters(["error", "loading"]),
+  },
 
-      setTimeout(() => {
-        this.showSuccessMessage = false;
-        if (this.user) {
-          // this.$router.push("/profile");
-        }
-      }, 2000);
+  methods: {
+    ...mapActions(["sendApplication"]),
+
+    async apply() {
+      const emailData = {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+        country: this.country,
+      };
+
+      await this.sendApplication(emailData);
+
+      if (!this.error) {
+        this.showSuccessMessage = true;
+
+        setTimeout(() => {
+          this.showSuccessMessage = false;
+        }, 2000);
+      }
     },
   },
 };

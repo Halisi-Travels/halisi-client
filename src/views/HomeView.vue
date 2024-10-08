@@ -274,7 +274,6 @@ export default {
   name: "HomeView",
 
   components: {
-    // Testimonials,
     SlickCarousel,
     InfiniteScroll,
   },
