@@ -52,7 +52,7 @@
             :key="index"
           >
             <div
-              class="rounded-full w-[280px] lg:w-[200px] h-[280px] lg:h-[200px] overflow-hidden bg-red-600"
+              class="rounded-full w-[280px] lg:w-[200px] h-[280px] lg:h-[200px] overflow-hidden"
             >
               <img
                 loading="lazy"
