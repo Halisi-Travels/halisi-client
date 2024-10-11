@@ -7,6 +7,7 @@ import Auth from "./auth";
 import Shared from "./shared";
 import Application from "./application";
 import Feedback from "./feedback";
+import Blog from "./blogs";
 
 export default createStore({
   modules: {
@@ -15,6 +16,7 @@ export default createStore({
     Shared,
     Application,
     Feedback,
+    Blog,
   },
   plugins: [persistedState()],
 });
