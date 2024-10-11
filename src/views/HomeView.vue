@@ -253,10 +253,6 @@
       </section>
 
       <section class="testimonials mt-20 w-12/12 md:10/12 lg:w-10/12 mx-auto">
-        <h3 class="section-title text-2xl font-semibold text-center mb-10">
-          TESTIMONIALS
-        </h3>
-
         <InfiniteScroll />
       </section>
     </main>

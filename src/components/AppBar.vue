@@ -1,7 +1,7 @@
 <template>
   <div
     id="app-navbar"
-    class="flex justify-between z-10 items-center px-10 py-2 h-[80px]"
+    class="flex justify-between z-20 items-center px-10 py-2 h-[80px]"
     :class="{
       'fixed top-0 left-0 right-0 shadow-lg bg-white': isFixed,
       relative: !isFixed,
