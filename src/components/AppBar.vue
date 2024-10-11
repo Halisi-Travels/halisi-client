@@ -35,7 +35,7 @@
 
       <router-link
         active-class="text-secondary"
-        to="/blog"
+        to="/blogs"
         class="hover:text-secondary transition-all duration-300"
       >
         BLOG
@@ -115,7 +115,7 @@
 
       <router-link
         active-class="text-secondary"
-        to="/blog"
+        to="/blogs"
         class="hover:text-secondary transition-all duration-300"
       >
         BLOG

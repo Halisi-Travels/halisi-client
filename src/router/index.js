@@ -26,9 +26,36 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
-    path: "/blog",
-    name: "blog",
-    component: () => import("../views/BlogView.vue"),
+    path: "/blogs",
+    name: "blogs",
+    component: () => import("../views/BlogsView.vue"),
+    beforeEnter: (_, __, next) => {
+      store
+        .dispatch("fetchBlogs")
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
+  },
+  {
+    path: "/blog/:id",
+    name: "blog info",
+    component: () => import("../views/BlogInfoView.vue"),
+    beforeEnter: (to, _, next) => {
+      store
+        .dispatch("fetchBlog", to.params.id)
+        .then(() => {
+          next();
+        })
+        .catch((err) => {
+          console.error(err);
+          next(false);
+        });
+    },
   },
   {
     path: "/jobs/:id",
