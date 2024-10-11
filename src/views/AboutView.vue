@@ -77,7 +77,7 @@
 import { useHead } from "@vueuse/head";
 
 export default {
-  name: "contactPage",
+  name: "aboutPage",
 
   data() {
     return {

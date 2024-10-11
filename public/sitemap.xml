@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://halisitravels.com/</loc>
-    <lastmod>2024-09-09</lastmod>
+    <lastmod>2024-10-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,8 +11,16 @@
   <!-- About Us Page -->
   <url>
     <loc>https://halisitravels.com/about</loc>
-    <lastmod>2024-09-05</lastmod>
+    <lastmod>2024-10-11</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://halisitravels.com/blog</loc>
+    <lastmod>2024-10-11</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
@@ -35,7 +43,7 @@
   <!-- Contact Us Page -->
   <url>
     <loc>https://halisitravels.com/contact</loc>
-    <lastmod>2024-09-05</lastmod>
+    <lastmod>2024-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

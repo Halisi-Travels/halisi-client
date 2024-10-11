@@ -169,7 +169,9 @@
         </section>
       </div>
 
-      <div class="copyright p-6 bg-black/40 text-gray-400 flex justify-between">
+      <div
+        class="copyright p-6 bg-black/40 text-gray-400 flex flex-col items-center md:flex-row md:justify-between"
+      >
         <p>Halisi Travel Agency &copy; {{ year }}</p>
         <p>
           Developed by

@@ -26,6 +26,11 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
+    path: "/blog",
+    name: "blog",
+    component: () => import("../views/BlogView.vue"),
+  },
+  {
     path: "/jobs/:id",
     name: "job description",
     component: () => import("../views/JobPage.vue"),
@@ -119,7 +124,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior: (to, from, savedPosition) => {
+  scrollBehavior: (to, _, savedPosition) => {
     if (to.hash) {
       return {
         selector: to.hash,
