@@ -1,44 +1,8 @@
 <template>
   <div>
     <div class="testimonials-div hidden md:block w-full mx-auto relative">
-      <!-- <p class="mb-10 px-10 md:w-10/12 mx-auto text-center">
-        We are proud to have successfully placed numerous individuals in
-        rewarding job opportunities abroad, spanning various industries and
-        professions. Our candidates come from diverse backgrounds and bring
-        unique skills and talents, enabling them to thrive in international
-        environments.
-      </p> -->
-
       <div class="testimonials relative py-16">
-        <!-- Gradient overlays -->
-        <!-- <div
-          class="fixed inset-y-0 left-0 w-64 bg-gradient-to-l from-transparent to-white z-10"
-        ></div>
-        <div
-          class="fixed inset-y-0 right-0 w-64 bg-gradient-to-r from-transparent to-white z-10"
-        ></div> -->
-
         <div class="testimonials-slide flex">
-          <!-- <div
-            class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto flex items-center space-x-4"
-          >
-            <img
-              :src="require('../assets/images/dominic.webp')"
-              class="w-8/12 h-[250px] rounded-lg"
-              alt="avatar"
-            />
-            <div>
-              <p class="text-gray-600">
-                "I highly recommend this agency for anyone looking to work
-                abroad. They made the process easy and stress-free."
-              </p>
-              <h5 class="mt-2 text-lg font-semibold text-gray-900">
-                Jane Smith
-              </h5>
-              <p class="text-sm text-gray-500">Marketing Manager, UK</p>
-            </div>
-          </div> -->
-
           <div class="bg-gray-100 py-12">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
               <h2 class="text-3xl font-extrabold text-gray-900 text-center">
