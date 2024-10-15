@@ -68,8 +68,12 @@
               id="requirements"
               @keyup.enter="addReq"
             />
-            <p class="text-gray-400 text-sm mt-2">
-              press enter to add a requirement to the list
+            <p class="text-gray-400 text-sm mt-2 hidden md:block">
+              Press <strong>"enter"</strong> to add a requirement to the list
+            </p>
+            <p class="text-gray-400 text-sm mt-2 md:hidden">
+              Separate the requirements with commas e.g. example 1, example 2
+              etc...
             </p>
             <div class="flex gap-3">
               <div
@@ -100,8 +104,11 @@
               id="roles"
               @keyup.enter="addRole"
             />
-            <p class="text-gray-400 text-sm mt-2">
-              press enter to add a role to the list
+            <p class="text-gray-400 text-sm mt-2 hidden md:block">
+              Press <strong>"enter"</strong> to add a role to the list
+            </p>
+            <p class="text-gray-400 text-sm mt-2 md:hidden">
+              Separate the roles with commas e.g. example 1, example 2 etc...
             </p>
             <div class="flex gap-3">
               <div
@@ -164,13 +171,6 @@
           The job has been successfully Posted
         </div>
 
-        <!-- <div
-          v-if="!showSuccessMessage"
-          class="p-3 bg-gray-200 text-gray-700 border-r-4 border-gray-700 w-1/2 font-bold uppercase text-sm text-center italic"
-        >
-          Ensure all the required fields are entered
-        </div> -->
-
         <div
           v-if="error"
           class="p-3 bg-red-200 text-red-700 border-r-4 border-red-700 w-1/2 font-bold uppercase text-sm text-center"
@@ -195,7 +195,7 @@ export default {
       title: "",
       country: "",
       salary: "",
-      type: "",
+      type: "Full Time",
       req: "",
       requirements: [],
       role: "",
@@ -241,6 +241,8 @@ export default {
         type: this.type,
         requirements: this.requirements,
         desc: this.desc,
+        role: this.role,
+        reqs: this.req,
         roles: this.roles,
       };
 

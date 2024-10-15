@@ -74,7 +74,7 @@
           <hr />
 
           <!-- skills -->
-          <div class="flex justify-between py-5 text-gray-400">
+          <!-- <div class="flex justify-between py-5 text-gray-400">
             <h4 class="text-xl font-semibold">Skills (optional)</h4>
             <div class="w-3/4">
               <input
@@ -100,9 +100,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <hr />
+          <!-- <hr /> -->
 
           <!-- resume upload -->
           <div class="flex justify-between py-5 text-gray-400">
@@ -167,8 +167,8 @@ export default {
 
       name: "",
       country: "",
-      skill: "",
-      skills: [],
+      // skill: "",
+      // skills: [],
       cv: null,
     };
   },
@@ -213,7 +213,7 @@ export default {
       formData.append("jobId", this.job._id);
       formData.append("name", this.name);
       formData.append("country", this.country);
-      formData.append("skills", this.skills);
+      // formData.append("skills", this.skills);
       formData.append("cv", this.cv);
 
       await this.newApplication(formData);
