@@ -16,13 +16,18 @@ export default {
     this.$store.dispatch("clearError");
   },
 
+  async created() {
+    this.$store.dispatch("getMe");
+  },
+
   computed: {
-    ...mapGetters(["user"]),
+    ...mapGetters(["isAuthenticated"]),
   },
 
   watch: {
-    user(val) {
-      if (val != null || val != undefined) {
+    isAuthenticated(val) {
+      // returns true if authenticated
+      if (val) {
         this.$router.push("/profile");
       } else {
         this.$router.push("/auth");

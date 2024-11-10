@@ -3,7 +3,6 @@ import axios from "axios";
 export default {
   state: {
     user: null,
-    token: localStorage.getItem("token") || "",
   },
 
   mutations: {
@@ -11,14 +10,11 @@ export default {
       state.user = payload;
     },
 
-    SET_TOKEN(state, payload) {
-      state.token = payload;
-    },
-
     LOGOUT(state) {
       state.user = null;
-      state.token = "";
+      state.applications = [];
       state.error = null;
+      state.userApplications = [];
     },
   },
 
@@ -53,18 +49,12 @@ export default {
         });
 
         if (res.status == 200) {
-          let user = res.data.loadedUser;
-          let token = res.data.token;
+          let user = res.data.user;
 
           commit("SET_USER", user);
-          commit("SET_TOKEN", token);
-
-          localStorage.setItem("token", token);
-          axios.defaults.headers.common["Authorization"] = token;
         }
       } catch (err) {
         commit("SET_ERROR", err.response.data.message);
-        localStorage.removeItem("token");
       } finally {
         commit("SET_LOADING", false);
       }
@@ -91,15 +81,26 @@ export default {
     },
 
     logout({ commit }) {
-      commit("SET_LOADING", true);
-      commit("CLEAR_ERROR");
-      commit("CLEAR_APPLICATIONS");
       commit("LOGOUT");
+    },
 
-      localStorage.removeItem("token");
-      delete axios.defaults.headers.common["Authorization"];
+    async getMe({ commit }) {
+      try {
+        commit("SET_LOADING", true);
+        commit("CLEAR_ERROR");
 
-      commit("SET_LOADING", false);
+        const res = await axios.post("/auth/me");
+
+        if (res.status == 200) {
+          let user = res.data.user;
+
+          commit("SET_USER", user);
+        }
+      } catch (err) {
+        commit("LOGOUT");
+      } finally {
+        commit("SET_LOADING", false);
+      }
     },
   },
 
