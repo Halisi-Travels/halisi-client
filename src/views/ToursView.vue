@@ -21,19 +21,11 @@
             class="absolute bottom-0 bg-opacity-50 bg-gray-900 text-white w-full h-full p-4 flex flex-col md:gap-6 justify-end"
           >
             <div class="md:w-7/12 mb-10 flex flex-col gap-6">
-              <h1
-                class="text-2xl md:text-4xl font-bold tracking-wider"
-                data-aos="fade-up"
-                data-aos-duration="2200"
-              >
+              <h1 class="text-2xl md:text-4xl font-bold tracking-wider">
                 {{ slide.title }}
               </h1>
 
-              <p
-                class="tracking-wide text-xl md:text-2xl"
-                data-aos="fade-up"
-                data-aos-duration="3000"
-              >
+              <p class="tracking-wide text-xl md:text-2xl">
                 {{ slide.text }}
               </p>
               <div
