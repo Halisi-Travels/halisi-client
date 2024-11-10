@@ -4,9 +4,6 @@
       <div
         class="w-full h-full bg-black/30 flex flex-col items-center justify-center text-white gap-8 p-4 md:p-0"
       >
-        <!-- <h1 class="page-title text-3xl md:text-6xl font-bold text-center">
-          Halisi Recruitment Agency
-        </h1> -->
         <p class="slogan font-semibold text-md md:text-xl text-center">
           YOUR GLOBAL RECRUITMENT PARTNER IN KENYA
         </p>

@@ -19,7 +19,7 @@
     <div class="hidden nav-links lg:flex gap-10 items-center font-bold">
       <router-link
         exact-active-class="text-secondary"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
         to="/"
       >
         HOME
@@ -28,7 +28,7 @@
       <router-link
         active-class="text-secondary  transition-all duration-500"
         to="/about"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
       >
         ABOUT US
       </router-link>
@@ -36,7 +36,7 @@
       <router-link
         active-class="text-secondary"
         to="/tours"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
       >
         TOURS
       </router-link>
@@ -44,7 +44,7 @@
       <router-link
         active-class="text-secondary"
         to="/blogs"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
       >
         BLOG
       </router-link>
@@ -52,7 +52,7 @@
       <router-link
         active-class="text-secondary  transition-all duration-500"
         to="/services"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
       >
         OUR SERVICES
       </router-link>
@@ -60,7 +60,7 @@
       <router-link
         active-class="text-secondary"
         to="/jobs"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
       >
         JOBS
       </router-link>
@@ -68,7 +68,7 @@
       <router-link
         active-class="text-secondary"
         to="/contact"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
       >
         CONTACT US
       </router-link>
@@ -77,7 +77,7 @@
         v-if="isAuthenticated"
         active-class="text-secondary"
         to="/profile"
-        class="hover:text-secondary transition-all duration-300"
+        class="text-primary hover:text-secondary transition-all duration-300"
       >
         MY PROFILE
       </router-link>
