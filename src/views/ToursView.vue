@@ -1,6 +1,6 @@
 <template>
   <div class="tours">
-    <header class="carousel relative">
+    <header class="h-[70vh] carousel relative">
       <div class="carousel-inner relative h-full w-full overflow-hidden">
         <div
           v-for="(slide, index) in slides"
@@ -158,16 +158,6 @@ export default {
     return {
       currentSlide: 0,
       slides: [
-        {
-          image: require("../assets/images/tour1.webp"),
-          title: "Majestic Wildlife of the Maasai Mara",
-          text: "Known for its breathtaking landscapes and abundant wildlife, it offers an unforgettable experience for anyone seeking to witness the Great Migration or spot the Big Five",
-        },
-        {
-          image: require("../assets/images/coast.webp"),
-          title: "Kenya’s Hidden Coastal Gems",
-          text: "From the quiet allure of Watamu’s pristine shores to the rich Swahili history of Lamu Island, Kenya’s coast offers a unique blend of adventure, culture, and relaxation",
-        },
         {
           image: require("../assets/images/waterfall.jpg"),
           title: "Chasing Waterfalls",

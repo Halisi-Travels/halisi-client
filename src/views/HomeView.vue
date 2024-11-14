@@ -59,22 +59,45 @@
 
     <main class="my-20">
       <section
-        v-if="filteredJobs.length > 0"
-        class="jobs-table w-11/12 md:w-10/12 lg:w-8/12 mx-auto"
+        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
       >
-        <h2 class="section-title text-3xl font-bold mb-6 uppercase text-center">
-          Jobs
-        </h2>
-
-        <p
-          v-if="filteredJobs.length <= 0"
-          class="text-gray-500 font-semibold p-3 bg-gray-200 border-l-4 border-gray-500"
+        <div
+          class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
         >
-          There are no jobs posted!
-        </p>
+          <h3 class="section-title text-xl font-semibold">
+            PLANNING YOUR NEXT VACATION
+          </h3>
+          <p>
+            Planning your next vacation can be an exciting and fulfilling
+            experience. Start by envisioning your ideal getaway—whether it's a
+            relaxing beach retreat, an adventurous mountain trek, or an
+            immersive cultural exploration. Consider your budget, travel dates,
+            and the type of experience you're seeking. Research destinations
+            that match your preferences, and explore accommodations, activities,
+            and local attractions. Don’t forget to check for travel deals and
+            packages that can offer great value. With careful planning, you can
+            create a memorable vacation that perfectly suits your desires and
+            needs.
+          </p>
+          <button
+            name="contact us"
+            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
+            @click="$router.push('/contact')"
+          >
+            CONTACT US
+          </button>
+        </div>
 
-        <SlickCarousel v-else :jobs="filteredJobs" />
+        <div class="image lg:w-[400px] h-[300px] overflow-hidden">
+          <img
+            loading="lazy"
+            class="w-full h-full object-cover"
+            :src="require('@/assets/images/vacation.webp')"
+            alt="job search image"
+          />
+        </div>
       </section>
+
       <hr class="my-20" />
 
       <section
@@ -143,7 +166,7 @@
       </section>
 
       <section
-        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
+        class="recruiter flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
       >
         <div
           class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
@@ -152,16 +175,13 @@
             are you a recruiter
           </h3>
           <p>
-            Planning your next vacation can be an exciting and fulfilling
-            experience. Start by envisioning your ideal getaway—whether it's a
-            relaxing beach retreat, an adventurous mountain trek, or an
-            immersive cultural exploration. Consider your budget, travel dates,
-            and the type of experience you're seeking. Research destinations
-            that match your preferences, and explore accommodations, activities,
-            and local attractions. Don’t forget to check for travel deals and
-            packages that can offer great value. With careful planning, you can
-            create a memorable vacation that perfectly suits your desires and
-            needs.
+            At <strong>Halisi Agency</strong>, we connect top talent with
+            leading organizations. As a recruiter, you'll have access to a
+            diverse pool of qualified candidates ready to meet your hiring
+            needs. Whether you're filling entry-level positions or executive
+            roles, our platform makes it easy to post jobs, manage applications,
+            and find the perfect fit for your team. Partner with us today to
+            streamline your hiring process and build a stronger workforce
           </p>
           <button
             name="post job"
@@ -212,44 +232,24 @@
       </section>
 
       <section
-        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
+        v-if="filteredJobs.length > 0"
+        class="jobs-table w-11/12 md:w-10/12 lg:w-8/12 mx-auto mt-28"
       >
-        <div
-          class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
-        >
-          <h3 class="section-title text-xl font-semibold">
-            PLANNING YOUR NEXT VACATION
-          </h3>
-          <p>
-            Planning your next vacation can be an exciting and fulfilling
-            experience. Start by envisioning your ideal getaway—whether it's a
-            relaxing beach retreat, an adventurous mountain trek, or an
-            immersive cultural exploration. Consider your budget, travel dates,
-            and the type of experience you're seeking. Research destinations
-            that match your preferences, and explore accommodations, activities,
-            and local attractions. Don’t forget to check for travel deals and
-            packages that can offer great value. With careful planning, you can
-            create a memorable vacation that perfectly suits your desires and
-            needs.
-          </p>
-          <button
-            name="contact us"
-            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
-            @click="$router.push('/contact')"
-          >
-            CONTACT US
-          </button>
-        </div>
+        <h2 class="section-title text-3xl font-bold mb-6 uppercase text-center">
+          Available Jobs
+        </h2>
 
-        <div class="image lg:w-[400px] h-[300px] overflow-hidden">
-          <img
-            loading="lazy"
-            class="w-full h-full object-cover"
-            :src="require('@/assets/images/vacation.webp')"
-            alt="job search image"
-          />
-        </div>
+        <p
+          v-if="filteredJobs.length <= 0"
+          class="text-gray-500 font-semibold p-3 bg-gray-200 border-l-4 border-gray-500"
+        >
+          There are no jobs posted!
+        </p>
+
+        <SlickCarousel v-else :jobs="filteredJobs" />
       </section>
+
+      <hr class="my-20" />
 
       <section class="testimonials mt-20 w-12/12 md:10/12 lg:w-10/12 mx-auto">
         <InfiniteScroll />
@@ -380,7 +380,7 @@ export default {
 
     setInterval(() => {
       this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-    }, 5000);
+    }, 3000);
 
     // fetch jobs
     this.$store.dispatch("fetchJobs");
@@ -399,10 +399,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// header {
-//  background-image: url("@/assets/images/cbd.jpg");
-// }
-
 .carousel {
   height: 80vh;
 }
@@ -424,7 +420,7 @@ input {
 }
 
 .dream-job {
-  background-image: url("@/assets/images/job_banner.webp");
+  background-image: url("@/assets/images/happiness.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
