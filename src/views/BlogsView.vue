@@ -93,6 +93,6 @@ export default {
 
 <style scoped>
 header {
-  background-image: url("@/assets/images/about_b.webp");
+  background-image: url("@/assets/images/blog.jpg");
 }
 </style>

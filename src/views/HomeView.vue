@@ -1,81 +1,103 @@
 <template>
   <div class="home">
-    <header class="h-full md:h-[70vh] bg-cover bg-fixed bg-center">
-      <div
-        class="w-full h-full bg-black/30 flex flex-col items-center justify-center text-white gap-8 p-4 md:p-0"
-      >
-        <!-- <h1 class="page-title text-3xl md:text-6xl font-bold text-center">
-          Halisi Recruitment Agency
-        </h1> -->
-        <p class="slogan font-semibold text-md md:text-xl text-center">
-          YOUR GLOBAL RECRUITMENT PARTNER IN KENYA
-        </p>
-
-        <div class="search container flex w-auto mt-7">
-          <div
-            class="flex flex-col lg:flex-row gap-4 p-3 bg-white/40 rounded-tl-md rounded-bl-md"
-          >
-            <input
-              v-model="filters.country"
-              type="text"
-              name="country"
-              id="country"
-              placeholder="COUNTRY"
-            />
-            <input
-              v-model="filters.location"
-              type="text"
-              name="position"
-              id="position"
-              placeholder="POSITION"
-            />
-            <input
-              v-model="filters.category"
-              type="text"
-              name="salary"
-              id="salary"
-              placeholder="SALARY"
-            />
-          </div>
-
-          <button
-            name="search"
-            :disabled="loading"
-            class="bg-secondary text-white p-3 rounded-tr-md rounded-br-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-            @click="filterJobs"
-          >
-            SEARCH
-          </button>
-        </div>
-
+    <header class="carousel relative">
+      <div class="carousel-inner relative h-full w-full overflow-hidden">
         <div
-          class="cv-upload flex gap-2 items-center bg-white text-black p-2 rounded-md hover:cursor-pointer font-bold"
-          @click="$router.push('/profile')"
+          v-for="(slide, index) in slides"
+          :key="index"
+          class="carousel-item w-full h-full object-center"
+          :class="{
+            block: currentSlide === index,
+            hidden: currentSlide !== index,
+          }"
+          style="transition: display 0.5s"
         >
-          <i class="bx bx-upload text-xl"></i>
-          <p>Upload CV</p>
+          <img
+            :src="slide.image"
+            :alt="slide.text"
+            class="w-full h-full object-cover object-center"
+          />
+          <div
+            class="absolute bottom-0 bg-opacity-50 bg-gray-900 text-white w-full h-full p-4 flex flex-col md:gap-6 justify-end"
+          >
+            <div class="md:w-7/12 mb-10 flex flex-col gap-6">
+              <h1 class="text-2xl md:text-4xl font-bold tracking-wider">
+                {{ slide.title }}
+              </h1>
+
+              <p class="tracking-wide text-xl md:text-2xl">
+                {{ slide.text }}
+              </p>
+              <div
+                class="w-[100px] text-secondary hover:cursor-pointer font-bold"
+                @click="$router.push('/services-apply')"
+              >
+                <p>Book Now</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Progress Dots -->
+      <div
+        class="dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1"
+      >
+        <span
+          v-for="(_, index) in slides"
+          :key="'dot-' + index"
+          @click="currentSlide = index"
+          class="cursor-pointer w-12 h-[2px]"
+          :class="{
+            'bg-gray-300': currentSlide !== index,
+            'bg-secondary': currentSlide === index,
+          }"
+          style="transition: background-color 0.5s"
+        ></span>
       </div>
     </header>
 
     <main class="my-20">
       <section
-        v-if="filteredJobs.length > 0"
-        class="jobs-table w-11/12 md:w-10/12 lg:w-8/12 mx-auto"
+        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
       >
-        <h2 class="section-title text-3xl font-bold mb-6 uppercase text-center">
-          Jobs
-        </h2>
-
-        <p
-          v-if="filteredJobs.length <= 0"
-          class="text-gray-500 font-semibold p-3 bg-gray-200 border-l-4 border-gray-500"
+        <div
+          class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
         >
-          There are no jobs posted!
-        </p>
+          <h3 class="section-title text-xl font-semibold">
+            PLANNING YOUR NEXT VACATION
+          </h3>
+          <p>
+            Planning your next vacation can be an exciting and fulfilling
+            experience. Start by envisioning your ideal getaway—whether it's a
+            relaxing beach retreat, an adventurous mountain trek, or an
+            immersive cultural exploration. Consider your budget, travel dates,
+            and the type of experience you're seeking. Research destinations
+            that match your preferences, and explore accommodations, activities,
+            and local attractions. Don’t forget to check for travel deals and
+            packages that can offer great value. With careful planning, you can
+            create a memorable vacation that perfectly suits your desires and
+            needs.
+          </p>
+          <button
+            name="contact us"
+            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
+            @click="$router.push('/contact')"
+          >
+            CONTACT US
+          </button>
+        </div>
 
-        <SlickCarousel v-else :jobs="filteredJobs" />
+        <div class="image lg:w-[400px] h-[300px] overflow-hidden">
+          <img
+            loading="lazy"
+            class="w-full h-full object-cover"
+            :src="require('@/assets/images/vacation.webp')"
+            alt="job search image"
+          />
+        </div>
       </section>
+
       <hr class="my-20" />
 
       <section
@@ -144,7 +166,7 @@
       </section>
 
       <section
-        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
+        class="recruiter flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
       >
         <div
           class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
@@ -153,16 +175,13 @@
             are you a recruiter
           </h3>
           <p>
-            Planning your next vacation can be an exciting and fulfilling
-            experience. Start by envisioning your ideal getaway—whether it's a
-            relaxing beach retreat, an adventurous mountain trek, or an
-            immersive cultural exploration. Consider your budget, travel dates,
-            and the type of experience you're seeking. Research destinations
-            that match your preferences, and explore accommodations, activities,
-            and local attractions. Don’t forget to check for travel deals and
-            packages that can offer great value. With careful planning, you can
-            create a memorable vacation that perfectly suits your desires and
-            needs.
+            At <strong>Halisi Agency</strong>, we connect top talent with
+            leading organizations. As a recruiter, you'll have access to a
+            diverse pool of qualified candidates ready to meet your hiring
+            needs. Whether you're filling entry-level positions or executive
+            roles, our platform makes it easy to post jobs, manage applications,
+            and find the perfect fit for your team. Partner with us today to
+            streamline your hiring process and build a stronger workforce
           </p>
           <button
             name="post job"
@@ -213,47 +232,80 @@
       </section>
 
       <section
-        class="vacation flex lg:flex-row-reverse flex-col-reverse justify-between gap-3 w-11/12 md:2-10/12 lg:w-8/12 mx-auto my-20"
+        v-if="filteredJobs.length > 0"
+        class="jobs-table w-11/12 md:w-10/12 lg:w-8/12 mx-auto mt-28"
       >
-        <div
-          class="info lg:w-2/4 flex flex-col items-center lg:items-start gap-7"
-        >
-          <h3 class="section-title text-xl font-semibold">
-            PLANNING YOUR NEXT VACATION
-          </h3>
-          <p>
-            Planning your next vacation can be an exciting and fulfilling
-            experience. Start by envisioning your ideal getaway—whether it's a
-            relaxing beach retreat, an adventurous mountain trek, or an
-            immersive cultural exploration. Consider your budget, travel dates,
-            and the type of experience you're seeking. Research destinations
-            that match your preferences, and explore accommodations, activities,
-            and local attractions. Don’t forget to check for travel deals and
-            packages that can offer great value. With careful planning, you can
-            create a memorable vacation that perfectly suits your desires and
-            needs.
-          </p>
-          <button
-            name="contact us"
-            class="border-2 border-secondary text-secondary p-3 rounded-md font-semibold w-full lg:w-6/12 mt-2"
-            @click="$router.push('/contact')"
-          >
-            CONTACT US
-          </button>
-        </div>
+        <h2 class="section-title text-3xl font-bold mb-6 uppercase text-center">
+          Available Jobs
+        </h2>
 
-        <div class="image lg:w-[400px] h-[300px] overflow-hidden">
-          <img
-            loading="lazy"
-            class="w-full h-full object-cover"
-            :src="require('@/assets/images/vacation.webp')"
-            alt="job search image"
-          />
-        </div>
+        <p
+          v-if="filteredJobs.length <= 0"
+          class="text-gray-500 font-semibold p-3 bg-gray-200 border-l-4 border-gray-500"
+        >
+          There are no jobs posted!
+        </p>
+
+        <SlickCarousel v-else :jobs="filteredJobs" />
       </section>
+
+      <hr class="my-20" />
 
       <section class="testimonials mt-20 w-12/12 md:10/12 lg:w-10/12 mx-auto">
         <InfiniteScroll />
+      </section>
+
+      <section
+        class="job-apply mt-20 w-12/12 md:10/12 lg:w-10/12 mx-auto bg-gray-400 p-5 rounded-lg"
+      >
+        <p class="slogan font-semibold text-md md:text-xl text-center">
+          FIND YOUR NEXT JOB
+        </p>
+
+        <div class="search container flex justify-center w-auto mt-7">
+          <div
+            class="flex flex-col lg:flex-row gap-4 p-3 bg-white/40 rounded-tl-md rounded-bl-md"
+          >
+            <input
+              v-model="filters.country"
+              type="text"
+              name="country"
+              id="country"
+              placeholder="COUNTRY"
+            />
+            <input
+              v-model="filters.location"
+              type="text"
+              name="position"
+              id="position"
+              placeholder="POSITION"
+            />
+            <input
+              v-model="filters.category"
+              type="text"
+              name="salary"
+              id="salary"
+              placeholder="SALARY"
+            />
+          </div>
+
+          <button
+            name="search"
+            :disabled="loading"
+            class="bg-secondary text-white p-3 rounded-tr-md rounded-br-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+            @click="filterJobs"
+          >
+            SEARCH
+          </button>
+        </div>
+
+        <div
+          class="cv-upload flex gap-2 items-center justify-center bg-white text-black p-2 rounded-md hover:cursor-pointer font-bold w-[300px] mx-auto mt-5"
+          @click="$router.push('/profile')"
+        >
+          <i class="bx bx-upload text-xl"></i>
+          <p>Upload CV</p>
+        </div>
       </section>
     </main>
   </div>
@@ -281,6 +333,24 @@ export default {
         salary: "",
         position: "",
       },
+      currentSlide: 0,
+      slides: [
+        {
+          image: require("../assets/images/tour1.webp"),
+          title: "Majestic Wildlife of the Maasai Mara",
+          text: "Known for its breathtaking landscapes and abundant wildlife, it offers an unforgettable experience for anyone seeking to witness the Great Migration or spot the Big Five",
+        },
+        {
+          image: require("../assets/images/coast.webp"),
+          title: "Kenya’s Hidden Coastal Gems",
+          text: "From the quiet allure of Watamu’s pristine shores to the rich Swahili history of Lamu Island, Kenya’s coast offers a unique blend of adventure, culture, and relaxation",
+        },
+        {
+          image: require("../assets/images/waterfall.jpg"),
+          title: "Chasing Waterfalls",
+          text: "From the impressive Karuru Falls in the Aberdares to the scenic Thompson Falls in Nyahururu, these natural wonders are perfect for hikers and nature lovers looking to explore off-the-beaten-path destinations",
+        },
+      ],
     };
   },
 
@@ -308,6 +378,10 @@ export default {
       ],
     });
 
+    setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    }, 3000);
+
     // fetch jobs
     this.$store.dispatch("fetchJobs");
   },
@@ -325,8 +399,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  background-image: url("@/assets/images/cbd.jpg");
+.carousel {
+  height: 80vh;
 }
 
 input {
@@ -346,7 +420,7 @@ input {
 }
 
 .dream-job {
-  background-image: url("@/assets/images/job_banner.webp");
+  background-image: url("@/assets/images/happiness.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
