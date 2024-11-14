@@ -23,7 +23,7 @@
         </div>
 
         <button
-          v-if="role == 'candidate'"
+          v-if="user && user.role == 'candidate'"
           name="apply"
           class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 uppercase transfom mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
           @click="$router.push('/apply')"
@@ -106,7 +106,7 @@
 
         <div class="btns flex justify-between">
           <button
-            v-if="role == 'candidate'"
+            v-if="user && user.role == 'candidate'"
             name="apply"
             class="mt-10 rounded-full bg-secondary px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300"
             @click="$router.push('/apply')"
@@ -116,7 +116,7 @@
 
           <button
             name="delete"
-            v-if="user && (role == 'admin' || user._id === job.postedBy)"
+            v-if="user && (user.role == 'admin' || user._id === job.postedBy)"
             class="mt-10 rounded-full bg-red-600 px-8 py-2 text-white font-semibold hover:shadow-lg transition-all duration-300 uppercase"
             @click="showDeleteDialog = true"
           >
@@ -183,7 +183,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["job", "user", "role"]),
+    ...mapGetters(["job", "user"]),
   },
 
   methods: {

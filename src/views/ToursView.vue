@@ -29,7 +29,7 @@
                 {{ slide.text }}
               </p>
               <div
-                class="w-[100px] text-secondary hover:cursor-pointer font-bold"
+                class="w-[120px] text-secondary border border-secondary text-center rounded-lg py-2 px-4 hover:cursor-pointer font-bold"
                 @click="$router.push('/services-apply')"
               >
                 <p>Book Now</p>
@@ -37,23 +37,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Progress Dots -->
-      <div
-        class="dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1"
-      >
-        <span
-          v-for="(_, index) in slides"
-          :key="'dot-' + index"
-          @click="currentSlide = index"
-          class="cursor-pointer w-12 h-[2px]"
-          :class="{
-            'bg-gray-300': currentSlide !== index,
-            'bg-secondary': currentSlide === index,
-          }"
-          style="transition: background-color 0.5s"
-        ></span>
       </div>
     </header>
 
