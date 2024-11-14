@@ -13,7 +13,7 @@ import "./index.css";
 import Navbar from "@/components/AppBar.vue";
 import Footer from "@/components/Footer.vue";
 
-axios.defaults.withCredentials = true; // enable sending cookies with requests
+axios.defaults.withCredentials = false; // enable sending cookies with requests
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
 const head = createHead();
