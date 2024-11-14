@@ -29,7 +29,7 @@
                 {{ slide.text }}
               </p>
               <div
-                class="w-[100px] text-secondary hover:cursor-pointer font-bold"
+                class="w-[120px] text-secondary border border-secondary text-center rounded-lg py-2 px-4 hover:cursor-pointer font-bold"
                 @click="$router.push('/services-apply')"
               >
                 <p>Book Now</p>
@@ -187,12 +187,21 @@ export default {
         },
       ],
     });
+
+    setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    }, 5000);
   },
 };
 </script>
 
-<style scoped>
-header {
-  background-image: url("@/assets/images/about_b.webp");
+<style scoped lang="scss">
+.carousel {
+  height: 80vh;
+}
+
+h2,
+h3 {
+  letter-spacing: 2px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="tours">
     <header
       class="h-[50vh] bg-cover bg-center text-white flex items-center justify-center"
     >
