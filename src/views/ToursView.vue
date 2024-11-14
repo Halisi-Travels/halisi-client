@@ -190,3 +190,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+header {
+  background-image: url("@/assets/images/about_b.webp");
+}
+</style>

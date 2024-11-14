@@ -43,6 +43,14 @@
 
       <router-link
         active-class="text-secondary"
+        to="/tours"
+        class="hover:text-secondary transition-all duration-300"
+      >
+        TOURS
+      </router-link>
+
+      <router-link
+        active-class="text-secondary"
         to="/blogs"
         class="hover:text-secondary transition-all duration-300"
       >
@@ -123,6 +131,14 @@
 
       <router-link
         active-class="text-secondary  transition-all duration-500"
+        to="/tours"
+        class="hover:text-secondary transition-all duration-300"
+      >
+        TOURS
+      </router-link>
+
+      <router-link
+        active-class="text-secondary"
         to="/tours"
         class="hover:text-secondary transition-all duration-300"
       >
