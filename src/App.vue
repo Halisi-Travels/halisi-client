@@ -16,10 +16,6 @@ export default {
     this.$store.dispatch("clearError");
   },
 
-  async created() {
-    this.$store.dispatch("getMe");
-  },
-
   computed: {
     ...mapGetters(["isAuthenticated"]),
   },

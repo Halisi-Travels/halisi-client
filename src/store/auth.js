@@ -49,7 +49,7 @@ export default {
         });
 
         if (res.status == 200) {
-          let user = res.data.user;
+          let user = res.data.loadedUser;
 
           commit("SET_USER", user);
         }
