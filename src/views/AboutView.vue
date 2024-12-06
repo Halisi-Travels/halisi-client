@@ -83,19 +83,24 @@ export default {
     return {
       staff: [
         {
-          name: "Samuel Ikinya",
+          name: "Winnie Karemi",
           title: "CEO",
-          url: require("@/assets/images/manager.webp"),
+          url: require("@/assets/images/ceo.jpeg"),
         },
         {
-          name: "Edwin Gitonga",
-          title: "Accounts Manager",
-          url: require("@/assets/images/ac_manager.webp"),
+          name: "Mike Kamau",
+          title: "Manager",
+          url: require("@/assets/images/manager.jpeg"),
         },
         {
-          name: "Ian Munene",
-          title: "Marketing Manager",
-          url: require("@/assets/images/mr_manager.jpeg"),
+          name: "Esther Wangari",
+          title: "Executive Secretary",
+          url: require("@/assets/images/secretary.jpeg"),
+        },
+        {
+          name: "Betty Kangethe",
+          title: "Supervisor",
+          url: require("@/assets/images/supervisor.jpeg"),
         },
       ],
     };
