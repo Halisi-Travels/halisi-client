@@ -170,6 +170,7 @@ export default {
           this.showSuccessMessage = false;
           this.country = "";
           this.cv = null;
+
           if (this.user) {
             this.$router.go(-1);
           }
