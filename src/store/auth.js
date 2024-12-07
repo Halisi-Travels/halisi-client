@@ -3,11 +3,13 @@ import axios from "axios";
 export default {
   state: {
     user: null,
+    token: localStorage.getItem("token") || null,
   },
 
   mutations: {
     SET_USER(state, payload) {
-      state.user = payload;
+      state.user = payload.user;
+      state.token = payload.token;
     },
 
     LOGOUT(state) {
@@ -19,7 +21,7 @@ export default {
   },
 
   actions: {
-    async signup({ commit }, payload) {
+    async signup({ commit, dispatch }, payload) {
       try {
         commit("SET_LOADING", true);
         commit("CLEAR_ERROR");
@@ -29,6 +31,11 @@ export default {
           email: payload.get("email"),
           phone: payload.get("phone"),
           role: payload.get("role"),
+          password: payload.get("password"),
+        });
+
+        await dispatch("login", {
+          email: payload.get("email"),
           password: payload.get("password"),
         });
       } catch (err) {
@@ -50,13 +57,18 @@ export default {
 
         if (res.status == 200) {
           let user = res.data.loadedUser;
+          let token = res.data.token;
 
-          commit("SET_USER", user);
+          commit("SET_USER", { user, token });
+
+          localStorage.setItem("token", token);
+          axios.defaults.headers.common["Authorization"] = token;
         }
       } catch (err) {
         commit("SET_ERROR", err.response.data.message);
       } finally {
         commit("SET_LOADING", false);
+        localStorage.removeItem("token");
       }
     },
 
@@ -81,6 +93,9 @@ export default {
     },
 
     logout({ commit }) {
+      localStorage.removeItem("token");
+      delete axios.defaults.headers.common["Authorization"];
+
       commit("LOGOUT");
     },
 

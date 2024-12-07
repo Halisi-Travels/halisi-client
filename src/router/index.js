@@ -179,11 +179,11 @@ router.beforeEach((to, _, next) => {
   // user needs to be logged in
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (isAuthenticated) {
-      const userRole = store.getters.role;
+      const user = store.getters.user;
 
       // user needs to be an admin or employer
       if (to.matched.some((record) => record.meta.requiresAdmin)) {
-        if (userRole == "employer" || userRole == "admin") {
+        if (user.role == "employer" || user.role == "admin") {
           next();
           return;
         }

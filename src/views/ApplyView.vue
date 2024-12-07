@@ -35,9 +35,7 @@
             <h4 class="text-xl font-semibold">Your Account</h4>
             <p class="flex-initial w-3/4">
               You are currently signed in as
-              <span class="font-semibold"
-                >{{ user ? user.email : "Null" }}
-              </span>
+              <span class="font-semibold">{{ user ? user.email : "" }} </span>
               <span
                 class="font-semibold text-secondary/90 uppercase text-sm hover:cursor-pointer"
                 @click="logout"
@@ -72,37 +70,6 @@
           </div>
 
           <hr />
-
-          <!-- skills -->
-          <!-- <div class="flex justify-between py-5 text-gray-400">
-            <h4 class="text-xl font-semibold">Skills (optional)</h4>
-            <div class="w-3/4">
-              <input
-                v-model="skill"
-                type="text"
-                name="skill"
-                id="skill"
-                @keyup.enter.prevent="addSkill"
-              />
-              <p class="text-gray-400 text-sm mt-2">Add up to 5 skills</p>
-              <div class="flex gap-3">
-                <div
-                  class="skill px-2 py-1 rounded-md bg-secondary/20 text-secondary"
-                  v-for="(item, index) in skills"
-                  :key="index"
-                >
-                  <p class="flex items-center">
-                    {{ item }}
-                    <span @click="removeSkill(index)">
-                      <i class="bx bx-x text-xl"></i>
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <hr /> -->
 
           <!-- resume upload -->
           <div class="flex justify-between py-5 text-gray-400">
@@ -167,8 +134,6 @@ export default {
 
       name: "",
       country: "",
-      // skill: "",
-      // skills: [],
       cv: null,
     };
   },
@@ -182,26 +147,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["newApplication"]),
-
-    addUrlCount() {
-      this.urlsCount++;
-    },
-
-    removeSkill(index) {
-      if (index > -1) {
-        this.skills.splice(index, 1);
-      }
-    },
-
-    addSkill() {
-      if (this.skills.length < 5) {
-        this.skills.push(this.skill);
-      } else {
-        alert("cannot add more skills");
-      }
-      this.skill = "";
-    },
+    ...mapActions(["newApplication", "logout"]),
 
     handleFileUpload(e) {
       this.cv = e.target.files[0];
@@ -213,7 +159,6 @@ export default {
       formData.append("jobId", this.job._id);
       formData.append("name", this.name);
       formData.append("country", this.country);
-      // formData.append("skills", this.skills);
       formData.append("cv", this.cv);
 
       await this.newApplication(formData);
@@ -223,8 +168,10 @@ export default {
 
         setTimeout(() => {
           this.showSuccessMessage = false;
+          this.country = "";
+          this.cv = null;
           if (this.user) {
-            // this.$router.push("/profile");
+            this.$router.go(-1);
           }
         }, 2000);
       }
