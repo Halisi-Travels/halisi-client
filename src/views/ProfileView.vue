@@ -24,7 +24,7 @@
           </div>
 
           <div
-            v-if="role == 'employer'"
+            v-if="user.role == 'employer'"
             class="p-3 hover:bg-primary/30 hover:border-l-4 hover:cursor-pointer hover:text-primary border-primary transition-all ease-in-out duration-300 flex items-center gap-2"
             @click="displayJobs"
             :class="{
@@ -36,7 +36,7 @@
           </div>
 
           <div
-            v-if="role == 'candidate'"
+            v-if="user.role == 'candidate'"
             class="p-3 hover:bg-primary/30 hover:border-l-4 hover:cursor-pointer hover:text-primary border-primary transition-all ease-in-out duration-300 flex items-center gap-2"
             @click="displayApps"
             :class="{
@@ -80,7 +80,10 @@
               <p class="text-2xl lg:text-4xl font-semibold">
                 {{ user ? user.name : "Null" }}
               </p>
-              <p class="mt-2 text-gray-600" v-if="user && role == 'candidate'">
+              <p
+                class="mt-2 text-gray-600"
+                v-if="user && user.role == 'candidate'"
+              >
                 <span class="font-semibold">0</span> applications
               </p>
             </div>
@@ -91,14 +94,14 @@
           <div class="more-info text-gray-600">
             <div class="flex gap-1">
               <p class="font-bold">Email:</p>
-              <p>{{ user ? user.email : "Null" }}</p>
+              <p>{{ user ? user.email : "" }}</p>
             </div>
             <div class="flex gap-1">
               <p class="font-bold">Role:</p>
-              <p class="capitalize">{{ user ? role : "Null" }}</p>
+              <p class="capitalize">{{ user ? user.role : "" }}</p>
             </div>
 
-            <div v-if="user && role == 'candidate'" class="cv-div">
+            <div v-if="user && user.role == 'candidate'" class="cv-div">
               <div class="flex gap-2 items-center" v-if="user.cvUrl">
                 <h3>Uploaded CV:</h3>
                 <a
@@ -113,7 +116,7 @@
                   class="text-blue-600 underline hover:cursor-pointer"
                   @click="showDialog = true"
                 >
-                  update CV
+                  Update CV
                 </p>
               </div>
 
@@ -122,7 +125,7 @@
                   class="text-blue-600 underline hover:cursor-pointer"
                   @click="showDialog = true"
                 >
-                  upload CV
+                  Upload CV
                 </p>
               </div>
             </div>
@@ -214,7 +217,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["user", "userApplications", "error", "role"]),
+    ...mapGetters(["user", "userApplications", "error"]),
   },
 
   watch: {
