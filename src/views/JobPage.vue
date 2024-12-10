@@ -32,7 +32,10 @@
       </div>
 
       <div class="item items-center gap-2 font-bold text-xl">
-        <p>Salary: {{ job.salary }}</p>
+        <p>
+          Salary: <span class="uppercase">{{ job.currency }}</span>
+          {{ job.salary }}
+        </p>
       </div>
 
       <h4 class="uppercase font-bold">
@@ -63,7 +66,10 @@
         </div>
 
         <div class="item items-center gap-2 font-bold text-xl mt-3">
-          <p>Salary: {{ job.salary }}</p>
+          <p>
+            Salary: <span class="uppercase">{{ job.currency }}</span>
+            {{ job.salary }}
+          </p>
         </div>
 
         <div class="job-desc text-gray-500 mt-5">
@@ -163,7 +169,7 @@
           <br />
           <p class="italic font-semibold">Posted By</p>
           <p class="text-gray-500 font-semibold capitalize">
-            {{ job.postedBy ? job.postedBy.name : "" }}
+            {{ job.postedBy.name }}
           </p>
         </div>
       </section>
