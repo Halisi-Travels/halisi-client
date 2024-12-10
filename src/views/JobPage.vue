@@ -163,7 +163,7 @@
           <br />
           <p class="italic font-semibold">Posted By</p>
           <p class="text-gray-500 font-semibold capitalize">
-            {{ job.postedBy.name }}
+            {{ job.postedBy ? job.postedBy.name : "" }}
           </p>
         </div>
       </section>
