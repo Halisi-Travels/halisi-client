@@ -222,10 +222,17 @@
               qualifications but also fulfills your career ambitions.
             </p>
             <button
+              @click="
+                {
+                  {
+                    user ? $router.push('/jobs') : $router.push('/auth');
+                  }
+                }
+              "
               name="signup"
               class="rounded-full px-5 py-3 bg-white text-black font-bold hover:border-b-4 border-gray-600 transition-all duration-300"
             >
-              SIGN UP TO JOIN
+              {{ user ? "SEEK JOBS" : "SIGN UP TO JOIN" }}
             </button>
           </div>
         </div>
@@ -355,7 +362,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["jobs", "loading"]),
+    ...mapGetters(["jobs", "loading", "user"]),
 
     filteredJobs() {
       return this.jobs.slice(0, 5);

@@ -26,7 +26,7 @@ export default {
         commit("SET_LOADING", true);
         commit("CLEAR_ERROR");
 
-        await axios.post("/auth/register", {
+        await axios.post("/users/register", {
           name: payload.get("name"),
           email: payload.get("email"),
           phone: payload.get("phone"),
@@ -50,13 +50,13 @@ export default {
         commit("SET_LOADING", true);
         commit("CLEAR_ERROR");
 
-        const res = await axios.post("/auth/login", {
+        const res = await axios.post("/users/login", {
           email: payload.get("email"),
           password: payload.get("password"),
         });
 
         if (res.status == 200) {
-          let user = res.data.loadedUser;
+          let user = res.data.user;
           let token = res.data.token;
 
           commit("SET_USER", { user, token });
@@ -77,7 +77,7 @@ export default {
         commit("SET_LOADING", true);
         commit("CLEAR_ERROR");
 
-        const res = await axios.post("/auth/upload", payload);
+        const res = await axios.post("/users/upload", payload);
 
         if (res.status == 201) {
           let user = res.data.updatedUser;
@@ -104,7 +104,7 @@ export default {
         commit("SET_LOADING", true);
         commit("CLEAR_ERROR");
 
-        const res = await axios.post("/auth/me");
+        const res = await axios.post("/users/me");
 
         if (res.status == 200) {
           let user = res.data.user;
