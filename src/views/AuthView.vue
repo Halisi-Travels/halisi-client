@@ -37,12 +37,26 @@
               name="email"
               placeholder="Email"
             />
-            <input
-              v-model="loginForm.password"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
+
+            <div class="password-input relative">
+              <input
+                v-model="loginForm.password"
+                :type="loginInputType"
+                name="password"
+                placeholder="Password"
+                id="password"
+                class="outline-0 w-full p-2 mt-3 mb-4 border border-slate-400 rounded bg-white"
+              />
+
+              <span
+                @click="toggleInput('login')"
+                class="absolute right-3 top-5 text-grey-200 cursor-pointer"
+                ><i
+                  class="bx text-2xl"
+                  :class="[showLoginPassword ? 'bx-hide' : 'bx-show']"
+                ></i>
+              </span>
+            </div>
 
             <button
               name="login button"
@@ -102,12 +116,26 @@
               name="phone"
               placeholder="Phone"
             />
-            <input
-              v-model="registerForm.password"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
+
+            <div class="password-input relative">
+              <input
+                v-model="registerForm.password"
+                :type="registerInputType"
+                name="password"
+                placeholder="Password"
+                id="password"
+                class="outline-0 w-full p-2 mt-3 mb-4 border border-slate-400 rounded bg-white"
+              />
+
+              <span
+                @click="toggleInput('register')"
+                class="absolute right-3 top-5 text-grey-200 cursor-pointer"
+                ><i
+                  class="bx text-2xl"
+                  :class="[showRegisterPassword ? 'bx-hide' : 'bx-show']"
+                ></i>
+              </span>
+            </div>
 
             <button
               name="signup"
@@ -138,6 +166,8 @@ export default {
     return {
       rememberMe: false,
       showSuccessMessage: false,
+      showLoginPassword: false,
+      showRegisterPassword: false,
       loginForm: {
         email: "",
         password: "",
@@ -154,10 +184,26 @@ export default {
 
   computed: {
     ...mapGetters(["isAuthenticated", "error", "loading"]),
+
+    loginInputType() {
+      return this.showLoginPassword ? "text" : "password";
+    },
+
+    registerInputType() {
+      return this.showRegisterPassword ? "text" : "password";
+    },
   },
 
   methods: {
     ...mapActions(["login", "signup", "setError"]),
+
+    toggleInput(param) {
+      if (param == "login") {
+        this.showLoginPassword = !this.showLoginPassword;
+      } else if (param == "register") {
+        this.showRegisterPassword = !this.showRegisterPassword;
+      }
+    },
 
     async userLogin() {
       if (this.loginForm.email != "" && this.loginForm.password != "") {
