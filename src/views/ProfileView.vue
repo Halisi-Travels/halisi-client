@@ -84,7 +84,8 @@
                 class="mt-2 text-gray-600"
                 v-if="user && user.role == 'candidate'"
               >
-                <span class="font-semibold">0</span> applications
+                <span class="font-semibold">{{ userApplications.length }}</span>
+                application(s)
               </p>
             </div>
           </div>
@@ -138,7 +139,7 @@
           class="applications w-full"
         >
           <h3 class="text-2xl font-bold mb-3 text-gray-600">
-            {{ userApplications.length }} Applications
+            {{ userApplications.length }} Application(s)
           </h3>
 
           <hr class="my-5" />
@@ -149,11 +150,11 @@
               v-for="(app, index) in userApplications"
               :key="index"
             >
-              <p class="text-secondary font-bold text-xl">
-                {{ app.jobId.title }}
+              <p class="text-secondary font-bold text-xl capitalize">
+                {{ app.job.title }}
               </p>
-              <p class="font-semibold">{{ app.jobId.client.name }}</p>
-              <p class="italic text-sm">{{ app.createdAt }}</p>
+              <p class="font-semibold capitalize">{{ app.job.country }}</p>
+              <p class="italic text-sm">{{ formatDate(app.createdAt) }}</p>
             </div>
           </div>
         </section>

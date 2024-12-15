@@ -72,10 +72,6 @@
               <span v-if="!loading">LOGIN</span>
               <span v-else>Logging in...</span>
             </button>
-
-            <div class="remember flex justify-end mt-4 hover:cursor-pointer">
-              <p class="text-secondary/70">forgot password?</p>
-            </div>
           </form>
         </section>
 

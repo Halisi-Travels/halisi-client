@@ -4,12 +4,17 @@ export default {
   state: {
     user: null,
     token: localStorage.getItem("token") || null,
+    userApplications: [],
   },
 
   mutations: {
     SET_USER(state, payload) {
       state.user = payload.user;
       state.token = payload.token;
+    },
+
+    SET_USER_APPLICATIONS(state, payload) {
+      state.userApplications = payload;
     },
 
     LOGOUT(state) {
@@ -21,7 +26,7 @@ export default {
   },
 
   actions: {
-    async signup({ commit, dispatch }, payload) {
+    async signup({ commit }, payload) {
       try {
         commit("SET_LOADING", true);
         commit("CLEAR_ERROR");
@@ -31,11 +36,6 @@ export default {
           email: payload.get("email"),
           phone: payload.get("phone"),
           role: payload.get("role"),
-          password: payload.get("password"),
-        });
-
-        await dispatch("login", {
-          email: payload.get("email"),
           password: payload.get("password"),
         });
       } catch (err) {
@@ -92,6 +92,24 @@ export default {
       }
     },
 
+    async getUserApplications({ commit }) {
+      commit("SET_LOADING", true);
+      commit("CLEAR_ERROR");
+
+      try {
+        const res = await axios.get(`/applications/user`);
+        const applications = res.data.applications;
+
+        if (res.status == 200) {
+          commit("SET_USER_APPLICATIONS", applications);
+        }
+      } catch (err) {
+        commit("SET_ERROR", err.response.data.message);
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
+
     logout({ commit }) {
       localStorage.removeItem("token");
       delete axios.defaults.headers.common["Authorization"];
@@ -122,5 +140,6 @@ export default {
   getters: {
     user: (state) => state.user,
     isAuthenticated: (state) => !!state.user,
+    userApplications: (state) => state.userApplications,
   },
 };

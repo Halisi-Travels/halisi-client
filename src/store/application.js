@@ -2,18 +2,17 @@ import axios from "axios";
 
 export default {
   state: {
-    allApplications: [],
-    userApplications: [],
+    applications: [],
     application: null,
   },
 
   mutations: {
     SET_APPLICATIONS(state, payload) {
-      state.allApplications = payload;
+      state.applications = payload;
     },
 
     ADD_APPLICATION(state, payload) {
-      state.allApplications.push(payload);
+      state.applications.push(payload);
     },
 
     SET_USER_APPLICATIONS(state, payload) {
@@ -27,7 +26,7 @@ export default {
     CLEAR_APPLICATIONS(state) {
       state.application = null;
       state.userApplications = [];
-      state.allApplications = [];
+      state.applications = [];
     },
   },
 
@@ -42,24 +41,6 @@ export default {
 
         if (res.status == 200) {
           commit("ADD_APPLICATION", application);
-        }
-      } catch (err) {
-        commit("SET_ERROR", err.response.data.message);
-      } finally {
-        commit("SET_LOADING", false);
-      }
-    },
-
-    async getUserApplications({ commit }) {
-      commit("SET_LOADING", true);
-      commit("CLEAR_ERROR");
-
-      try {
-        const res = await axios.get(`/applications/user`);
-        const applications = res.data.applications;
-
-        if (res.status == 200) {
-          commit("SET_USER_APPLICATIONS", applications);
         }
       } catch (err) {
         commit("SET_ERROR", err.response.data.message);
