@@ -181,7 +181,7 @@
             v-if="showSuccess"
             class="p-3 bg-green-200 text-green-700 border-r-4 border-green-700 w-full font-bold uppercase text-sm text-right"
           >
-            Your has been submitted succesfully
+            feedback submitted successfully
           </div>
 
           <button
