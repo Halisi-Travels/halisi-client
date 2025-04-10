@@ -12,9 +12,10 @@ import "./index.css";
 // global components
 import Navbar from "@/components/AppBar.vue";
 import Footer from "@/components/Footer.vue";
+import apiUrl from "./env";
 
 axios.defaults.withCredentials = false; // enable sending cookies with requests
-axios.defaults.baseURL = process.env.VUE_APP_API_URL;
+axios.defaults.baseURL = apiUrl;
 
 const head = createHead();
 
