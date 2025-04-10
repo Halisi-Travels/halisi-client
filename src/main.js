@@ -5,6 +5,7 @@ import store from "./store";
 import axios from "axios";
 import { format } from "date-fns";
 import { createHead, useHead } from "@vueuse/head";
+import apiUrl from "./env";
 
 // import tailwind
 import "./index.css";
@@ -12,7 +13,6 @@ import "./index.css";
 // global components
 import Navbar from "@/components/AppBar.vue";
 import Footer from "@/components/Footer.vue";
-import apiUrl from "./env";
 
 axios.defaults.withCredentials = false; // enable sending cookies with requests
 axios.defaults.baseURL = apiUrl;
