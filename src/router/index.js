@@ -141,6 +141,11 @@ const routes = [
     component: () => import("../views/GenericApply.vue"),
   },
   {
+    path: "/privacy-policy",
+    name: "Privacy Policy",
+    component: () => import("../views/PrivacyPolicy.vue"),
+  },
+  {
     path: "/unauthorized",
     name: "unauthorized",
     component: () => import("../views/UnauthorizedView.vue"),

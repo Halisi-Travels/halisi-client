@@ -178,7 +178,7 @@
           <span class="font-semibold">
             <a
               aria-label="The developer portfolio website"
-              href="https://mawira.netlify.app"
+              href="https://mawirab.com"
               target="_blank"
               >Mawira</a
             >
